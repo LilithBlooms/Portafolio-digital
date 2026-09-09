@@ -2630,28 +2630,33 @@ body {
 } 
 
 /* ==========================================
-   ARREGLO DEL TAMAÑO DE LA PORTADA
+   ARREGLO DEFINITIVO DE LA PORTADA EN CELULAR
 ========================================== */
 
-.cover-page {
-    min-height: 0 !important;
-    height: auto !important;
-}
+@media (max-width: 650px) {
 
-.cover-content {
-    min-height: 430px !important;
-    height: auto !important;
-    padding: 20px 15px !important;
-}
+    .book {
+        min-height: 620px;
+    }
 
-@media (max-width: 600px) {
+    .book-page {
+        min-height: 620px;
+    }
+
+    /* Solo la portada será más compacta */
+
+    .book-page.cover-page {
+        min-height: 520px !important;
+    }
 
     .cover-content {
         min-height: 400px !important;
-        padding: 15px 10px !important;
+        height: auto !important;
+        padding: 20px 15px !important;
     }
 
     .cover-content h2 {
         font-size: clamp(4rem, 16vw, 6rem) !important;
     }
+
 }
