@@ -1867,3 +1867,763 @@ body {
     }
 
 }
+/* =========================================================
+   👑 SECCIÓN: GOBERNANTES DE ESPAÑA
+   ========================================================= */
+
+
+/* =========================
+   PÁGINA DE INTRODUCCIÓN
+========================= */
+
+.governors-intro-page {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at top right, rgba(255, 196, 0, 0.18), transparent 25%),
+        radial-gradient(circle at bottom left, rgba(255, 70, 50, 0.16), transparent 30%),
+        linear-gradient(135deg, #7d0b12, #a8141d 55%, #7d0b12);
+}
+
+/* Decoración de fondo */
+
+.governors-intro-page::before {
+    content: "👑 🇪🇸 🏛️ 📜 👑 🇪🇸";
+    position: absolute;
+    top: 8%;
+    left: -5%;
+    width: 110%;
+    font-size: 2rem;
+    letter-spacing: 3rem;
+    opacity: 0.10;
+    transform: rotate(-12deg);
+    pointer-events: none;
+}
+
+.governors-intro-page::after {
+    content: "🇪🇸 👑 🏛️ ⚖️ 📜 🇪🇸";
+    position: absolute;
+    bottom: 8%;
+    left: -5%;
+    width: 110%;
+    font-size: 2rem;
+    letter-spacing: 3rem;
+    opacity: 0.10;
+    transform: rotate(10deg);
+    pointer-events: none;
+}
+
+
+/* Contenido de introducción */
+
+.governors-intro-content {
+    position: relative;
+    z-index: 2;
+
+    min-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 3rem 2.5rem;
+}
+
+
+/* Iconos superiores */
+
+.cover-icons {
+    font-size: 2.3rem;
+    letter-spacing: 0.5rem;
+    margin-bottom: 1.5rem;
+
+    animation: softFloat 3s ease-in-out infinite;
+}
+
+
+/* Título */
+
+.governors-intro-content h2 {
+    color: #ffd43b;
+
+    font-size: clamp(2.3rem, 5vw, 4.5rem);
+
+    line-height: 1.05;
+
+    margin: 1rem 0;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        3px 3px 0 rgba(80, 0, 0, 0.35);
+}
+
+.governors-intro-content h2 span {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 1.15em;
+}
+
+
+/* Texto */
+
+.governors-intro-content p {
+    max-width: 750px;
+
+    color: #fff6d8;
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+
+    margin: 1rem auto;
+}
+
+
+/* Línea decorativa */
+
+.center-line {
+    margin: 1.2rem auto 1.8rem;
+}
+
+
+/* Emojis */
+
+.governors-intro-emojis {
+    font-size: 1.8rem;
+
+    margin-top: 1.8rem;
+
+    word-spacing: 0.8rem;
+
+    animation: softFloat 4s ease-in-out infinite;
+}
+
+
+/* =========================
+   PÁGINAS BIOGRÁFICAS
+========================= */
+
+.biography-page {
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at top left, rgba(255, 196, 0, 0.13), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(255, 60, 50, 0.12), transparent 30%),
+        linear-gradient(
+            135deg,
+            #6f090f 0%,
+            #94111a 45%,
+            #750b12 100%
+        );
+}
+
+
+/* Emojis suaves de fondo */
+
+.biography-page::before {
+    content: "🇪🇸 👑 🏛️ 📜 🇪🇸 👑";
+
+    position: absolute;
+
+    top: 5%;
+    left: -10%;
+
+    width: 120%;
+
+    font-size: 2rem;
+
+    letter-spacing: 4rem;
+
+    opacity: 0.07;
+
+    transform: rotate(-8deg);
+
+    pointer-events: none;
+}
+
+
+.biography-page::after {
+    content: "🏛️ 🇪🇸 👑 📜 🏛️ 🇪🇸";
+
+    position: absolute;
+
+    bottom: 5%;
+    left: -10%;
+
+    width: 120%;
+
+    font-size: 2rem;
+
+    letter-spacing: 4rem;
+
+    opacity: 0.07;
+
+    transform: rotate(8deg);
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+
+.biography-layout {
+    position: relative;
+    z-index: 2;
+
+    min-height: 100%;
+
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    align-items: center;
+
+    gap: 2.5rem;
+
+    padding: 2.5rem 3rem;
+}
+
+
+/* Alternar imagen y texto */
+
+.reverse-biography {
+    grid-template-columns: 1.2fr 0.8fr;
+}
+
+.reverse-biography .biography-image {
+    order: 2;
+}
+
+.reverse-biography .biography-content {
+    order: 1;
+}
+
+
+/* =========================
+   IMÁGENES DE GOBERNANTES
+========================= */
+
+.biography-image {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+}
+
+
+/* 👑 IMAGEN MÁS PEQUEÑA Y CENTRADA */
+
+.biography-image img {
+    display: block;
+
+    width: 100%;
+
+    max-width: 280px;
+
+    max-height: 360px;
+
+    margin: 0 auto;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    border-radius: 22px;
+
+    border: 4px solid #ffd43b;
+
+    box-shadow:
+        0 12px 0 rgba(70, 0, 0, 0.25),
+        0 18px 35px rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* Pequeño efecto al pasar el mouse */
+
+.biography-image img:hover {
+    transform: scale(1.03) rotate(-1deg);
+
+    box-shadow:
+        0 14px 0 rgba(70, 0, 0, 0.25),
+        0 22px 45px rgba(0, 0, 0, 0.4);
+}
+
+
+/* =========================
+   CONTENIDO BIOGRÁFICO
+========================= */
+
+.biography-content {
+    position: relative;
+
+    max-width: 650px;
+
+    color: #fff7df;
+
+    padding: 1rem 0;
+}
+
+
+/* Etiqueta superior */
+
+.biography-content .section-label {
+    display: inline-block;
+
+    background: #ffd43b;
+
+    color: #7a0c12;
+
+    font-size: 0.72rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.08rem;
+
+    padding: 0.55rem 0.9rem;
+
+    border-radius: 999px;
+
+    margin-bottom: 0.9rem;
+
+    box-shadow: 3px 3px 0 rgba(70, 0, 0, 0.3);
+}
+
+
+/* Nombre */
+
+.biography-content h2 {
+    color: #ffffff;
+
+    font-size: clamp(2rem, 4vw, 3.6rem);
+
+    line-height: 1;
+
+    margin: 0.4rem 0 1rem;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        3px 3px 0 rgba(80, 0, 0, 0.35);
+}
+
+
+/* Apellido o palabra destacada */
+
+.biography-content h2 span {
+    color: #ffd43b;
+}
+
+
+/* Línea España */
+
+.red-yellow-line {
+    width: 110px;
+
+    height: 7px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        to right,
+        #d71920 0%,
+        #d71920 33%,
+        #ffd43b 33%,
+        #ffd43b 66%,
+        #d71920 66%
+    );
+
+    margin: 1rem 0 1.4rem;
+
+    box-shadow:
+        0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Fecha */
+
+.biography-date {
+    display: inline-block;
+
+    background: rgba(255, 212, 59, 0.16);
+
+    border-left: 4px solid #ffd43b;
+
+    color: #fff3c4;
+
+    font-weight: 700;
+
+    padding: 0.7rem 1rem;
+
+    border-radius: 0 12px 12px 0;
+
+    margin-bottom: 1rem;
+}
+
+
+/* Subtítulo */
+
+.biography-content h3 {
+    color: #ffd43b;
+
+    font-size: 1.35rem;
+
+    margin: 0.8rem 0;
+}
+
+
+/* Párrafos */
+
+.biography-content p {
+    color: #fff5df;
+
+    font-size: 0.98rem;
+
+    line-height: 1.7;
+
+    margin-bottom: 0.9rem;
+}
+
+
+/* =========================
+   CAJA DE LEGADO
+========================= */
+
+.legacy-box {
+    position: relative;
+
+    margin-top: 1.2rem;
+
+    padding: 1.1rem 1.3rem;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 212, 59, 0.20),
+            rgba(255, 255, 255, 0.06)
+        );
+
+    border: 2px dashed rgba(255, 212, 59, 0.8);
+
+    border-radius: 18px;
+
+    box-shadow:
+        6px 6px 0 rgba(70, 0, 0, 0.20);
+}
+
+
+.legacy-box strong {
+    display: block;
+
+    color: #ffd43b;
+
+    font-size: 1rem;
+
+    margin-bottom: 0.4rem;
+}
+
+
+.legacy-box p {
+    margin: 0;
+
+    color: #fff7df;
+
+    font-size: 0.92rem;
+
+    line-height: 1.55;
+}
+
+
+/* =========================
+   TIPOS ESPECIALES
+========================= */
+
+
+/* Monarquía */
+
+.monarchy-page .biography-image img {
+    border-color: #ffd43b;
+
+    box-shadow:
+        0 12px 0 rgba(110, 65, 0, 0.25),
+        0 18px 35px rgba(0, 0, 0, 0.35);
+}
+
+
+/* Instituciones */
+
+.institution-page .biography-image img {
+    max-width: 320px;
+
+    border-radius: 18px;
+}
+
+
+/* Símbolos */
+
+.symbol-page .biography-image img {
+    max-width: 330px;
+
+    max-height: 300px;
+
+    object-fit: contain;
+
+    background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* Mapa histórico */
+
+.history-page .biography-image img {
+    max-width: 340px;
+
+    max-height: 310px;
+
+    object-fit: contain;
+
+    background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================
+   ANIMACIÓN
+========================= */
+
+@keyframes softFloat {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .biography-layout,
+    .reverse-biography {
+
+        grid-template-columns: 1fr;
+
+        gap: 1.5rem;
+
+        padding: 2.5rem 2rem;
+    }
+
+
+    .reverse-biography .biography-image,
+    .reverse-biography .biography-content {
+        order: initial;
+    }
+
+
+    .biography-image img {
+
+        max-width: 240px;
+
+        max-height: 310px;
+    }
+
+
+    .biography-content {
+
+        max-width: 100%;
+
+        text-align: center;
+    }
+
+
+    .biography-content .section-label {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .red-yellow-line {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .biography-date {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .legacy-box {
+        text-align: left;
+    }
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .governors-intro-content {
+
+        padding: 2rem 1.3rem;
+    }
+
+
+    .governors-intro-content h2 {
+
+        font-size: 2.3rem;
+    }
+
+
+    .governors-intro-content p {
+
+        font-size: 0.92rem;
+
+        line-height: 1.65;
+    }
+
+
+    .cover-icons {
+
+        font-size: 1.7rem;
+
+        letter-spacing: 0.2rem;
+    }
+
+
+    .governors-intro-emojis {
+
+        font-size: 1.4rem;
+
+        word-spacing: 0.2rem;
+    }
+
+
+    .biography-layout,
+    .reverse-biography {
+
+        padding: 2rem 1.3rem;
+
+        gap: 1.3rem;
+    }
+
+
+    /* Imágenes todavía más pequeñas en celular */
+
+    .biography-image img {
+
+        max-width: 200px;
+
+        max-height: 260px;
+
+        border-width: 3px;
+
+        border-radius: 18px;
+    }
+
+
+    .institution-page .biography-image img {
+
+        max-width: 240px;
+
+        max-height: 220px;
+    }
+
+
+    .symbol-page .biography-image img {
+
+        max-width: 250px;
+
+        max-height: 210px;
+    }
+
+
+    .history-page .biography-image img {
+
+        max-width: 260px;
+
+        max-height: 220px;
+    }
+
+
+    .biography-content h2 {
+
+        font-size: 2rem;
+    }
+
+
+    .biography-content h3 {
+
+        font-size: 1.2rem;
+    }
+
+
+    .biography-content p {
+
+        font-size: 0.9rem;
+
+        line-height: 1.6;
+    }
+
+
+    .biography-content .section-label {
+
+        font-size: 0.62rem;
+
+        padding: 0.45rem 0.7rem;
+    }
+
+
+    .biography-date {
+
+        font-size: 0.82rem;
+
+        padding: 0.6rem 0.8rem;
+    }
+
+
+    .legacy-box {
+
+        padding: 1rem;
+
+        border-radius: 15px;
+    }
+
+
+    .biography-page::before,
+    .biography-page::after {
+
+        font-size: 1.4rem;
+
+        letter-spacing: 2rem;
+    }
+
+} 
