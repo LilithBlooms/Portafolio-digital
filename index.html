@@ -4,28 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>España | Portafolio Digital</title>
+    <title>España 🇪🇸 | Portafolio Digital</title>
 
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <!-- DECORACIONES DEL FONDO -->
+    <!-- FONDO ANIMADO -->
+    <div class="spain-background" id="spainBackground"></div>
 
-    <div class="background-decor decor-one">✦</div>
-    <div class="background-decor decor-two">✧</div>
-    <div class="background-decor decor-three">✦</div>
-    <div class="background-decor decor-four">✧</div>
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+    <div class="glow glow-three"></div>
 
 
-    <!-- ENCABEZADO -->
-
+    <!-- HEADER -->
     <header class="top-header">
 
         <button class="menu-button" id="menuButton" aria-label="Abrir índice">
@@ -34,33 +33,39 @@
 
         <div class="header-title">
             <span>PORTAFOLIO DIGITAL</span>
-            <h1>ESPAÑA</h1>
+
+            <h1>
+                ESPAÑA <i>🇪🇸</i>
+            </h1>
         </div>
 
         <div class="page-indicator">
             <span id="currentPage">1</span>
-            <span>/</span>
-            <span id="totalPages">15</span>
+            <span class="slash">/</span>
+            <span id="totalPages">17</span>
         </div>
 
     </header>
 
 
-    <!-- ÍNDICE LATERAL -->
-
+    <!-- ÍNDICE -->
     <aside class="sidebar" id="sidebar">
 
         <div class="sidebar-header">
 
             <div>
-                <p>EXPLORA EL LIBRO</p>
+                <p>🇪🇸 EXPLORA EL PORTAFOLIO</p>
                 <h2>Índice</h2>
             </div>
 
-            <button id="closeMenu" aria-label="Cerrar índice">
+            <button id="closeMenu" aria-label="Cerrar menú">
                 ×
             </button>
 
+        </div>
+
+        <div class="sidebar-decoration">
+            ❤️ ━━━━━ 💛 ━━━━━ ❤️
         </div>
 
 
@@ -68,82 +73,87 @@
 
             <button class="thumbnail active" data-page="0">
                 <img src="images/IMG_9032.jpeg" alt="Portada">
-                <span>Portada</span>
+                <span><b>01.</b> Portada</span>
             </button>
 
             <button class="thumbnail" data-page="1">
                 <img src="images/IMG_9045.jpeg" alt="España">
-                <span>¿Quién es España?</span>
+                <span><b>02.</b> ¿Quién es España?</span>
             </button>
 
-            <button class="thumbnail" data-page="2">
-                <img src="images/IMG_9033.jpeg" alt="Cronología">
-                <span>Cronología</span>
+            <button class="thumbnail map-thumbnail" data-page="2">
+                <div class="emoji-thumbnail">🗺️🇪🇸✈️</div>
+                <span><b>03.</b> España en el mapa</span>
             </button>
 
             <button class="thumbnail" data-page="3">
-                <img src="images/IMG_9034.jpeg" alt="Registro digital">
-                <span>Registro digital</span>
+                <img src="images/IMG_9033.jpeg" alt="Cronología">
+                <span><b>04.</b> Cronología</span>
             </button>
 
             <button class="thumbnail" data-page="4">
-                <img src="images/IMG_9035.jpeg" alt="Hemeroteca">
-                <span>Hemeroteca</span>
+                <img src="images/IMG_9034.jpeg" alt="Registro digital">
+                <span><b>05.</b> Registro digital</span>
             </button>
 
             <button class="thumbnail" data-page="5">
-                <img src="images/IMG_9036.jpeg" alt="Cultura">
-                <span>Cultura española</span>
+                <img src="images/IMG_9035.jpeg" alt="Hemeroteca">
+                <span><b>06.</b> Hemeroteca</span>
             </button>
 
             <button class="thumbnail" data-page="6">
-                <img src="images/IMG_9037.jpeg" alt="Videoteca">
-                <span>Videoteca</span>
+                <img src="images/IMG_9036.jpeg" alt="Cultura">
+                <span><b>07.</b> Cultura española</span>
             </button>
 
             <button class="thumbnail" data-page="7">
-                <img src="images/IMG_9038.jpeg" alt="Biblioteca">
-                <span>Biblioteca</span>
+                <img src="images/IMG_9037.jpeg" alt="Videoteca">
+                <span><b>08.</b> Videoteca</span>
             </button>
 
             <button class="thumbnail" data-page="8">
-                <img src="images/IMG_9040.jpeg" alt="Comercio">
-                <span>Comercio</span>
+                <img src="images/IMG_9038.jpeg" alt="Biblioteca">
+                <span><b>09.</b> Biblioteca</span>
             </button>
 
             <button class="thumbnail" data-page="9">
-                <img src="images/IMG_9041.jpeg" alt="Teatro">
-                <span>Obras teatrales</span>
+                <img src="images/IMG_9040.jpeg" alt="Comercio">
+                <span><b>10.</b> Comercio</span>
             </button>
 
             <button class="thumbnail" data-page="10">
-                <img src="images/IMG_9042.jpeg" alt="Eventos">
-                <span>Eventos artísticos</span>
+                <img src="images/IMG_9041.jpeg" alt="Teatro">
+                <span><b>11.</b> Obras teatrales</span>
             </button>
 
             <button class="thumbnail" data-page="11">
-                <img src="images/IMG_9043.jpeg" alt="Exposición">
-                <span>Exposición</span>
+                <img src="images/IMG_9042.jpeg" alt="Eventos">
+                <span><b>12.</b> Eventos artísticos</span>
             </button>
 
             <button class="thumbnail" data-page="12">
-                <img src="images/IMG_9044.jpeg" alt="Fototeca">
-                <span>Fototeca</span>
+                <img src="images/IMG_9043.jpeg" alt="Exposición">
+                <span><b>13.</b> Exposición</span>
             </button>
 
             <button class="thumbnail" data-page="13">
-                <img src="images/IMG_9046.jpeg" alt="Archivo">
-                <span>Archivo</span>
+                <img src="images/IMG_9044.jpeg" alt="Fototeca">
+                <span><b>14.</b> Fototeca</span>
             </button>
 
             <button class="thumbnail" data-page="14">
-                <img src="images/IMG_9048.jpeg" alt="Conclusión">
-                <span>Conclusión y fuentes</span>
+                <img src="images/IMG_9046.jpeg" alt="Archivo">
+                <span><b>15.</b> Archivo</span>
             </button>
 
             <button class="thumbnail" data-page="15">
+                <img src="images/IMG_9048.jpeg" alt="Conclusión">
+                <span><b>16.</b> Conclusión</span>
+            </button>
+
+            <button class="thumbnail" data-page="16">
                 <img src="images/IMG_9049.jpeg" alt="Agradecimiento">
-                <span>Agradecimiento</span>
+                <span><b>17.</b> Agradecimiento</span>
             </button>
 
         </div>
@@ -154,8 +164,7 @@
     <div class="overlay" id="overlay"></div>
 
 
-    <!-- CONTENEDOR PRINCIPAL -->
-
+    <!-- LIBRO -->
     <main class="book-area">
 
         <div class="book-wrapper">
@@ -163,39 +172,40 @@
             <div class="book" id="book">
 
 
-                <!-- PORTADA -->
-
+                <!-- PÁGINA 1 -->
                 <section class="book-page cover-page active">
+
+                    <div class="spanish-stripe stripe-top"></div>
 
                     <div class="cover-content">
 
-                        <div class="cover-decoration top-decoration">
-                            ✦ ───── ✧ ───── ✦
+                        <div class="cover-icons">
+                            ☀️ ✦ 🇪🇸 ✦ ☀️
                         </div>
 
-                        <p class="small-title">
+                        <p class="cover-small-title">
                             PORTAFOLIO DIGITAL
                         </p>
 
-                        <h2>
-                            ESPAÑA
-                        </h2>
+                        <h2>ESPAÑA</h2>
 
-                        <div class="cover-line"></div>
+                        <div class="flag-line">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
 
                         <p class="cover-subtitle">
-                            Historia, cultura, arte y tradición
+                            Un recorrido por su historia,
+                            cultura, arte y tradición
                         </p>
 
                         <div class="cover-image-container">
-                            <img
-                                src="images/IMG_9032.jpeg"
-                                alt="Portada del portafolio sobre España"
-                            >
+                            <img src="images/IMG_9032.jpeg" alt="España">
                         </div>
 
-                        <div class="cover-decoration bottom-decoration">
-                            ✦ ───── ✧ ───── ✦
+                        <div class="cover-bottom-icons">
+                            🏰 💃 🥘 🎸 🪭 ⚽
                         </div>
 
                     </div>
@@ -205,21 +215,23 @@
                 </section>
 
 
-                <!-- ¿QUIÉN ES ESPAÑA? -->
-
+                <!-- PÁGINA 2 -->
                 <section class="book-page">
+
+                    <div class="corner-emoji">🇪🇸</div>
 
                     <div class="page-content">
 
                         <div class="page-text">
 
-                            <span class="section-label">
-                                INTRODUCCIÓN
-                            </span>
+                            <span class="section-label">✦ INTRODUCCIÓN</span>
 
-                            <h2>¿Quién es España?</h2>
+                            <h2>
+                                ¿Quién es<br>
+                                <span>España?</span>
+                            </h2>
 
-                            <div class="gold-line"></div>
+                            <div class="red-yellow-line"></div>
 
                             <p>
                                 España es un país situado en el suroeste de Europa,
@@ -239,9 +251,13 @@
                                 una enorme influencia en diferentes partes del mundo.
                             </p>
 
+                            <div class="page-emojis">
+                                🏰 ☀️ 🎸 💃 🥘
+                            </div>
+
                         </div>
 
-                        <div class="page-image">
+                        <div class="page-image image-frame">
                             <img src="images/IMG_9045.jpeg" alt="España">
                         </div>
 
@@ -252,21 +268,25 @@
                 </section>
 
 
-                <!-- MAPA -->
-
+                <!-- PÁGINA 3 -->
                 <section class="book-page map-page">
+
+                    <div class="corner-emoji">🗺️</div>
 
                     <div class="page-content map-content">
 
                         <div class="page-text">
 
                             <span class="section-label">
-                                UBICACIÓN GEOGRÁFICA
+                                ✦ UBICACIÓN GEOGRÁFICA
                             </span>
 
-                            <h2>España en el mapa</h2>
+                            <h2>
+                                España en<br>
+                                <span>el mapa</span>
+                            </h2>
 
-                            <div class="gold-line"></div>
+                            <div class="red-yellow-line"></div>
 
                             <p>
                                 España ocupa gran parte de la península ibérica y
@@ -279,115 +299,68 @@
                                 de encuentro entre diferentes pueblos y culturas.
                             </p>
 
+                            <div class="page-emojis">
+                                🌍 ✈️ 🇪🇸 📍
+                            </div>
+
                         </div>
 
 
                         <div class="map-container">
 
-                            <svg
-                                viewBox="0 0 700 450"
-                                class="spain-map"
-                                aria-label="Mapa estilizado de España"
-                            >
-
-                                <!-- FONDO -->
+                            <svg viewBox="0 0 700 450" class="spain-map">
 
                                 <rect
                                     width="700"
                                     height="450"
-                                    rx="25"
+                                    rx="30"
                                     class="map-background"
                                 />
 
-
-                                <!-- EUROPA ESTILIZADA -->
-
                                 <path
                                     class="europe-shape"
-                                    d="
-                                    M110 80
-                                    C180 30 300 30 380 70
-                                    C470 40 560 80 590 140
-                                    C640 190 610 270 550 300
-                                    C510 360 420 360 350 330
-                                    C280 370 170 350 130 280
-                                    C70 220 70 130 110 80 Z
-                                    "
+                                    d="M110 80 C180 30 300 30 380 70 C470 40 560 80 590 140 C640 190 610 270 550 300 C510 360 420 360 350 330 C280 370 170 350 130 280 C70 220 70 130 110 80 Z"
                                 />
-
-
-                                <!-- ESPAÑA RESALTADA -->
 
                                 <path
                                     class="spain-shape"
-                                    d="
-                                    M185 220
-                                    L260 190
-                                    L340 205
-                                    L405 245
-                                    L380 310
-                                    L290 330
-                                    L210 300
-                                    Z
-                                    "
+                                    d="M185 220 L260 190 L340 205 L405 245 L380 310 L290 330 L210 300 Z"
                                 />
-
-
-                                <!-- RUTA -->
 
                                 <path
                                     id="flightPath"
-                                    d="
-                                    M100 350
-                                    C180 300 210 240 280 245
-                                    C340 250 370 220 440 160
-                                    "
+                                    d="M90 360 C170 300 210 250 280 250 C350 250 370 210 460 130"
                                     class="flight-path"
                                 />
 
-
-                                <!-- MARCADOR -->
-
                                 <g class="location-marker">
 
-                                    <circle
-                                        cx="300"
-                                        cy="255"
-                                        r="18"
-                                    />
+                                    <circle cx="300" cy="255" r="22"></circle>
 
                                     <circle
                                         cx="300"
                                         cy="255"
-                                        r="7"
+                                        r="8"
                                         class="marker-center"
-                                    />
+                                    ></circle>
 
                                 </g>
 
-
-                                <!-- AVIÓN -->
-
                                 <g id="plane">
-
                                     <text
                                         x="0"
                                         y="0"
                                         class="plane-icon"
-                                    >
-                                        ✈
-                                    </text>
-
+                                    >✈</text>
                                 </g>
-
 
                                 <text
                                     x="300"
-                                    y="370"
+                                    y="390"
                                     text-anchor="middle"
                                     class="map-label"
                                 >
-                                    ESPAÑA
+                                    ESPAÑA 🇪🇸
                                 </text>
 
                             </svg>
@@ -401,25 +374,24 @@
                 </section>
 
 
-                <!-- CRONOLOGÍA -->
-
+                <!-- PÁGINA 4 -->
                 <section class="book-page">
+
+                    <div class="corner-emoji">📜</div>
 
                     <div class="page-content reverse">
 
-                        <div class="page-image">
-                            <img src="images/IMG_9033.jpeg" alt="Cronología de España">
+                        <div class="page-image image-frame">
+                            <img src="images/IMG_9033.jpeg" alt="Cronología">
                         </div>
 
                         <div class="page-text">
 
-                            <span class="section-label">
-                                HISTORIA
-                            </span>
+                            <span class="section-label">✦ HISTORIA</span>
 
-                            <h2>Cronología</h2>
+                            <h2>Crono<span>logía</span></h2>
 
-                            <div class="gold-line"></div>
+                            <div class="red-yellow-line"></div>
 
                             <p>
                                 La historia de España está formada por numerosos
@@ -429,9 +401,13 @@
 
                             <p>
                                 Desde las civilizaciones antiguas hasta la España
-                                contemporánea, cada período histórico dejó una huella
-                                importante en su cultura e identidad.
+                                contemporánea, cada período histórico dejó una
+                                huella importante en su cultura e identidad.
                             </p>
+
+                            <div class="page-emojis">
+                                ⏳ 📜 🏛️ 👑
+                            </div>
 
                         </div>
 
@@ -442,26 +418,30 @@
                 </section>
 
 
-                <!-- REGISTRO DIGITAL -->
-
+                <!-- PÁGINA 5 -->
                 <section class="book-page">
+
+                    <div class="corner-emoji">💻</div>
 
                     <div class="page-content">
 
                         <div class="page-text">
 
                             <span class="section-label">
-                                TECNOLOGÍA Y MEMORIA
+                                ✦ TECNOLOGÍA Y MEMORIA
                             </span>
 
-                            <h2>Registro digital</h2>
+                            <h2>
+                                Registro<br>
+                                <span>digital</span>
+                            </h2>
 
-                            <div class="gold-line"></div>
+                            <div class="red-yellow-line"></div>
 
                             <p>
-                                La tecnología permite conservar, organizar y compartir
-                                información histórica y cultural de una manera mucho
-                                más accesible.
+                                La tecnología permite conservar, organizar y
+                                compartir información histórica y cultural de una
+                                manera mucho más accesible.
                             </p>
 
                             <p>
@@ -470,9 +450,13 @@
                                 preservados para las futuras generaciones.
                             </p>
 
+                            <div class="page-emojis">
+                                💻 📱 📂 ✨
+                            </div>
+
                         </div>
 
-                        <div class="page-image">
+                        <div class="page-image image-frame">
                             <img src="images/IMG_9034.jpeg" alt="Registro digital">
                         </div>
 
@@ -483,25 +467,26 @@
                 </section>
 
 
-                <!-- HEMEROTECA -->
-
+                <!-- PÁGINA 6 -->
                 <section class="book-page">
+
+                    <div class="corner-emoji">📰</div>
 
                     <div class="page-content reverse">
 
-                        <div class="page-image">
+                        <div class="page-image image-frame">
                             <img src="images/IMG_9035.jpeg" alt="Hemeroteca">
                         </div>
 
                         <div class="page-text">
 
                             <span class="section-label">
-                                PRENSA E INFORMACIÓN
+                                ✦ PRENSA E INFORMACIÓN
                             </span>
 
-                            <h2>Hemeroteca</h2>
+                            <h2>Heme<span>roteca</span></h2>
 
-                            <div class="gold-line"></div>
+                            <div class="red-yellow-line"></div>
 
                             <p>
                                 Las hemerotecas conservan periódicos, revistas y
@@ -511,8 +496,13 @@
 
                             <p>
                                 Estos registros constituyen una fuente fundamental
-                                para comprender la evolución histórica de una sociedad.
+                                para comprender la evolución histórica de una
+                                sociedad.
                             </p>
+
+                            <div class="page-emojis">
+                                📰 🗞️ 📚 🕰️
+                            </div>
 
                         </div>
 
@@ -523,21 +513,23 @@
                 </section>
 
 
-                <!-- CULTURA -->
-
+                <!-- PÁGINA 7 -->
                 <section class="book-page">
+
+                    <div class="corner-emoji">💃</div>
 
                     <div class="page-content">
 
                         <div class="page-text">
 
-                            <span class="section-label">
-                                IDENTIDAD
-                            </span>
+                            <span class="section-label">✦ IDENTIDAD</span>
 
-                            <h2>Cultura española</h2>
+                            <h2>
+                                Cultura<br>
+                                <span>española</span>
+                            </h2>
 
-                            <div class="gold-line"></div>
+                            <div class="red-yellow-line"></div>
 
                             <p>
                                 La cultura española se caracteriza por su diversidad,
@@ -550,9 +542,13 @@
                                 y las costumbres forman parte esencial de su identidad.
                             </p>
 
+                            <div class="page-emojis">
+                                💃 🎸 🪭 🥘 🇪🇸
+                            </div>
+
                         </div>
 
-                        <div class="page-image">
+                        <div class="page-image image-frame">
                             <img src="images/IMG_9036.jpeg" alt="Cultura española">
                         </div>
 
@@ -563,29 +559,31 @@
                 </section>
 
 
-                <!-- VIDEOTECA -->
-
+                <!-- PÁGINA 8 -->
                 <section class="book-page">
+
+                    <div class="corner-emoji">🎬</div>
 
                     <div class="page-content reverse">
 
-                        <div class="page-image">
+                        <div class="page-image image-frame">
                             <img src="images/IMG_9037.jpeg" alt="Videoteca">
                         </div>
 
                         <div class="page-text">
 
                             <span class="section-label">
-                                MEMORIA AUDIOVISUAL
+                                ✦ MEMORIA AUDIOVISUAL
                             </span>
 
-                            <h2>Videoteca</h2>
+                            <h2>Video<span>teca</span></h2>
 
-                            <div class="gold-line"></div>
+                            <div class="red-yellow-line"></div>
 
                             <p>
-                                El contenido audiovisual permite documentar la historia,
-                                las tradiciones y diferentes expresiones culturales.
+                                El contenido audiovisual permite documentar la
+                                historia, las tradiciones y diferentes expresiones
+                                culturales.
                             </p>
 
                             <p>
@@ -593,6 +591,10 @@
                                 que pueden ser observados y estudiados incluso muchos
                                 años después.
                             </p>
+
+                            <div class="page-emojis">
+                                🎬 📹 🎞️ 🍿
+                            </div>
 
                         </div>
 
@@ -603,36 +605,39 @@
                 </section>
 
 
-                <!-- BIBLIOTECA -->
-
+                <!-- PÁGINA 9 -->
                 <section class="book-page">
+
+                    <div class="corner-emoji">📚</div>
 
                     <div class="page-content">
 
                         <div class="page-text">
 
-                            <span class="section-label">
-                                CONOCIMIENTO
-                            </span>
+                            <span class="section-label">✦ CONOCIMIENTO</span>
 
-                            <h2>Biblioteca</h2>
+                            <h2>Biblio<span>teca</span></h2>
 
-                            <div class="gold-line"></div>
+                            <div class="red-yellow-line"></div>
 
                             <p>
-                                Las bibliotecas representan espacios fundamentales para
-                                la conservación y transmisión del conocimiento.
+                                Las bibliotecas representan espacios fundamentales
+                                para la conservación y transmisión del conocimiento.
                             </p>
 
                             <p>
                                 Los libros permiten conocer las ideas, historias y
-                                experiencias que han contribuido a construir la cultura
-                                de una sociedad.
+                                experiencias que han contribuido a construir la
+                                cultura de una sociedad.
                             </p>
+
+                            <div class="page-emojis">
+                                📚 📖 ✍️ 🏛️
+                            </div>
 
                         </div>
 
-                        <div class="page-image">
+                        <div class="page-image image-frame">
                             <img src="images/IMG_9038.jpeg" alt="Biblioteca">
                         </div>
 
@@ -643,25 +648,24 @@
                 </section>
 
 
-                <!-- COMERCIO -->
-
+                <!-- PÁGINA 10 -->
                 <section class="book-page">
+
+                    <div class="corner-emoji">🛍️</div>
 
                     <div class="page-content reverse">
 
-                        <div class="page-image">
+                        <div class="page-image image-frame">
                             <img src="images/IMG_9040.jpeg" alt="Comercio">
                         </div>
 
                         <div class="page-text">
 
-                            <span class="section-label">
-                                ECONOMÍA
-                            </span>
+                            <span class="section-label">✦ ECONOMÍA</span>
 
-                            <h2>Comercio</h2>
+                            <h2>Comer<span>cio</span></h2>
 
-                            <div class="gold-line"></div>
+                            <div class="red-yellow-line"></div>
 
                             <p>
                                 El comercio ha sido una actividad fundamental para el
@@ -674,6 +678,10 @@
                                 territorios del mundo.
                             </p>
 
+                            <div class="page-emojis">
+                                🛍️ 🚢 💰 📦
+                            </div>
+
                         </div>
 
                     </div>
@@ -683,21 +691,25 @@
                 </section>
 
 
-                <!-- OBRAS TEATRALES -->
-
+                <!-- PÁGINA 11 -->
                 <section class="book-page">
+
+                    <div class="corner-emoji">🎭</div>
 
                     <div class="page-content">
 
                         <div class="page-text">
 
                             <span class="section-label">
-                                ARTES ESCÉNICAS
+                                ✦ ARTES ESCÉNICAS
                             </span>
 
-                            <h2>Obras teatrales</h2>
+                            <h2>
+                                Obras<br>
+                                <span>teatrales</span>
+                            </h2>
 
-                            <div class="gold-line"></div>
+                            <div class="red-yellow-line"></div>
 
                             <p>
                                 El teatro ha ocupado un lugar importante dentro de la
@@ -705,15 +717,19 @@
                             </p>
 
                             <p>
-                                Grandes autores y compañías teatrales han contribuido al
-                                desarrollo de obras que continúan siendo reconocidas por
-                                su valor cultural.
+                                Grandes autores y compañías teatrales han contribuido
+                                al desarrollo de obras que continúan siendo reconocidas
+                                por su valor cultural.
                             </p>
+
+                            <div class="page-emojis">
+                                🎭 🎟️ 🎬 ✨
+                            </div>
 
                         </div>
 
-                        <div class="page-image">
-                            <img src="images/IMG_9041.jpeg" alt="Obras teatrales">
+                        <div class="page-image image-frame">
+                            <img src="images/IMG_9041.jpeg" alt="Teatro">
                         </div>
 
                     </div>
@@ -723,30 +739,34 @@
                 </section>
 
 
-                <!-- EVENTOS ARTÍSTICOS -->
-
+                <!-- PÁGINA 12 -->
                 <section class="book-page">
+
+                    <div class="corner-emoji">🎨</div>
 
                     <div class="page-content reverse">
 
-                        <div class="page-image">
-                            <img src="images/IMG_9042.jpeg" alt="Eventos artísticos">
+                        <div class="page-image image-frame">
+                            <img src="images/IMG_9042.jpeg" alt="Eventos">
                         </div>
 
                         <div class="page-text">
 
                             <span class="section-label">
-                                EXPRESIÓN CULTURAL
+                                ✦ EXPRESIÓN CULTURAL
                             </span>
 
-                            <h2>Eventos artísticos</h2>
+                            <h2>
+                                Eventos<br>
+                                <span>artísticos</span>
+                            </h2>
 
-                            <div class="gold-line"></div>
+                            <div class="red-yellow-line"></div>
 
                             <p>
-                                Los eventos artísticos permiten reunir diferentes formas
-                                de expresión como la música, la pintura, la danza y el
-                                teatro.
+                                Los eventos artísticos permiten reunir diferentes
+                                formas de expresión como la música, la pintura,
+                                la danza y el teatro.
                             </p>
 
                             <p>
@@ -754,6 +774,10 @@
                                 tradiciones y a promover nuevas manifestaciones
                                 culturales.
                             </p>
+
+                            <div class="page-emojis">
+                                🎨 🎶 💃 🎭
+                            </div>
 
                         </div>
 
@@ -764,21 +788,22 @@
                 </section>
 
 
-                <!-- EXPOSICIÓN -->
-
+                <!-- PÁGINA 13 -->
                 <section class="book-page">
+
+                    <div class="corner-emoji">🖼️</div>
 
                     <div class="page-content">
 
                         <div class="page-text">
 
                             <span class="section-label">
-                                ARTE E HISTORIA
+                                ✦ ARTE E HISTORIA
                             </span>
 
-                            <h2>Exposición</h2>
+                            <h2>Expo<span>sición</span></h2>
 
-                            <div class="gold-line"></div>
+                            <div class="red-yellow-line"></div>
 
                             <p>
                                 Las exposiciones permiten presentar obras, objetos y
@@ -791,9 +816,13 @@
                                 de una manera visual e interactiva.
                             </p>
 
+                            <div class="page-emojis">
+                                🖼️ 🏛️ 🎨 ✨
+                            </div>
+
                         </div>
 
-                        <div class="page-image">
+                        <div class="page-image image-frame">
                             <img src="images/IMG_9043.jpeg" alt="Exposición">
                         </div>
 
@@ -804,25 +833,26 @@
                 </section>
 
 
-                <!-- FOTOTECA -->
-
+                <!-- PÁGINA 14 -->
                 <section class="book-page">
+
+                    <div class="corner-emoji">📸</div>
 
                     <div class="page-content reverse">
 
-                        <div class="page-image">
+                        <div class="page-image image-frame">
                             <img src="images/IMG_9044.jpeg" alt="Fototeca">
                         </div>
 
                         <div class="page-text">
 
                             <span class="section-label">
-                                MEMORIA VISUAL
+                                ✦ MEMORIA VISUAL
                             </span>
 
-                            <h2>Fototeca</h2>
+                            <h2>Foto<span>teca</span></h2>
 
-                            <div class="gold-line"></div>
+                            <div class="red-yellow-line"></div>
 
                             <p>
                                 Las fotografías constituyen testimonios visuales capaces
@@ -834,6 +864,10 @@
                                 como parte de la memoria histórica y cultural.
                             </p>
 
+                            <div class="page-emojis">
+                                📸 🖼️ 📷 ✨
+                            </div>
+
                         </div>
 
                     </div>
@@ -843,21 +877,22 @@
                 </section>
 
 
-                <!-- ARCHIVO -->
-
+                <!-- PÁGINA 15 -->
                 <section class="book-page">
+
+                    <div class="corner-emoji">📁</div>
 
                     <div class="page-content">
 
                         <div class="page-text">
 
                             <span class="section-label">
-                                CONSERVACIÓN
+                                ✦ CONSERVACIÓN
                             </span>
 
-                            <h2>Archivo</h2>
+                            <h2>Archi<span>vo</span></h2>
 
-                            <div class="gold-line"></div>
+                            <div class="red-yellow-line"></div>
 
                             <p>
                                 Los archivos conservan documentos y registros de gran
@@ -865,13 +900,17 @@
                             </p>
 
                             <p>
-                                Su preservación permite que las futuras generaciones
-                                puedan conocer y comprender acontecimientos del pasado.
+                                Su preservación permite que las futuras generaciones puedan
+                                conocer y comprender acontecimientos del pasado.
                             </p>
+
+                            <div class="page-emojis">
+                                📁 📜 🗃️ 🔐
+                            </div>
 
                         </div>
 
-                        <div class="page-image">
+                        <div class="page-image image-frame">
                             <img src="images/IMG_9046.jpeg" alt="Archivo">
                         </div>
 
@@ -882,25 +921,26 @@
                 </section>
 
 
-                <!-- CONCLUSIÓN -->
+                <!-- PÁGINA 16 -->
+                <section class="book-page conclusion-page">
 
-                <section class="book-page">
+                    <div class="corner-emoji">✨</div>
 
                     <div class="page-content reverse">
 
-                        <div class="page-image">
-                            <img src="images/IMG_9048.jpeg" alt="Conclusión y fuentes">
+                        <div class="page-image image-frame">
+                            <img src="images/IMG_9048.jpeg" alt="Conclusión">
                         </div>
 
                         <div class="page-text">
 
                             <span class="section-label">
-                                REFLEXIÓN FINAL
+                                ✦ REFLEXIÓN FINAL
                             </span>
 
-                            <h2>Conclusión</h2>
+                            <h2>Conclu<span>sión</span></h2>
 
-                            <div class="gold-line"></div>
+                            <div class="red-yellow-line"></div>
 
                             <p>
                                 España representa una combinación extraordinaria de
@@ -909,15 +949,20 @@
 
                             <p>
                                 Conocer y preservar estos elementos permite comprender
-                                mejor la importancia de su legado y su influencia en el
-                                mundo.
+                                mejor la importancia de su legado y su influencia en
+                                el mundo.
                             </p>
 
-                            <p class="sources-note">
-                                Fuentes consultadas: recursos históricos, culturales y
-                                educativos utilizados para la elaboración de este
-                                portafolio digital.
-                            </p>
+                            <div class="sources-note">
+
+                                <strong>📚 Fuentes consultadas</strong>
+
+                                <p>
+                                    Recursos históricos, culturales y educativos
+                                    utilizados para la elaboración de este portafolio.
+                                </p>
+
+                            </div>
 
                         </div>
 
@@ -928,39 +973,43 @@
                 </section>
 
 
-                <!-- AGRADECIMIENTO -->
-
+                <!-- PÁGINA 17 -->
                 <section class="book-page thank-you-page">
+
+                    <div class="spanish-stripe stripe-bottom"></div>
 
                     <div class="thank-you-content">
 
-                        <div class="thank-you-symbol">
-                            ✦
+                        <div class="thank-you-icons">
+                            🇪🇸 ✨ 💃 ☀️ ✨ 🇪🇸
                         </div>
 
-                        <p class="small-title">
+                        <p class="section-label">
                             FIN DEL RECORRIDO
                         </p>
 
                         <h2>
-                            Muchas gracias<br>
-                            por su atención
+                            ¡Muchas gracias<br>
+                            por su atención!
                         </h2>
 
-                        <div class="gold-line center-line"></div>
+                        <div class="red-yellow-line center-line"></div>
 
-                        <p>
-                            Espero que este recorrido por la historia, cultura y
-                            riqueza de España haya sido de su interés.
+                        <p class="thank-you-text">
+                            Espero que este recorrido por la historia,
+                            cultura, arte y tradición de España haya
+                            sido de su interés.
                         </p>
 
-                        <img
-                            src="images/IMG_9049.jpeg"
-                            alt="Agradecimiento"
-                        >
+                        <div class="final-image">
+                            <img
+                                src="images/IMG_9049.jpeg"
+                                alt="Muchas gracias"
+                            >
+                        </div>
 
-                        <div class="thank-you-symbol bottom-symbol">
-                            ✧
+                        <div class="final-emojis">
+                            🏰 🥘 💃 🎸 🪭 ⚽ ☀️ 🇪🇸
                         </div>
 
                     </div>
@@ -968,7 +1017,6 @@
                     <div class="page-number">17</div>
 
                 </section>
-
 
             </div>
 
@@ -979,21 +1027,28 @@
 
         <div class="controls">
 
-            <button id="prevButton" class="navigation-button">
-                <span>←</span>
-                <span class="button-text">Anterior</span>
+            <button
+                id="prevButton"
+                class="navigation-button previous-button"
+            >
+                ←
+                <span>Anterior</span>
             </button>
 
-            <button id="nextButton" class="navigation-button">
-                <span class="button-text">Siguiente</span>
-                <span>→</span>
+
+            <button
+                id="nextButton"
+                class="navigation-button next-button"
+            >
+                <span>Siguiente</span>
+                →
             </button>
 
         </div>
 
 
         <p class="navigation-hint">
-            Usa las flechas, el teclado o desliza para navegar
+            🇪🇸 Usa las flechas, el teclado o desliza para navegar 🇪🇸
         </p>
 
     </main>
