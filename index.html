@@ -1,542 +1,1005 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>España | Portafolio Artístico Digital 🇪🇸</title>
+    <title>España | Portafolio Digital</title>
 
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-  <!-- Fondo decorativo -->
-  <div class="background-decoration">
-    <span>🌹</span>
-    <span>🪭</span>
-    <span>🎸</span>
-    <span>🇪🇸</span>
-    <span>💃</span>
-  </div>
+    <!-- DECORACIONES DEL FONDO -->
 
-  <header>
-    <h1>🇪🇸 PORTAFOLIO ARTÍSTICO DIGITAL</h1>
-    <p>España: Historia, Arte y Cultura</p>
-  </header>
+    <div class="background-decor decor-one">✦</div>
+    <div class="background-decor decor-two">✧</div>
+    <div class="background-decor decor-three">✦</div>
+    <div class="background-decor decor-four">✧</div>
 
 
-  <main class="scene">
+    <!-- ENCABEZADO -->
 
-    <div class="book" id="book">
+    <header class="top-header">
 
-      <!-- LOMO -->
-      <div class="spine"></div>
+        <button class="menu-button" id="menuButton" aria-label="Abrir índice">
+            ☰
+        </button>
 
-
-      <!-- =========================
-           HOJA 1 - PORTADA
-      ========================== -->
-
-      <div class="paper" id="p1">
-
-        <div class="front cover">
-
-          <div class="cover-decoration">🌹 🪭 🎸 🌹</div>
-
-          <h2>ESPAÑA</h2>
-
-          <h3>Portafolio Artístico Digital</h3>
-
-          <p>Historia • Arte • Cultura • Tradición</p>
-
-          <button class="open-button" id="openBook">
-            📖 Abrir portafolio
-          </button>
-
+        <div class="header-title">
+            <span>PORTAFOLIO DIGITAL</span>
+            <h1>ESPAÑA</h1>
         </div>
 
-        <div class="back page">
-
-          <span class="page-number">1</span>
-
-          <div class="decor">🇪🇸 🪭 🌹</div>
-
-          <h2>España 🇪🇸</h2>
-
-          <p>
-            España es un país situado en el suroeste de Europa.
-            Es reconocido mundialmente por su historia, su arte,
-            su arquitectura, su gastronomía y sus tradiciones.
-          </p>
-
-          <p>
-            Su identidad cultural se ha formado a través de diferentes
-            civilizaciones y actualmente posee uno de los patrimonios
-            culturales más importantes del mundo.
-          </p>
-
-          <div class="highlight">
-            ✨ España es un país donde la historia y el arte forman
-            parte de la vida cotidiana.
-          </div>
-
+        <div class="page-indicator">
+            <span id="currentPage">1</span>
+            <span>/</span>
+            <span id="totalPages">15</span>
         </div>
 
-      </div>
+    </header>
 
 
-      <!-- =========================
-           HOJA 2
-      ========================== -->
+    <!-- ÍNDICE LATERAL -->
 
-      <div class="paper" id="p2">
+    <aside class="sidebar" id="sidebar">
 
-        <div class="front page">
+        <div class="sidebar-header">
 
-          <span class="page-number">2</span>
+            <div>
+                <p>EXPLORA EL LIBRO</p>
+                <h2>Índice</h2>
+            </div>
 
-          <div class="decor">📚 🌹 🏛️</div>
-
-          <h2>Biblioteca 📚</h2>
-
-          <p>
-            Una biblioteca es un espacio destinado a conservar,
-            organizar y facilitar el acceso a libros, documentos
-            y materiales de información.
-          </p>
-
-          <div class="highlight">
-            📖 En el ámbito artístico, las bibliotecas ayudan a
-            investigar artistas, obras y movimientos culturales.
-          </div>
+            <button id="closeMenu" aria-label="Cerrar índice">
+                ×
+            </button>
 
         </div>
 
 
-        <div class="back page">
+        <div class="thumbnail-list">
 
-          <span class="page-number">3</span>
+            <button class="thumbnail active" data-page="0">
+                <img src="images/IMG_9032.jpeg" alt="Portada">
+                <span>Portada</span>
+            </button>
 
-          <div class="decor">📸 🪭 🇪🇸</div>
+            <button class="thumbnail" data-page="1">
+                <img src="images/IMG_9045.jpeg" alt="España">
+                <span>¿Quién es España?</span>
+            </button>
 
-          <h2>Fototeca 📸</h2>
+            <button class="thumbnail" data-page="2">
+                <img src="images/IMG_9033.jpeg" alt="Cronología">
+                <span>Cronología</span>
+            </button>
 
-          <p>
-            Una fototeca es un archivo especializado en fotografías.
-            Conserva imágenes de valor histórico, artístico y documental.
-          </p>
+            <button class="thumbnail" data-page="3">
+                <img src="images/IMG_9034.jpeg" alt="Registro digital">
+                <span>Registro digital</span>
+            </button>
 
-          <div class="highlight">
-            📸 Las fotografías permiten conservar la memoria visual
-            de una sociedad.
-          </div>
+            <button class="thumbnail" data-page="4">
+                <img src="images/IMG_9035.jpeg" alt="Hemeroteca">
+                <span>Hemeroteca</span>
+            </button>
 
-        </div>
+            <button class="thumbnail" data-page="5">
+                <img src="images/IMG_9036.jpeg" alt="Cultura">
+                <span>Cultura española</span>
+            </button>
 
-      </div>
+            <button class="thumbnail" data-page="6">
+                <img src="images/IMG_9037.jpeg" alt="Videoteca">
+                <span>Videoteca</span>
+            </button>
 
+            <button class="thumbnail" data-page="7">
+                <img src="images/IMG_9038.jpeg" alt="Biblioteca">
+                <span>Biblioteca</span>
+            </button>
 
-      <!-- =========================
-           HOJA 3
-      ========================== -->
+            <button class="thumbnail" data-page="8">
+                <img src="images/IMG_9040.jpeg" alt="Comercio">
+                <span>Comercio</span>
+            </button>
 
-      <div class="paper" id="p3">
+            <button class="thumbnail" data-page="9">
+                <img src="images/IMG_9041.jpeg" alt="Teatro">
+                <span>Obras teatrales</span>
+            </button>
 
-        <div class="front page">
+            <button class="thumbnail" data-page="10">
+                <img src="images/IMG_9042.jpeg" alt="Eventos">
+                <span>Eventos artísticos</span>
+            </button>
 
-          <span class="page-number">4</span>
+            <button class="thumbnail" data-page="11">
+                <img src="images/IMG_9043.jpeg" alt="Exposición">
+                <span>Exposición</span>
+            </button>
 
-          <div class="decor">🎥 🎬 🌹</div>
+            <button class="thumbnail" data-page="12">
+                <img src="images/IMG_9044.jpeg" alt="Fototeca">
+                <span>Fototeca</span>
+            </button>
 
-          <h2>Videoteca 🎥</h2>
+            <button class="thumbnail" data-page="13">
+                <img src="images/IMG_9046.jpeg" alt="Archivo">
+                <span>Archivo</span>
+            </button>
 
-          <p>
-            Una videoteca conserva películas, documentales,
-            entrevistas y otros materiales audiovisuales.
-          </p>
+            <button class="thumbnail" data-page="14">
+                <img src="images/IMG_9048.jpeg" alt="Conclusión">
+                <span>Conclusión y fuentes</span>
+            </button>
 
-          <div class="highlight">
-            🎬 Protege la memoria audiovisual de una sociedad.
-          </div>
-
-        </div>
-
-
-        <div class="back page">
-
-          <span class="page-number">5</span>
-
-          <div class="decor">📰 🇪🇸 🪭</div>
-
-          <h2>Hemeroteca 📰</h2>
-
-          <p>
-            La hemeroteca conserva periódicos, revistas y
-            publicaciones periódicas.
-          </p>
-
-          <div class="highlight">
-            🗞️ La prensa permite conocer cómo fueron narrados
-            diferentes acontecimientos históricos y culturales.
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- =========================
-           HOJA 4
-      ========================== -->
-
-      <div class="paper" id="p4">
-
-        <div class="front page">
-
-          <span class="page-number">6</span>
-
-          <div class="decor">🗂️ 🏛️ 🌹</div>
-
-          <h2>Archivo 🗂️</h2>
-
-          <p>
-            Un archivo es un conjunto organizado de documentos
-            conservados por su valor histórico, administrativo,
-            cultural o artístico.
-          </p>
-
-          <div class="highlight">
-            🏛️ Los archivos protegen la memoria de una sociedad.
-          </div>
+            <button class="thumbnail" data-page="15">
+                <img src="images/IMG_9049.jpeg" alt="Agradecimiento">
+                <span>Agradecimiento</span>
+            </button>
 
         </div>
 
+    </aside>
 
-        <div class="back page">
 
-          <span class="page-number">7</span>
+    <div class="overlay" id="overlay"></div>
 
-          <div class="decor">💻 🌐 🇪🇸</div>
 
-          <h2>Registro digital 💻</h2>
+    <!-- CONTENEDOR PRINCIPAL -->
 
-          <p>
-            El registro digital consiste en conservar información
-            mediante formatos electrónicos.
-          </p>
+    <main class="book-area">
 
-          <div class="highlight">
-            🌐 La tecnología permite preservar y compartir la cultura
-            con personas de todo el mundo.
-          </div>
+        <div class="book-wrapper">
+
+            <div class="book" id="book">
+
+
+                <!-- PORTADA -->
+
+                <section class="book-page cover-page active">
+
+                    <div class="cover-content">
+
+                        <div class="cover-decoration top-decoration">
+                            ✦ ───── ✧ ───── ✦
+                        </div>
+
+                        <p class="small-title">
+                            PORTAFOLIO DIGITAL
+                        </p>
+
+                        <h2>
+                            ESPAÑA
+                        </h2>
+
+                        <div class="cover-line"></div>
+
+                        <p class="cover-subtitle">
+                            Historia, cultura, arte y tradición
+                        </p>
+
+                        <div class="cover-image-container">
+                            <img
+                                src="images/IMG_9032.jpeg"
+                                alt="Portada del portafolio sobre España"
+                            >
+                        </div>
+
+                        <div class="cover-decoration bottom-decoration">
+                            ✦ ───── ✧ ───── ✦
+                        </div>
+
+                    </div>
+
+                    <div class="page-number">01</div>
+
+                </section>
+
+
+                <!-- ¿QUIÉN ES ESPAÑA? -->
+
+                <section class="book-page">
+
+                    <div class="page-content">
+
+                        <div class="page-text">
+
+                            <span class="section-label">
+                                INTRODUCCIÓN
+                            </span>
+
+                            <h2>¿Quién es España?</h2>
+
+                            <div class="gold-line"></div>
+
+                            <p>
+                                España es un país situado en el suroeste de Europa,
+                                reconocido por su extraordinaria riqueza histórica,
+                                cultural y artística.
+                            </p>
+
+                            <p>
+                                A lo largo de los siglos, diferentes civilizaciones
+                                dejaron su huella en su territorio, creando una
+                                identidad diversa y profundamente rica.
+                            </p>
+
+                            <p>
+                                Su idioma, sus tradiciones, su gastronomía, sus
+                                monumentos y sus expresiones artísticas han tenido
+                                una enorme influencia en diferentes partes del mundo.
+                            </p>
+
+                        </div>
+
+                        <div class="page-image">
+                            <img src="images/IMG_9045.jpeg" alt="España">
+                        </div>
+
+                    </div>
+
+                    <div class="page-number">02</div>
+
+                </section>
+
+
+                <!-- MAPA -->
+
+                <section class="book-page map-page">
+
+                    <div class="page-content map-content">
+
+                        <div class="page-text">
+
+                            <span class="section-label">
+                                UBICACIÓN GEOGRÁFICA
+                            </span>
+
+                            <h2>España en el mapa</h2>
+
+                            <div class="gold-line"></div>
+
+                            <p>
+                                España ocupa gran parte de la península ibérica y
+                                está situada en el extremo suroccidental de Europa.
+                            </p>
+
+                            <p>
+                                Su ubicación geográfica ha sido fundamental en su
+                                historia, convirtiéndola durante siglos en un punto
+                                de encuentro entre diferentes pueblos y culturas.
+                            </p>
+
+                        </div>
+
+
+                        <div class="map-container">
+
+                            <svg
+                                viewBox="0 0 700 450"
+                                class="spain-map"
+                                aria-label="Mapa estilizado de España"
+                            >
+
+                                <!-- FONDO -->
+
+                                <rect
+                                    width="700"
+                                    height="450"
+                                    rx="25"
+                                    class="map-background"
+                                />
+
+
+                                <!-- EUROPA ESTILIZADA -->
+
+                                <path
+                                    class="europe-shape"
+                                    d="
+                                    M110 80
+                                    C180 30 300 30 380 70
+                                    C470 40 560 80 590 140
+                                    C640 190 610 270 550 300
+                                    C510 360 420 360 350 330
+                                    C280 370 170 350 130 280
+                                    C70 220 70 130 110 80 Z
+                                    "
+                                />
+
+
+                                <!-- ESPAÑA RESALTADA -->
+
+                                <path
+                                    class="spain-shape"
+                                    d="
+                                    M185 220
+                                    L260 190
+                                    L340 205
+                                    L405 245
+                                    L380 310
+                                    L290 330
+                                    L210 300
+                                    Z
+                                    "
+                                />
+
+
+                                <!-- RUTA -->
+
+                                <path
+                                    id="flightPath"
+                                    d="
+                                    M100 350
+                                    C180 300 210 240 280 245
+                                    C340 250 370 220 440 160
+                                    "
+                                    class="flight-path"
+                                />
+
+
+                                <!-- MARCADOR -->
+
+                                <g class="location-marker">
+
+                                    <circle
+                                        cx="300"
+                                        cy="255"
+                                        r="18"
+                                    />
+
+                                    <circle
+                                        cx="300"
+                                        cy="255"
+                                        r="7"
+                                        class="marker-center"
+                                    />
+
+                                </g>
+
+
+                                <!-- AVIÓN -->
+
+                                <g id="plane">
+
+                                    <text
+                                        x="0"
+                                        y="0"
+                                        class="plane-icon"
+                                    >
+                                        ✈
+                                    </text>
+
+                                </g>
+
+
+                                <text
+                                    x="300"
+                                    y="370"
+                                    text-anchor="middle"
+                                    class="map-label"
+                                >
+                                    ESPAÑA
+                                </text>
+
+                            </svg>
+
+                        </div>
+
+                    </div>
+
+                    <div class="page-number">03</div>
+
+                </section>
+
+
+                <!-- CRONOLOGÍA -->
+
+                <section class="book-page">
+
+                    <div class="page-content reverse">
+
+                        <div class="page-image">
+                            <img src="images/IMG_9033.jpeg" alt="Cronología de España">
+                        </div>
+
+                        <div class="page-text">
+
+                            <span class="section-label">
+                                HISTORIA
+                            </span>
+
+                            <h2>Cronología</h2>
+
+                            <div class="gold-line"></div>
+
+                            <p>
+                                La historia de España está formada por numerosos
+                                acontecimientos que transformaron su territorio y
+                                construyeron la nación que conocemos actualmente.
+                            </p>
+
+                            <p>
+                                Desde las civilizaciones antiguas hasta la España
+                                contemporánea, cada período histórico dejó una huella
+                                importante en su cultura e identidad.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="page-number">04</div>
+
+                </section>
+
+
+                <!-- REGISTRO DIGITAL -->
+
+                <section class="book-page">
+
+                    <div class="page-content">
+
+                        <div class="page-text">
+
+                            <span class="section-label">
+                                TECNOLOGÍA Y MEMORIA
+                            </span>
+
+                            <h2>Registro digital</h2>
+
+                            <div class="gold-line"></div>
+
+                            <p>
+                                La tecnología permite conservar, organizar y compartir
+                                información histórica y cultural de una manera mucho
+                                más accesible.
+                            </p>
+
+                            <p>
+                                Gracias a los recursos digitales, documentos,
+                                fotografías y diferentes registros pueden ser
+                                preservados para las futuras generaciones.
+                            </p>
+
+                        </div>
+
+                        <div class="page-image">
+                            <img src="images/IMG_9034.jpeg" alt="Registro digital">
+                        </div>
+
+                    </div>
+
+                    <div class="page-number">05</div>
+
+                </section>
+
+
+                <!-- HEMEROTECA -->
+
+                <section class="book-page">
+
+                    <div class="page-content reverse">
+
+                        <div class="page-image">
+                            <img src="images/IMG_9035.jpeg" alt="Hemeroteca">
+                        </div>
+
+                        <div class="page-text">
+
+                            <span class="section-label">
+                                PRENSA E INFORMACIÓN
+                            </span>
+
+                            <h2>Hemeroteca</h2>
+
+                            <div class="gold-line"></div>
+
+                            <p>
+                                Las hemerotecas conservan periódicos, revistas y
+                                publicaciones que permiten conocer acontecimientos,
+                                opiniones y momentos importantes del pasado.
+                            </p>
+
+                            <p>
+                                Estos registros constituyen una fuente fundamental
+                                para comprender la evolución histórica de una sociedad.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="page-number">06</div>
+
+                </section>
+
+
+                <!-- CULTURA -->
+
+                <section class="book-page">
+
+                    <div class="page-content">
+
+                        <div class="page-text">
+
+                            <span class="section-label">
+                                IDENTIDAD
+                            </span>
+
+                            <h2>Cultura española</h2>
+
+                            <div class="gold-line"></div>
+
+                            <p>
+                                La cultura española se caracteriza por su diversidad,
+                                resultado de siglos de intercambios entre diferentes
+                                pueblos y tradiciones.
+                            </p>
+
+                            <p>
+                                La música, la danza, las celebraciones, la gastronomía
+                                y las costumbres forman parte esencial de su identidad.
+                            </p>
+
+                        </div>
+
+                        <div class="page-image">
+                            <img src="images/IMG_9036.jpeg" alt="Cultura española">
+                        </div>
+
+                    </div>
+
+                    <div class="page-number">07</div>
+
+                </section>
+
+
+                <!-- VIDEOTECA -->
+
+                <section class="book-page">
+
+                    <div class="page-content reverse">
+
+                        <div class="page-image">
+                            <img src="images/IMG_9037.jpeg" alt="Videoteca">
+                        </div>
+
+                        <div class="page-text">
+
+                            <span class="section-label">
+                                MEMORIA AUDIOVISUAL
+                            </span>
+
+                            <h2>Videoteca</h2>
+
+                            <div class="gold-line"></div>
+
+                            <p>
+                                El contenido audiovisual permite documentar la historia,
+                                las tradiciones y diferentes expresiones culturales.
+                            </p>
+
+                            <p>
+                                Las imágenes y los videos ayudan a conservar momentos
+                                que pueden ser observados y estudiados incluso muchos
+                                años después.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="page-number">08</div>
+
+                </section>
+
+
+                <!-- BIBLIOTECA -->
+
+                <section class="book-page">
+
+                    <div class="page-content">
+
+                        <div class="page-text">
+
+                            <span class="section-label">
+                                CONOCIMIENTO
+                            </span>
+
+                            <h2>Biblioteca</h2>
+
+                            <div class="gold-line"></div>
+
+                            <p>
+                                Las bibliotecas representan espacios fundamentales para
+                                la conservación y transmisión del conocimiento.
+                            </p>
+
+                            <p>
+                                Los libros permiten conocer las ideas, historias y
+                                experiencias que han contribuido a construir la cultura
+                                de una sociedad.
+                            </p>
+
+                        </div>
+
+                        <div class="page-image">
+                            <img src="images/IMG_9038.jpeg" alt="Biblioteca">
+                        </div>
+
+                    </div>
+
+                    <div class="page-number">09</div>
+
+                </section>
+
+
+                <!-- COMERCIO -->
+
+                <section class="book-page">
+
+                    <div class="page-content reverse">
+
+                        <div class="page-image">
+                            <img src="images/IMG_9040.jpeg" alt="Comercio">
+                        </div>
+
+                        <div class="page-text">
+
+                            <span class="section-label">
+                                ECONOMÍA
+                            </span>
+
+                            <h2>Comercio</h2>
+
+                            <div class="gold-line"></div>
+
+                            <p>
+                                El comercio ha sido una actividad fundamental para el
+                                desarrollo económico y social de España.
+                            </p>
+
+                            <p>
+                                A través del intercambio de productos, ideas y recursos,
+                                diferentes regiones establecieron conexiones con otros
+                                territorios del mundo.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="page-number">10</div>
+
+                </section>
+
+
+                <!-- OBRAS TEATRALES -->
+
+                <section class="book-page">
+
+                    <div class="page-content">
+
+                        <div class="page-text">
+
+                            <span class="section-label">
+                                ARTES ESCÉNICAS
+                            </span>
+
+                            <h2>Obras teatrales</h2>
+
+                            <div class="gold-line"></div>
+
+                            <p>
+                                El teatro ha ocupado un lugar importante dentro de la
+                                tradición artística española.
+                            </p>
+
+                            <p>
+                                Grandes autores y compañías teatrales han contribuido al
+                                desarrollo de obras que continúan siendo reconocidas por
+                                su valor cultural.
+                            </p>
+
+                        </div>
+
+                        <div class="page-image">
+                            <img src="images/IMG_9041.jpeg" alt="Obras teatrales">
+                        </div>
+
+                    </div>
+
+                    <div class="page-number">11</div>
+
+                </section>
+
+
+                <!-- EVENTOS ARTÍSTICOS -->
+
+                <section class="book-page">
+
+                    <div class="page-content reverse">
+
+                        <div class="page-image">
+                            <img src="images/IMG_9042.jpeg" alt="Eventos artísticos">
+                        </div>
+
+                        <div class="page-text">
+
+                            <span class="section-label">
+                                EXPRESIÓN CULTURAL
+                            </span>
+
+                            <h2>Eventos artísticos</h2>
+
+                            <div class="gold-line"></div>
+
+                            <p>
+                                Los eventos artísticos permiten reunir diferentes formas
+                                de expresión como la música, la pintura, la danza y el
+                                teatro.
+                            </p>
+
+                            <p>
+                                Estos encuentros contribuyen a mantener vivas las
+                                tradiciones y a promover nuevas manifestaciones
+                                culturales.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="page-number">12</div>
+
+                </section>
+
+
+                <!-- EXPOSICIÓN -->
+
+                <section class="book-page">
+
+                    <div class="page-content">
+
+                        <div class="page-text">
+
+                            <span class="section-label">
+                                ARTE E HISTORIA
+                            </span>
+
+                            <h2>Exposición</h2>
+
+                            <div class="gold-line"></div>
+
+                            <p>
+                                Las exposiciones permiten presentar obras, objetos y
+                                documentos que ayudan a comprender diferentes aspectos
+                                de la historia y la cultura.
+                            </p>
+
+                            <p>
+                                Son espacios donde el conocimiento puede ser compartido
+                                de una manera visual e interactiva.
+                            </p>
+
+                        </div>
+
+                        <div class="page-image">
+                            <img src="images/IMG_9043.jpeg" alt="Exposición">
+                        </div>
+
+                    </div>
+
+                    <div class="page-number">13</div>
+
+                </section>
+
+
+                <!-- FOTOTECA -->
+
+                <section class="book-page">
+
+                    <div class="page-content reverse">
+
+                        <div class="page-image">
+                            <img src="images/IMG_9044.jpeg" alt="Fototeca">
+                        </div>
+
+                        <div class="page-text">
+
+                            <span class="section-label">
+                                MEMORIA VISUAL
+                            </span>
+
+                            <h2>Fototeca</h2>
+
+                            <div class="gold-line"></div>
+
+                            <p>
+                                Las fotografías constituyen testimonios visuales capaces
+                                de conservar lugares, personas y acontecimientos.
+                            </p>
+
+                            <p>
+                                Una fototeca permite organizar y preservar estas imágenes
+                                como parte de la memoria histórica y cultural.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="page-number">14</div>
+
+                </section>
+
+
+                <!-- ARCHIVO -->
+
+                <section class="book-page">
+
+                    <div class="page-content">
+
+                        <div class="page-text">
+
+                            <span class="section-label">
+                                CONSERVACIÓN
+                            </span>
+
+                            <h2>Archivo</h2>
+
+                            <div class="gold-line"></div>
+
+                            <p>
+                                Los archivos conservan documentos y registros de gran
+                                importancia para la investigación y la memoria histórica.
+                            </p>
+
+                            <p>
+                                Su preservación permite que las futuras generaciones
+                                puedan conocer y comprender acontecimientos del pasado.
+                            </p>
+
+                        </div>
+
+                        <div class="page-image">
+                            <img src="images/IMG_9046.jpeg" alt="Archivo">
+                        </div>
+
+                    </div>
+
+                    <div class="page-number">15</div>
+
+                </section>
+
+
+                <!-- CONCLUSIÓN -->
+
+                <section class="book-page">
+
+                    <div class="page-content reverse">
+
+                        <div class="page-image">
+                            <img src="images/IMG_9048.jpeg" alt="Conclusión y fuentes">
+                        </div>
+
+                        <div class="page-text">
+
+                            <span class="section-label">
+                                REFLEXIÓN FINAL
+                            </span>
+
+                            <h2>Conclusión</h2>
+
+                            <div class="gold-line"></div>
+
+                            <p>
+                                España representa una combinación extraordinaria de
+                                historia, cultura, arte y tradición.
+                            </p>
+
+                            <p>
+                                Conocer y preservar estos elementos permite comprender
+                                mejor la importancia de su legado y su influencia en el
+                                mundo.
+                            </p>
+
+                            <p class="sources-note">
+                                Fuentes consultadas: recursos históricos, culturales y
+                                educativos utilizados para la elaboración de este
+                                portafolio digital.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="page-number">16</div>
+
+                </section>
+
+
+                <!-- AGRADECIMIENTO -->
+
+                <section class="book-page thank-you-page">
+
+                    <div class="thank-you-content">
+
+                        <div class="thank-you-symbol">
+                            ✦
+                        </div>
+
+                        <p class="small-title">
+                            FIN DEL RECORRIDO
+                        </p>
+
+                        <h2>
+                            Muchas gracias<br>
+                            por su atención
+                        </h2>
+
+                        <div class="gold-line center-line"></div>
+
+                        <p>
+                            Espero que este recorrido por la historia, cultura y
+                            riqueza de España haya sido de su interés.
+                        </p>
+
+                        <img
+                            src="images/IMG_9049.jpeg"
+                            alt="Agradecimiento"
+                        >
+
+                        <div class="thank-you-symbol bottom-symbol">
+                            ✧
+                        </div>
+
+                    </div>
+
+                    <div class="page-number">17</div>
+
+                </section>
+
+
+            </div>
 
         </div>
 
-      </div>
 
+        <!-- CONTROLES -->
 
-      <!-- =========================
-           HOJA 5
-      ========================== -->
+        <div class="controls">
 
-      <div class="paper" id="p5">
+            <button id="prevButton" class="navigation-button">
+                <span>←</span>
+                <span class="button-text">Anterior</span>
+            </button>
 
-        <div class="front page">
-
-          <span class="page-number">8</span>
-
-          <h2>2010–2014 🗓️</h2>
-
-          <div class="timeline">
-
-            <div><b>2010:</b> España mantiene una intensa actividad cultural.</div>
-            <div><b>2011:</b> El arte contemporáneo español continúa creciendo.</div>
-            <div><b>2012:</b> Los museos desarrollan importantes exposiciones.</div>
-            <div><b>2013:</b> El teatro y las artes escénicas mantienen gran presencia.</div>
-            <div><b>2014:</b> El cine español continúa destacándose internacionalmente.</div>
-
-          </div>
+            <button id="nextButton" class="navigation-button">
+                <span class="button-text">Siguiente</span>
+                <span>→</span>
+            </button>
 
         </div>
 
 
-        <div class="back page">
+        <p class="navigation-hint">
+            Usa las flechas, el teclado o desliza para navegar
+        </p>
 
-          <span class="page-number">9</span>
+    </main>
 
-          <h2>2015–2019 🗓️</h2>
 
-          <div class="timeline">
-
-            <div><b>2015:</b> La cultura y el patrimonio continúan siendo fundamentales.</div>
-            <div><b>2016:</b> Se conmemora el 400 aniversario de Miguel de Cervantes.</div>
-            <div><b>2017:</b> España fortalece su presencia artística internacional.</div>
-            <div><b>2018:</b> Continúan importantes festivales y exposiciones.</div>
-            <div><b>2019:</b> La cultura española mantiene reconocimiento mundial.</div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- =========================
-           HOJA 6
-      ========================== -->
-
-      <div class="paper" id="p6">
-
-        <div class="front page">
-
-          <span class="page-number">10</span>
-
-          <h2>2020–2022 🌍</h2>
-
-          <p>
-            <b>2020:</b> La pandemia transformó la forma de realizar
-            actividades culturales y aumentó los proyectos digitales.
-          </p>
-
-          <p>
-            <b>2021:</b> Museos y espacios culturales desarrollaron
-            nuevas formas de conectar con el público.
-          </p>
-
-          <p>
-            <b>2022:</b> Regresaron numerosos festivales, exposiciones
-            y actividades culturales.
-          </p>
-
-        </div>
-
-
-        <div class="back page">
-
-          <span class="page-number">11</span>
-
-          <h2>2023–2026 ✨</h2>
-
-          <p><b>2023:</b> España fortaleció su presencia cultural internacional.</p>
-
-          <p><b>2024:</b> Continuaron importantes exposiciones y festivales.</p>
-
-          <p><b>2025:</b> La actividad artística y cultural siguió creciendo.</p>
-
-          <p><b>2026:</b> España continúa siendo un referente cultural internacional.</p>
-
-        </div>
-
-      </div>
-
-
-      <!-- =========================
-           HOJA 7
-      ========================== -->
-
-      <div class="paper" id="p7">
-
-        <div class="front page">
-
-          <span class="page-number">12</span>
-
-          <h2>Obras teatrales 🎭</h2>
-
-          <ul>
-            <li>La casa de Bernarda Alba</li>
-            <li>La vida es sueño</li>
-            <li>Don Juan Tenorio</li>
-            <li>La Celestina</li>
-          </ul>
-
-          <div class="highlight">
-            🎭 El teatro español combina historia, literatura
-            y creatividad.
-          </div>
-
-        </div>
-
-
-        <div class="back page">
-
-          <span class="page-number">13</span>
-
-          <h2>Películas españolas 🎬</h2>
-
-          <ul>
-            <li>Dolor y gloria</li>
-            <li>La sociedad de la nieve</li>
-            <li>El buen patrón</li>
-            <li>Blancanieves</li>
-          </ul>
-
-          <div class="highlight">
-            🎥 El cine español es una importante forma
-            de expresión cultural.
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- =========================
-           HOJA 8
-      ========================== -->
-
-      <div class="paper" id="p8">
-
-        <div class="front page">
-
-          <span class="page-number">14</span>
-
-          <h2>Eventos artísticos 🎨</h2>
-
-          <ul>
-            <li>ARCOmadrid</li>
-            <li>Festival de Cine de San Sebastián</li>
-            <li>Madrid Fashion Week</li>
-            <li>Feria de Abril</li>
-          </ul>
-
-          <div class="highlight">
-            🎉 Los eventos culturales convierten las ciudades
-            españolas en espacios de creatividad.
-          </div>
-
-        </div>
-
-
-        <div class="back page">
-
-          <span class="page-number">15</span>
-
-          <h2>Exposiciones y pintura 🖼️</h2>
-
-          <p>
-            España posee algunos de los museos más importantes
-            y reconocidos del mundo.
-          </p>
-
-          <ul>
-            <li>Pablo Picasso</li>
-            <li>Salvador Dalí</li>
-            <li>Francisco de Goya</li>
-            <li>Diego Velázquez</li>
-          </ul>
-
-        </div>
-
-      </div>
-
-
-      <!-- =========================
-           HOJA 9
-      ========================== -->
-
-      <div class="paper" id="p9">
-
-        <div class="front page">
-
-          <span class="page-number">16</span>
-
-          <h2>La cultura española 💃</h2>
-
-          <p>
-            La cultura española combina música, danza,
-            gastronomía, historia y tradiciones.
-          </p>
-
-          <div class="big-icons">
-            💃 🪭 🎸 🌹 🇪🇸
-          </div>
-
-          <div class="highlight">
-            ❤️ La cultura española no solo se observa:
-            ¡también se vive!
-          </div>
-
-        </div>
-
-
-        <div class="back page">
-
-          <h2>Conclusión ✨</h2>
-
-          <p>
-            España posee un patrimonio artístico y cultural
-            extraordinario.
-          </p>
-
-          <p>
-            Su historia puede conocerse mediante libros,
-            fotografías, películas, periódicos, archivos
-            y registros digitales.
-          </p>
-
-          <div class="highlight">
-            🇪🇸 España: Historia, Arte, Cultura y Tradición.
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- CONTRAPORTADA -->
-
-      <div class="paper" id="p10">
-
-        <div class="front page">
-
-          <h2>Fuentes 📚</h2>
-
-          <ul>
-            <li>Ministerio de Cultura de España</li>
-            <li>Biblioteca Nacional de España</li>
-            <li>Museo Nacional del Prado</li>
-            <li>Museo Reina Sofía</li>
-            <li>Filmoteca Española</li>
-          </ul>
-
-          <div class="highlight">
-            ✨ Gracias por visitar mi portafolio.
-          </div>
-
-        </div>
-
-        <div class="back back-cover">
-          🇪🇸
-        </div>
-
-      </div>
-
-
-    </div>
-
-  </main>
-
-
-  <!-- CONTROLES -->
-
-  <div class="controls">
-
-    <button id="prevBtn">⬅ Atrás</button>
-
-    <span id="pageIndicator">📕 Portada</span>
-
-    <button id="nextBtn">Siguiente ➡</button>
-
-  </div>
-
-
-  <footer>
-    🇪🇸 Portafolio Artístico Digital sobre España 🇪🇸
-  </footer>
-
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
