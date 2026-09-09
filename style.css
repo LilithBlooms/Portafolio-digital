@@ -2628,3 +2628,30 @@ body {
     }
 
 } 
+
+/* ==========================================
+   ARREGLO DEL TAMAÑO DE LA PORTADA
+========================================== */
+
+.cover-page {
+    min-height: 0 !important;
+    height: auto !important;
+}
+
+.cover-content {
+    min-height: 430px !important;
+    height: auto !important;
+    padding: 20px 15px !important;
+}
+
+@media (max-width: 600px) {
+
+    .cover-content {
+        min-height: 400px !important;
+        padding: 15px 10px !important;
+    }
+
+    .cover-content h2 {
+        font-size: clamp(4rem, 16vw, 6rem) !important;
+    }
+}
