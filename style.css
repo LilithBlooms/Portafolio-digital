@@ -976,7 +976,7 @@ body {
 
 .cover-content {
 
-    min-height: 550px;
+    min-height: 430px;
 
     display: flex;
 
@@ -988,8 +988,9 @@ body {
 
     text-align: center;
 
-}
+    padding: 25px 15px;
 
+}
 
 .cover-icons {
 
