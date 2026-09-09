@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>España | Portafolio Artístico Digital 🇪🇸</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Fondo decorativo -->
+  <div class="background-decoration">
+    <span>🌹</span>
+    <span>🪭</span>
+    <span>🎸</span>
+    <span>🇪🇸</span>
+    <span>💃</span>
+  </div>
+
+  <header>
+    <h1>🇪🇸 PORTAFOLIO ARTÍSTICO DIGITAL</h1>
+    <p>España: Historia, Arte y Cultura</p>
+  </header>
+
+
+  <main class="scene">
+
+    <div class="book" id="book">
+
+      <!-- LOMO -->
+      <div class="spine"></div>
+
+
+      <!-- =========================
+           HOJA 1 - PORTADA
+      ========================== -->
+
+      <div class="paper" id="p1">
+
+        <div class="front cover">
+
+          <div class="cover-decoration">🌹 🪭 🎸 🌹</div>
+
+          <h2>ESPAÑA</h2>
+
+          <h3>Portafolio Artístico Digital</h3>
+
+          <p>Historia • Arte • Cultura • Tradición</p>
+
+          <button class="open-button" id="openBook">
+            📖 Abrir portafolio
+          </button>
+
+        </div>
+
+        <div class="back page">
+
+          <span class="page-number">1</span>
+
+          <div class="decor">🇪🇸 🪭 🌹</div>
+
+          <h2>España 🇪🇸</h2>
+
+          <p>
+            España es un país situado en el suroeste de Europa.
+            Es reconocido mundialmente por su historia, su arte,
+            su arquitectura, su gastronomía y sus tradiciones.
+          </p>
+
+          <p>
+            Su identidad cultural se ha formado a través de diferentes
+            civilizaciones y actualmente posee uno de los patrimonios
+            culturales más importantes del mundo.
+          </p>
+
+          <div class="highlight">
+            ✨ España es un país donde la historia y el arte forman
+            parte de la vida cotidiana.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =========================
+           HOJA 2
+      ========================== -->
+
+      <div class="paper" id="p2">
+
+        <div class="front page">
+
+          <span class="page-number">2</span>
+
+          <div class="decor">📚 🌹 🏛️</div>
+
+          <h2>Biblioteca 📚</h2>
+
+          <p>
+            Una biblioteca es un espacio destinado a conservar,
+            organizar y facilitar el acceso a libros, documentos
+            y materiales de información.
+          </p>
+
+          <div class="highlight">
+            📖 En el ámbito artístico, las bibliotecas ayudan a
+            investigar artistas, obras y movimientos culturales.
+          </div>
+
+        </div>
+
+
+        <div class="back page">
+
+          <span class="page-number">3</span>
+
+          <div class="decor">📸 🪭 🇪🇸</div>
+
+          <h2>Fototeca 📸</h2>
+
+          <p>
+            Una fototeca es un archivo especializado en fotografías.
+            Conserva imágenes de valor histórico, artístico y documental.
+          </p>
+
+          <div class="highlight">
+            📸 Las fotografías permiten conservar la memoria visual
+            de una sociedad.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =========================
+           HOJA 3
+      ========================== -->
+
+      <div class="paper" id="p3">
+
+        <div class="front page">
+
+          <span class="page-number">4</span>
+
+          <div class="decor">🎥 🎬 🌹</div>
+
+          <h2>Videoteca 🎥</h2>
+
+          <p>
+            Una videoteca conserva películas, documentales,
+            entrevistas y otros materiales audiovisuales.
+          </p>
+
+          <div class="highlight">
+            🎬 Protege la memoria audiovisual de una sociedad.
+          </div>
+
+        </div>
+
+
+        <div class="back page">
+
+          <span class="page-number">5</span>
+
+          <div class="decor">📰 🇪🇸 🪭</div>
+
+          <h2>Hemeroteca 📰</h2>
+
+          <p>
+            La hemeroteca conserva periódicos, revistas y
+            publicaciones periódicas.
+          </p>
+
+          <div class="highlight">
+            🗞️ La prensa permite conocer cómo fueron narrados
+            diferentes acontecimientos históricos y culturales.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =========================
+           HOJA 4
+      ========================== -->
+
+      <div class="paper" id="p4">
+
+        <div class="front page">
+
+          <span class="page-number">6</span>
+
+          <div class="decor">🗂️ 🏛️ 🌹</div>
+
+          <h2>Archivo 🗂️</h2>
+
+          <p>
+            Un archivo es un conjunto organizado de documentos
+            conservados por su valor histórico, administrativo,
+            cultural o artístico.
+          </p>
+
+          <div class="highlight">
+            🏛️ Los archivos protegen la memoria de una sociedad.
+          </div>
+
+        </div>
+
+
+        <div class="back page">
+
+          <span class="page-number">7</span>
+
+          <div class="decor">💻 🌐 🇪🇸</div>
+
+          <h2>Registro digital 💻</h2>
+
+          <p>
+            El registro digital consiste en conservar información
+            mediante formatos electrónicos.
+          </p>
+
+          <div class="highlight">
+            🌐 La tecnología permite preservar y compartir la cultura
+            con personas de todo el mundo.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =========================
+           HOJA 5
+      ========================== -->
+
+      <div class="paper" id="p5">
+
+        <div class="front page">
+
+          <span class="page-number">8</span>
+
+          <h2>2010–2014 🗓️</h2>
+
+          <div class="timeline">
+
+            <div><b>2010:</b> España mantiene una intensa actividad cultural.</div>
+            <div><b>2011:</b> El arte contemporáneo español continúa creciendo.</div>
+            <div><b>2012:</b> Los museos desarrollan importantes exposiciones.</div>
+            <div><b>2013:</b> El teatro y las artes escénicas mantienen gran presencia.</div>
+            <div><b>2014:</b> El cine español continúa destacándose internacionalmente.</div>
+
+          </div>
+
+        </div>
+
+
+        <div class="back page">
+
+          <span class="page-number">9</span>
+
+          <h2>2015–2019 🗓️</h2>
+
+          <div class="timeline">
+
+            <div><b>2015:</b> La cultura y el patrimonio continúan siendo fundamentales.</div>
+            <div><b>2016:</b> Se conmemora el 400 aniversario de Miguel de Cervantes.</div>
+            <div><b>2017:</b> España fortalece su presencia artística internacional.</div>
+            <div><b>2018:</b> Continúan importantes festivales y exposiciones.</div>
+            <div><b>2019:</b> La cultura española mantiene reconocimiento mundial.</div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =========================
+           HOJA 6
+      ========================== -->
+
+      <div class="paper" id="p6">
+
+        <div class="front page">
+
+          <span class="page-number">10</span>
+
+          <h2>2020–2022 🌍</h2>
+
+          <p>
+            <b>2020:</b> La pandemia transformó la forma de realizar
+            actividades culturales y aumentó los proyectos digitales.
+          </p>
+
+          <p>
+            <b>2021:</b> Museos y espacios culturales desarrollaron
+            nuevas formas de conectar con el público.
+          </p>
+
+          <p>
+            <b>2022:</b> Regresaron numerosos festivales, exposiciones
+            y actividades culturales.
+          </p>
+
+        </div>
+
+
+        <div class="back page">
+
+          <span class="page-number">11</span>
+
+          <h2>2023–2026 ✨</h2>
+
+          <p><b>2023:</b> España fortaleció su presencia cultural internacional.</p>
+
+          <p><b>2024:</b> Continuaron importantes exposiciones y festivales.</p>
+
+          <p><b>2025:</b> La actividad artística y cultural siguió creciendo.</p>
+
+          <p><b>2026:</b> España continúa siendo un referente cultural internacional.</p>
+
+        </div>
+
+      </div>
+
+
+      <!-- =========================
+           HOJA 7
+      ========================== -->
+
+      <div class="paper" id="p7">
+
+        <div class="front page">
+
+          <span class="page-number">12</span>
+
+          <h2>Obras teatrales 🎭</h2>
+
+          <ul>
+            <li>La casa de Bernarda Alba</li>
+            <li>La vida es sueño</li>
+            <li>Don Juan Tenorio</li>
+            <li>La Celestina</li>
+          </ul>
+
+          <div class="highlight">
+            🎭 El teatro español combina historia, literatura
+            y creatividad.
+          </div>
+
+        </div>
+
+
+        <div class="back page">
+
+          <span class="page-number">13</span>
+
+          <h2>Películas españolas 🎬</h2>
+
+          <ul>
+            <li>Dolor y gloria</li>
+            <li>La sociedad de la nieve</li>
+            <li>El buen patrón</li>
+            <li>Blancanieves</li>
+          </ul>
+
+          <div class="highlight">
+            🎥 El cine español es una importante forma
+            de expresión cultural.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =========================
+           HOJA 8
+      ========================== -->
+
+      <div class="paper" id="p8">
+
+        <div class="front page">
+
+          <span class="page-number">14</span>
+
+          <h2>Eventos artísticos 🎨</h2>
+
+          <ul>
+            <li>ARCOmadrid</li>
+            <li>Festival de Cine de San Sebastián</li>
+            <li>Madrid Fashion Week</li>
+            <li>Feria de Abril</li>
+          </ul>
+
+          <div class="highlight">
+            🎉 Los eventos culturales convierten las ciudades
+            españolas en espacios de creatividad.
+          </div>
+
+        </div>
+
+
+        <div class="back page">
+
+          <span class="page-number">15</span>
+
+          <h2>Exposiciones y pintura 🖼️</h2>
+
+          <p>
+            España posee algunos de los museos más importantes
+            y reconocidos del mundo.
+          </p>
+
+          <ul>
+            <li>Pablo Picasso</li>
+            <li>Salvador Dalí</li>
+            <li>Francisco de Goya</li>
+            <li>Diego Velázquez</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+
+      <!-- =========================
+           HOJA 9
+      ========================== -->
+
+      <div class="paper" id="p9">
+
+        <div class="front page">
+
+          <span class="page-number">16</span>
+
+          <h2>La cultura española 💃</h2>
+
+          <p>
+            La cultura española combina música, danza,
+            gastronomía, historia y tradiciones.
+          </p>
+
+          <div class="big-icons">
+            💃 🪭 🎸 🌹 🇪🇸
+          </div>
+
+          <div class="highlight">
+            ❤️ La cultura española no solo se observa:
+            ¡también se vive!
+          </div>
+
+        </div>
+
+
+        <div class="back page">
+
+          <h2>Conclusión ✨</h2>
+
+          <p>
+            España posee un patrimonio artístico y cultural
+            extraordinario.
+          </p>
+
+          <p>
+            Su historia puede conocerse mediante libros,
+            fotografías, películas, periódicos, archivos
+            y registros digitales.
+          </p>
+
+          <div class="highlight">
+            🇪🇸 España: Historia, Arte, Cultura y Tradición.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- CONTRAPORTADA -->
+
+      <div class="paper" id="p10">
+
+        <div class="front page">
+
+          <h2>Fuentes 📚</h2>
+
+          <ul>
+            <li>Ministerio de Cultura de España</li>
+            <li>Biblioteca Nacional de España</li>
+            <li>Museo Nacional del Prado</li>
+            <li>Museo Reina Sofía</li>
+            <li>Filmoteca Española</li>
+          </ul>
+
+          <div class="highlight">
+            ✨ Gracias por visitar mi portafolio.
+          </div>
+
+        </div>
+
+        <div class="back back-cover">
+          🇪🇸
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </main>
+
+
+  <!-- CONTROLES -->
+
+  <div class="controls">
+
+    <button id="prevBtn">⬅ Atrás</button>
+
+    <span id="pageIndicator">📕 Portada</span>
+
+    <button id="nextBtn">Siguiente ➡</button>
+
+  </div>
+
+
+  <footer>
+    🇪🇸 Portafolio Artístico Digital sobre España 🇪🇸
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
