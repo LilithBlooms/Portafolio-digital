@@ -1020,7 +1020,7 @@ body {
 
     font-family: "Bebas Neue", sans-serif;
 
-    font-size: clamp(6rem, 14vw, 11rem);
+    font-size: clamp(4rem, 12vw, 8rem);
 
     letter-spacing: 10px;
 
