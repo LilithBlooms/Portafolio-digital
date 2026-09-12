@@ -13,6 +13,7 @@
     --dark-red: #8f0614;
     --light-red: #e63946;
 
+    --orange: #f57c00;
     --yellow: #ffc400;
     --gold: #f4a900;
     --light-yellow: #ffe082;
@@ -51,47 +52,76 @@ body {
     font-family: "Montserrat", sans-serif;
     color: var(--dark);
 
+    /* FONDO ROJO → NARANJA → AMARILLO */
     background:
         linear-gradient(
             135deg,
-            #7d0713,
-            #b70c1c,
-            #f4a900,
-            #c60b1e
+            #76000d 0%,
+            #a80718 22%,
+            var(--red) 42%,
+            var(--orange) 68%,
+            var(--yellow) 100%
         );
+
+    background-size: 250% 250%;
+
+    animation: backgroundMove 15s ease infinite;
 
     position: relative;
 }
 
 
+@keyframes backgroundMove {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
+}
+
+
 /* =========================================================
-   FONDO ANIMADO
+   FONDO ANIMADO — EMOJIS CAYENDO
 ========================================================= */
 
 .spain-background {
     position: fixed;
     inset: 0;
 
+    width: 100%;
+    height: 100%;
+
     overflow: hidden;
     pointer-events: none;
 
-    z-index: -5;
+    z-index: 0;
 }
 
 
 .floating-emoji {
     position: absolute;
 
-    top: -100px;
+    top: -120px;
 
     user-select: none;
     pointer-events: none;
 
-    animation:
-        fall linear forwards,
-        sway ease-in-out infinite;
+    z-index: 1;
 
-    opacity: 0.8;
+    opacity: 0.85;
+
+    animation-name: fall, sway;
+    animation-timing-function: linear, ease-in-out;
+    animation-fill-mode: forwards, none;
+    animation-iteration-count: 1, infinite;
 }
 
 
@@ -102,7 +132,7 @@ body {
     }
 
     to {
-        transform: translateY(115vh);
+        transform: translateY(120vh);
     }
 
 }
@@ -113,12 +143,10 @@ body {
     0%,
     100% {
         margin-left: 0;
-        transform: rotate(-8deg);
     }
 
     50% {
-        margin-left: 25px;
-        transform: rotate(8deg);
+        margin-left: 30px;
     }
 
 }
@@ -140,9 +168,9 @@ body {
 
     pointer-events: none;
 
-    opacity: 0.35;
+    opacity: 0.32;
 
-    z-index: -4;
+    z-index: 0;
 }
 
 
@@ -155,7 +183,7 @@ body {
 
 
 .glow-two {
-    background: #ff4d5e;
+    background: #ff5a36;
 
     right: -150px;
     bottom: -100px;
@@ -367,11 +395,8 @@ body {
 
 .sidebar-header p {
     font-size: 0.65rem;
-
     font-weight: 800;
-
     letter-spacing: 2px;
-
     color: var(--red);
 }
 
@@ -403,8 +428,7 @@ body {
     font-size: 2rem;
     line-height: 1;
 
-    transition:
-        transform 0.25s ease;
+    transition: transform 0.25s ease;
 }
 
 
@@ -452,9 +476,7 @@ body {
 
     padding: 9px;
 
-    border:
-        2px solid transparent;
-
+    border: 2px solid transparent;
     border-radius: 16px;
 
     cursor: pointer;
@@ -584,6 +606,9 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    position: relative;
+    z-index: 5;
 }
 
 
@@ -594,6 +619,9 @@ body {
     justify-content: center;
 
     perspective: 2200px;
+
+    position: relative;
+    z-index: 5;
 }
 
 
@@ -615,6 +643,8 @@ body {
         drop-shadow(
             0 30px 40px rgba(40, 15, 5, 0.28)
         );
+
+    z-index: 5;
 }
 
 
@@ -737,7 +767,7 @@ body {
 
 
 /* =========================================================
-   PÁGINA INTERIOR — CONTENIDO
+   CONTENIDO DE PÁGINAS
 ========================================================= */
 
 .page-content {
@@ -806,11 +836,7 @@ body {
         "Cormorant Garamond",
         serif;
 
-    font-size: clamp(
-        3rem,
-        5vw,
-        5.3rem
-    );
+    font-size: clamp(3rem, 5vw, 5.3rem);
 
     font-weight: 700;
 
@@ -954,8 +980,26 @@ body {
 
     object-fit: cover;
 
+    object-position: center;
+
     transition:
         transform 0.6s ease;
+}
+
+
+/* IMÁGENES DE GOBERNANTES */
+.biography-image img {
+    object-fit: contain;
+    background: #ece7df;
+}
+
+
+/* Evita que estas imágenes se recorten */
+.biography-image.juan-carlos img,
+.biography-image.felipe-vi img,
+.biography-image.pedro-sanchez img {
+    object-fit: contain;
+    object-position: center;
 }
 
 
@@ -1259,73 +1303,6 @@ body {
 }
 
 
-.map-background {
-    fill: #fff9eb;
-
-    stroke: #e8c77b;
-    stroke-width: 3;
-}
-
-
-.europe-shape {
-    fill: #e8d6bb;
-
-    stroke: #bda27c;
-    stroke-width: 3;
-}
-
-
-.spain-shape {
-    fill: var(--red);
-
-    stroke: var(--dark-red);
-    stroke-width: 5;
-}
-
-
-.flight-path {
-    fill: none;
-
-    stroke: var(--yellow);
-    stroke-width: 7;
-
-    stroke-linecap: round;
-
-    stroke-dasharray: 14 12;
-}
-
-
-.location-marker circle:first-child {
-    fill: var(--yellow);
-
-    stroke: var(--red);
-    stroke-width: 6;
-}
-
-
-.marker-center {
-    fill: var(--red);
-}
-
-
-.plane-icon {
-    font-size: 42px;
-}
-
-
-.map-label {
-    font-family:
-        "Bebas Neue",
-        sans-serif;
-
-    font-size: 30px;
-
-    letter-spacing: 4px;
-
-    fill: var(--dark);
-}
-
-
 /* =========================================================
    INTRODUCCIÓN GOBERNANTES
 ========================================================= */
@@ -1508,201 +1485,6 @@ body {
 
 
 /* =========================================================
-   PÁGINAS ESPECIALES
-========================================================= */
-
-.monarchy-page::after {
-    background:
-        radial-gradient(
-            circle,
-            rgba(255, 196, 0, 0.32),
-            transparent 70%
-        );
-}
-
-
-.institution-page::after {
-    background:
-        radial-gradient(
-            circle,
-            rgba(198, 11, 30, 0.15),
-            transparent 70%
-        );
-}
-
-
-.symbol-page {
-    background:
-        linear-gradient(
-            135deg,
-            #fffdf7,
-            #fff4cc
-        );
-}
-
-
-.history-page {
-    background:
-        linear-gradient(
-            135deg,
-            #fffdf7,
-            #f7ecd8
-        );
-}
-
-
-/* =========================================================
-   CONCLUSIÓN
-========================================================= */
-
-.conclusion-page {
-    background:
-        linear-gradient(
-            135deg,
-            #fffdf7,
-            #fff0c8
-        );
-}
-
-
-.sources-note {
-    margin-top: 25px;
-
-    padding: 18px;
-
-    border-radius: 14px;
-
-    background:
-        rgba(198, 11, 30, 0.06);
-
-    border-left:
-        5px solid var(--yellow);
-}
-
-
-.sources-note strong {
-    color: var(--red);
-}
-
-
-.sources-note p {
-    margin-top: 8px;
-
-    font-size: 0.8rem;
-}
-
-
-/* =========================================================
-   AGRADECIMIENTO
-========================================================= */
-
-.thank-you-page {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-
-    background:
-
-        radial-gradient(
-            circle at 50% 35%,
-            rgba(255, 196, 0, 0.28),
-            transparent 35%
-        ),
-
-        linear-gradient(
-            135deg,
-            #fffdf7,
-            #fff0c8
-        );
-}
-
-
-.thank-you-content {
-    max-width: 850px;
-
-    position: relative;
-
-    z-index: 2;
-}
-
-
-.thank-you-content h2 {
-    font-size:
-        clamp(
-            3rem,
-            6vw,
-            6rem
-        );
-}
-
-
-.thank-you-emojis {
-    margin-bottom: 20px;
-
-    font-size: 2rem;
-
-    letter-spacing: 10px;
-}
-
-
-.final-message {
-    margin: 35px auto;
-
-    padding:
-        20px
-        25px;
-
-    max-width: 550px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 20px;
-
-    border-radius: 20px;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--red),
-            var(--dark-red)
-        );
-
-    color: white;
-
-    box-shadow:
-        0 15px 30px rgba(150, 10, 20, 0.25);
-}
-
-
-.final-message span {
-    font-size: 1.6rem;
-}
-
-
-.final-message strong {
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: 1.5rem;
-}
-
-
-.goodbye-emojis {
-    font-size: 1.6rem;
-
-    letter-spacing: 8px;
-
-    animation:
-        emojiFloat 3s ease-in-out infinite;
-}
-
-
-/* =========================================================
    CONTROLES
 ========================================================= */
 
@@ -1716,6 +1498,9 @@ body {
     justify-content: space-between;
 
     gap: 20px;
+
+    position: relative;
+    z-index: 20;
 }
 
 
@@ -1736,6 +1521,8 @@ body {
     border-radius: 50px;
 
     cursor: pointer;
+
+    pointer-events: auto;
 
     font-family:
         "Montserrat",
@@ -1763,7 +1550,7 @@ body {
 
 .previous-button {
     background:
-        rgba(255, 255, 255, 0.9);
+        rgba(255, 255, 255, 0.95);
 
     color: var(--red);
 
@@ -1777,7 +1564,8 @@ body {
         linear-gradient(
             135deg,
             var(--red),
-            var(--dark-red)
+            var(--orange),
+            var(--yellow)
         );
 
     color: white;
@@ -1818,6 +1606,9 @@ body {
     color: white;
 
     backdrop-filter: blur(8px);
+
+    position: relative;
+    z-index: 10;
 }
 
 
@@ -1844,12 +1635,14 @@ body {
 
     from {
         opacity: 0;
+
         transform:
             translateX(-25px);
     }
 
     to {
         opacity: 1;
+
         transform:
             translateX(0);
     }
@@ -1861,6 +1654,7 @@ body {
 
     from {
         opacity: 0;
+
         transform:
             translateX(25px)
             rotate(2deg);
@@ -1868,33 +1662,10 @@ body {
 
     to {
         opacity: 1;
+
         transform:
             translateX(0)
             rotate(0);
-    }
-
-}
-
-
-.book-page.active .reverse .page-text,
-.book-page.active .reverse-biography .biography-content {
-    animation:
-        slideTextReverse 0.65s ease both;
-}
-
-
-@keyframes slideTextReverse {
-
-    from {
-        opacity: 0;
-        transform:
-            translateX(25px);
-    }
-
-    to {
-        opacity: 1;
-        transform:
-            translateX(0);
     }
 
 }
@@ -1921,6 +1692,7 @@ body {
     background:
         linear-gradient(
             var(--red),
+            var(--orange),
             var(--yellow)
         );
 }
@@ -1971,17 +1743,6 @@ body {
         height: 410px;
     }
 
-
-    .page-text h2,
-    .biography-content h2 {
-        font-size:
-            clamp(
-                2.7rem,
-                6vw,
-                4.3rem
-            );
-    }
-
 }
 
 
@@ -1990,9 +1751,6 @@ body {
 ========================================================= */
 
 @media (max-width: 700px) {
-
-
-    /* HEADER */
 
     .top-header {
         min-height: 70px;
@@ -2035,8 +1793,6 @@ body {
         font-size: 0.78rem;
     }
 
-
-    /* LIBRO */
 
     .book-area {
         min-height: auto;
@@ -2083,8 +1839,6 @@ body {
     }
 
 
-    /* ORDEN EN MÓVIL */
-
     .page-content.reverse .page-image {
         order: 1;
     }
@@ -2104,8 +1858,6 @@ body {
         order: 2;
     }
 
-
-    /* TEXTO */
 
     .section-label {
         margin-bottom: 13px;
@@ -2143,8 +1895,6 @@ body {
     }
 
 
-    /* IMÁGENES */
-
     .page-image,
     .biography-image {
         width: 100%;
@@ -2157,8 +1907,6 @@ body {
         height: 340px;
     }
 
-
-    /* PORTADA */
 
     .cover-content {
         padding:
@@ -2213,14 +1961,10 @@ body {
     }
 
 
-    /* MAPA */
-
     .map-container {
         padding: 5px;
     }
 
-
-    /* BIOGRAFÍAS */
 
     .biography-date {
         font-size: 0.7rem;
@@ -2233,12 +1977,9 @@ body {
 
 
     .legacy-box {
-        padding:
-            15px;
+        padding: 15px;
     }
 
-
-    /* INTRO GOBERNANTES */
 
     .governors-intro-page,
     .thank-you-page {
@@ -2252,8 +1993,6 @@ body {
         letter-spacing: 5px;
     }
 
-
-    /* AGRADECIMIENTO */
 
     .thank-you-emojis {
         font-size: 1.45rem;
@@ -2283,8 +2022,6 @@ body {
     }
 
 
-    /* CONTROLES */
-
     .controls {
         margin-top: 20px;
 
@@ -2313,8 +2050,6 @@ body {
         line-height: 1.5;
     }
 
-
-    /* DETALLES */
 
     .corner-emoji {
         top: 16px;
