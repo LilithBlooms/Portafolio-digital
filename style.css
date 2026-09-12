@@ -1,33 +1,36 @@
-/* ==========================================
-   🇪🇸 PORTAFOLIO DIGITAL ESPAÑA
-   CSS DEFINITIVO — PARTE 1
-   BASE + ESTRUCTURA DEL LIBRO
-========================================== */
+/* =========================================================
+   ESPAÑA 🇪🇸 — PORTAFOLIO DIGITAL
+   STYLE.CSS COMPLETO
+========================================================= */
 
 
-/* ==========================================
+/* =========================================================
    VARIABLES
-========================================== */
+========================================================= */
 
 :root {
-
     --red: #c60b1e;
-    --dark-red: #8f0715;
-    --bright-red: #e31b2f;
+    --dark-red: #8f0614;
+    --light-red: #e63946;
 
     --yellow: #ffc400;
-    --gold: #ffb300;
-    --light-yellow: #ffe27a;
+    --gold: #f4a900;
+    --light-yellow: #ffe082;
 
-    --dark: #2a1010;
-    --paper: #fffaf0;
+    --cream: #fffaf0;
+    --paper: #fffdf7;
+    --paper-dark: #f4ead7;
 
+    --dark: #241b16;
+    --brown: #5c4033;
+
+    --shadow: rgba(70, 35, 15, 0.18);
 }
 
 
-/* ==========================================
-   RESET GENERAL
-========================================== */
+/* =========================================================
+   RESET
+========================================================= */
 
 * {
     margin: 0;
@@ -38,2629 +41,858 @@
 
 html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
 }
 
 
 body {
-
-    width: 100%;
     min-height: 100vh;
-
     overflow-x: hidden;
 
     font-family: "Montserrat", sans-serif;
-
-    background:
-
-        radial-gradient(
-            circle at 15% 20%,
-            rgba(255, 196, 0, 0.35),
-            transparent 25%
-        ),
-
-        radial-gradient(
-            circle at 85% 80%,
-            rgba(198, 11, 30, 0.30),
-            transparent 30%
-        ),
-
-        linear-gradient(
-            135deg,
-            #7e0612,
-            #c60b1e,
-            #9b0817
-        );
-
     color: var(--dark);
 
-}
-
-
-/* ==========================================
-   EVITAR DESBORDAMIENTOS
-========================================== */
-
-img,
-svg {
-    max-width: 100%;
-}
-
-
-button {
-    font-family: inherit;
-}
-
-
-button,
-a {
-    -webkit-tap-highlight-color: transparent;
-}
-
-
-/* ==========================================
-   FONDO DE EMOJIS
-========================================== */
-
-.spain-background {
-
-    position: fixed;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100vh;
-
-    overflow: hidden;
-
-    pointer-events: none;
-
-    z-index: -2;
-
-}
-
-
-.falling-emoji {
-
-    position: absolute;
-
-    top: -120px;
-
-    user-select: none;
-
-    animation-name: fallEmoji;
-
-    animation-timing-function: linear;
-
-    animation-iteration-count: infinite;
-
-    opacity: 0.85;
-
-    filter:
-        drop-shadow(
-            0 8px 8px rgba(0, 0, 0, 0.20)
+    background:
+        linear-gradient(
+            135deg,
+            #7d0713,
+            #b70c1c,
+            #f4a900,
+            #c60b1e
         );
 
+    position: relative;
 }
 
 
-@keyframes fallEmoji {
+/* =========================================================
+   FONDO ANIMADO
+========================================================= */
 
-    0% {
+.spain-background {
+    position: fixed;
+    inset: 0;
 
-        transform:
-            translateY(-120px)
-            rotate(0deg);
+    overflow: hidden;
+    pointer-events: none;
 
+    z-index: -5;
+}
+
+
+.floating-emoji {
+    position: absolute;
+
+    top: -100px;
+
+    user-select: none;
+    pointer-events: none;
+
+    animation:
+        fall linear forwards,
+        sway ease-in-out infinite;
+
+    opacity: 0.8;
+}
+
+
+@keyframes fall {
+
+    from {
+        transform: translateY(-120px);
     }
 
+    to {
+        transform: translateY(115vh);
+    }
+
+}
+
+
+@keyframes sway {
+
+    0%,
     100% {
+        margin-left: 0;
+        transform: rotate(-8deg);
+    }
 
-        transform:
-            translateY(115vh)
-            rotate(360deg);
-
+    50% {
+        margin-left: 25px;
+        transform: rotate(8deg);
     }
 
 }
 
 
-/* ==========================================
-   EFECTOS DE LUZ
-========================================== */
+/* =========================================================
+   LUCES DEL FONDO
+========================================================= */
 
 .glow {
-
     position: fixed;
 
-    width: 300px;
-    height: 300px;
+    width: 450px;
+    height: 450px;
 
     border-radius: 50%;
 
     filter: blur(100px);
 
-    opacity: 0.25;
-
-    z-index: -1;
-
     pointer-events: none;
 
+    opacity: 0.35;
+
+    z-index: -4;
 }
 
 
 .glow-one {
+    background: #ffdf4d;
 
-    background: var(--yellow);
-
-    top: -100px;
-    left: -100px;
-
+    top: -150px;
+    left: -120px;
 }
 
 
 .glow-two {
+    background: #ff4d5e;
 
-    background: #ff6b00;
-
-    right: -100px;
+    right: -150px;
     bottom: -100px;
-
 }
 
 
 .glow-three {
+    background: #fff2a6;
 
-    background: var(--yellow);
+    left: 45%;
+    top: 40%;
 
-    top: 45%;
-    left: 40%;
-
+    transform: translate(-50%, -50%);
 }
 
 
-/* ==========================================
+/* =========================================================
    HEADER
-========================================== */
+========================================================= */
 
 .top-header {
-
     width: 100%;
 
+    min-height: 82px;
+
+    padding: 12px 40px;
+
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
-    padding: 20px 5%;
 
     position: relative;
 
+    background:
+        rgba(255, 250, 240, 0.92);
+
+    backdrop-filter: blur(14px);
+
+    border-bottom:
+        4px solid var(--yellow);
+
+    box-shadow:
+        0 8px 30px rgba(60, 20, 10, 0.16);
+
     z-index: 50;
-
-    color: white;
-
-}
-
-
-.menu-button {
-
-    width: 52px;
-    height: 52px;
-
-    flex-shrink: 0;
-
-    border-radius: 50%;
-
-    border: 2px solid rgba(255, 255, 255, 0.70);
-
-    background: rgba(255, 255, 255, 0.15);
-
-    color: white;
-
-    backdrop-filter: blur(10px);
-
-    font-size: 1.4rem;
-
-    cursor: pointer;
-
-    transition: 0.35s;
-
-}
-
-
-.menu-button:hover {
-
-    transform: rotate(90deg) scale(1.08);
-
-    background: var(--yellow);
-
-    color: var(--red);
-
 }
 
 
 .header-title {
-
     text-align: center;
-
 }
 
 
 .header-title span {
+    display: block;
 
-    font-size: 0.60rem;
+    font-size: 0.68rem;
+    font-weight: 800;
 
-    letter-spacing: 5px;
+    letter-spacing: 4px;
 
-    color: var(--light-yellow);
-
+    color: var(--red);
 }
 
 
 .header-title h1 {
-
     font-family: "Bebas Neue", sans-serif;
 
-    font-size: 3rem;
-
-    letter-spacing: 8px;
+    font-size: 2.3rem;
+    letter-spacing: 3px;
 
     line-height: 1;
 
+    color: var(--dark);
 }
 
 
-.header-title i {
-
+.header-title h1 i {
     font-style: normal;
-
     font-size: 1.5rem;
-
 }
 
 
-.page-indicator {
+/* =========================================================
+   BOTÓN MENÚ
+========================================================= */
 
-    min-width: 70px;
+.menu-button {
+    width: 48px;
+    height: 48px;
 
-    text-align: right;
+    border: none;
+    border-radius: 50%;
 
-    font-weight: 700;
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--red),
+            var(--dark-red)
+        );
 
     color: white;
 
-    font-size: 0.8rem;
+    font-size: 1.5rem;
 
-    letter-spacing: 2px;
+    box-shadow:
+        0 7px 18px rgba(150, 10, 20, 0.25);
 
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.menu-button:hover {
+    transform: scale(1.08) rotate(4deg);
+
+    box-shadow:
+        0 10px 25px rgba(150, 10, 20, 0.4);
+}
+
+
+/* =========================================================
+   INDICADOR DE PÁGINAS
+========================================================= */
+
+.page-indicator {
+    min-width: 80px;
+
+    padding: 10px 15px;
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    font-weight: 800;
+
+    background: var(--dark);
+
+    color: white;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.18);
+}
+
+
+.page-indicator #currentPage {
+    color: var(--yellow);
 }
 
 
 .slash {
-
-    color: var(--yellow);
-
-    margin: 0 5px;
-
+    margin: 0 4px;
+    opacity: 0.5;
 }
 
 
-/* ==========================================
+/* =========================================================
    SIDEBAR
-========================================== */
+========================================================= */
 
 .sidebar {
-
     position: fixed;
 
     top: 0;
     left: 0;
 
-    width: min(350px, 88vw);
-    height: 100dvh;
+    width: min(390px, 88vw);
+    height: 100vh;
 
-    padding: 30px;
-
-    background:
-
-        linear-gradient(
-            180deg,
-            #fff8df,
-            #fffdf7
-        );
-
-    z-index: 200;
+    padding: 25px 20px;
 
     overflow-y: auto;
 
-    transform: translateX(-110%);
-
-    transition: transform 0.45s ease;
+    background:
+        linear-gradient(
+            180deg,
+            #fffdf7,
+            #fff4d6
+        );
 
     box-shadow:
-        20px 0 60px rgba(0, 0, 0, 0.35);
+        15px 0 50px rgba(0, 0, 0, 0.28);
 
+    transform: translateX(-110%);
+
+    transition:
+        transform 0.4s cubic-bezier(.77, 0, .18, 1);
+
+    z-index: 200;
 }
 
 
 .sidebar.open {
-
     transform: translateX(0);
-
 }
 
 
 .sidebar-header {
-
     display: flex;
-
+    align-items: center;
     justify-content: space-between;
 
-    align-items: center;
-
-    gap: 15px;
-
+    margin-bottom: 20px;
 }
 
 
 .sidebar-header p {
+    font-size: 0.65rem;
 
-    font-size: 0.60rem;
-
-    color: var(--red);
-
-    font-weight: 700;
+    font-weight: 800;
 
     letter-spacing: 2px;
 
+    color: var(--red);
 }
 
 
 .sidebar-header h2 {
+    margin-top: 4px;
 
-    font-family: "Bebas Neue", sans-serif;
+    font-family: "Cormorant Garamond", serif;
 
-    font-size: 3.5rem;
+    font-size: 2.8rem;
 
-    color: var(--red);
-
-    letter-spacing: 2px;
-
+    color: var(--dark);
 }
 
 
 #closeMenu {
-
-    border: none;
-
-    background: var(--red);
-
-    color: white;
-
     width: 42px;
     height: 42px;
 
-    flex-shrink: 0;
-
+    border: none;
     border-radius: 50%;
-
-    font-size: 1.8rem;
 
     cursor: pointer;
 
+    background: var(--dark);
+
+    color: white;
+
+    font-size: 2rem;
+    line-height: 1;
+
+    transition:
+        transform 0.25s ease;
 }
 
 
+#closeMenu:hover {
+    transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   DECORACIÓN SIDEBAR
+========================================================= */
+
 .sidebar-decoration {
+    margin-bottom: 20px;
 
     text-align: center;
 
-    margin: 20px 0 25px;
-
     color: var(--red);
 
+    font-size: 0.9rem;
 }
 
 
+/* =========================================================
+   MINIATURAS
+========================================================= */
+
 .thumbnail-list {
-
     display: flex;
-
     flex-direction: column;
 
     gap: 10px;
 
+    padding-bottom: 30px;
 }
 
 
 .thumbnail {
-
     width: 100%;
 
     display: flex;
-
     align-items: center;
 
-    gap: 14px;
+    gap: 13px;
 
     padding: 9px;
 
-    border: 2px solid transparent;
+    border:
+        2px solid transparent;
 
-    border-radius: 12px;
-
-    background: transparent;
+    border-radius: 16px;
 
     cursor: pointer;
 
     text-align: left;
 
-    transition: 0.3s;
+    background:
+        rgba(255, 255, 255, 0.75);
 
+    transition:
+        transform 0.2s ease,
+        border 0.2s ease,
+        background 0.2s ease;
 }
 
 
-.thumbnail:hover,
-.thumbnail.active {
-
-    background: rgba(255, 196, 0, 0.20);
+.thumbnail:hover {
+    transform: translateX(5px);
 
     border-color: var(--yellow);
 
-    transform: translateX(5px);
-
+    background: white;
 }
 
 
-.thumbnail img {
+.thumbnail.active {
+    border-color: var(--red);
 
-    width: 70px;
-    height: 55px;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(198, 11, 30, 0.12),
+            rgba(255, 196, 0, 0.12)
+        );
+}
+
+
+.thumbnail img,
+.emoji-thumbnail {
+    width: 72px;
+    height: 58px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
 
     object-fit: cover;
 
-    border-radius: 8px;
-
-}
-
-
-.thumbnail span {
-
-    font-size: 0.7rem;
-
-    color: var(--dark);
-
-}
-
-
-.thumbnail b {
-
-    color: var(--red);
-
+    background:
+        linear-gradient(
+            135deg,
+            var(--red),
+            var(--yellow)
+        );
 }
 
 
 .emoji-thumbnail {
-
-    width: 70px;
-    height: 55px;
-
-    flex-shrink: 0;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
-    background:
-
-        linear-gradient(
-            135deg,
-            var(--yellow),
-            #ffdc4d
-        );
-
-    border-radius: 8px;
-
-    font-size: 1.1rem;
-
+    font-size: 1.4rem;
 }
 
 
-/* ==========================================
+.thumbnail span {
+    font-size: 0.78rem;
+
+    font-weight: 600;
+
+    line-height: 1.35;
+
+    color: var(--dark);
+}
+
+
+.thumbnail b {
+    color: var(--red);
+}
+
+
+/* =========================================================
    OVERLAY
-========================================== */
+========================================================= */
 
 .overlay {
-
     position: fixed;
 
     inset: 0;
 
-    background: rgba(0, 0, 0, 0.55);
+    background:
+        rgba(30, 10, 10, 0.55);
 
     opacity: 0;
-
     visibility: hidden;
 
-    transition: 0.3s;
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
 
     z-index: 150;
-
 }
 
 
-.overlay.active {
-
+.overlay.show {
     opacity: 1;
-
     visibility: visible;
-
-}
-
-
-/* ==========================================
-   ÁREA PRINCIPAL DEL LIBRO
-========================================== */
-
-.book-area {
-
-    width: 100%;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    padding: 25px 20px 60px;
-
-}
-
-
-/* ==========================================
-   CONTENEDOR DEL LIBRO
-========================================== */
-
-.book-wrapper {
-
-    width: min(100%, 1100px);
-
-    perspective: 2500px;
-
 }
 
 
 /* =========================================================
-   LIBRO — CORRECCIÓN DEFINITIVA DEL ESPACIO VACÍO
+   ÁREA DEL LIBRO
+========================================================= */
+
+.book-area {
+    width: 100%;
+
+    min-height: calc(100vh - 82px);
+
+    padding:
+        40px
+        25px
+        30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.book-wrapper {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    perspective: 2200px;
+}
+
+
+/* =========================================================
+   LIBRO
 ========================================================= */
 
 .book {
+    width: min(1120px, 100%);
+    min-height: 670px;
 
     position: relative;
 
-    width: 100%;
+    transform-style: preserve-3d;
 
-    /*
-       IMPORTANTE:
+    border-radius: 18px;
 
-       Ya NO usamos un min-height gigante aquí.
-
-       JavaScript calculará la altura necesaria
-       de la página activa.
-    */
-
-    min-height: 0;
-
-    height: auto;
-
+    filter:
+        drop-shadow(
+            0 30px 40px rgba(40, 15, 5, 0.28)
+        );
 }
 
 
 /* =========================================================
-   PÁGINAS DEL LIBRO
+   PÁGINAS
 ========================================================= */
 
 .book-page {
+    width: 100%;
+    min-height: 670px;
 
-    /*
-       Las páginas siguen superpuestas para
-       conservar la animación del libro.
-    */
+    padding: 55px 65px 60px;
 
     position: absolute;
 
-    top: 0;
-    left: 0;
-
-    width: 100%;
-
-    /*
-       CAMBIO IMPORTANTE:
-
-       Eliminamos min-height: 680px
-       y cualquier altura forzada gigante.
-    */
-
-    min-height: 0;
-
-    height: auto;
-
-    padding: 65px 75px 55px;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            rgba(198, 11, 30, 0.04),
-            transparent 8%,
-            transparent 92%,
-            rgba(255, 196, 0, 0.08)
-        ),
-
-        var(--paper);
-
-    border-radius: 12px;
-
-    border: 4px solid var(--yellow);
-
-    border-left: 10px solid var(--red);
-
-    box-shadow:
-
-        0 35px 80px rgba(0, 0, 0, 0.40),
-
-        0 0 0 5px rgba(255, 255, 255, 0.25),
-
-        inset 0 0 50px rgba(255, 196, 0, 0.08);
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    pointer-events: none;
-
-    transform:
-        rotateY(90deg)
-        translateX(80px);
-
-    transform-origin: left center;
-
-    transition:
-
-        transform 0.75s cubic-bezier(.2, .8, .2, 1),
-
-        opacity 0.45s ease,
-
-        visibility 0.45s;
+    inset: 0;
 
     overflow: hidden;
 
-    backface-visibility: hidden;
+    border-radius: 18px;
 
+    background:
+        var(--paper);
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,0.4) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.4) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        28px 28px;
+
+    box-shadow:
+        inset 0 0 80px rgba(160, 100, 40, 0.06);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform:
+        rotateY(15deg)
+        scale(0.98);
+
+    transform-origin: center;
+
+    transition:
+        opacity 0.5s ease,
+        visibility 0.5s ease,
+        transform 0.6s cubic-bezier(.22,.61,.36,1);
+
+    pointer-events: none;
 }
 
 
-/* ==========================================
-   PÁGINA ACTIVA
-========================================== */
-
 .book-page.active {
-
-    /*
-       ESTA ES LA PARTE MÁS IMPORTANTE.
-
-       La página activa pasa a position: relative.
-
-       Así el libro adopta la altura REAL
-       del contenido y NO queda ese espacio
-       vacío gigante debajo.
-    */
-
     position: relative;
 
-    top: auto;
-    left: auto;
-
     opacity: 1;
-
     visibility: visible;
+
+    transform:
+        rotateY(0)
+        scale(1);
 
     pointer-events: auto;
 
-    transform:
-        rotateY(0deg)
-        translateX(0);
-
-    z-index: 10;
-
+    z-index: 5;
 }
 
 
-/* ==========================================
-   ANIMACIONES DE SALIDA
-========================================== */
-
-.book-page.exit-left {
-
-    opacity: 0;
-
-    transform:
-        rotateY(-90deg)
-        translateX(-80px);
-
-    transform-origin: right center;
-
-}
-
-
-.book-page.exit-right {
-
-    opacity: 0;
-
-    transform:
-        rotateY(90deg)
-        translateX(80px);
-
-    transform-origin: left center;
-
-}
-
-
-/* ==========================================
-   EMOJI DE ESQUINA
-========================================== */
-
-.corner-emoji {
-
-    position: absolute;
-
-    top: 20px;
-    right: 30px;
-
-    font-size: 2rem;
-
-    animation: floatEmoji 3s ease-in-out infinite;
-
-}
-
-
-@keyframes floatEmoji {
-
-    0%,
-    100% {
-
-        transform:
-            translateY(0)
-            rotate(-5deg);
-
-    }
-
-    50% {
-
-        transform:
-            translateY(-10px)
-            rotate(5deg);
-
-    }
-
-}
-
-
-/* ==========================================
-   CONTENIDO GENERAL
-========================================== */
-
-.page-content {
-
-    width: 100%;
-
-    min-height: 0;
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    align-items: center;
-
-    gap: 60px;
-
-}
-
-
-/* ==========================================
-   ETIQUETA DE SECCIÓN
-========================================== */
-
-.section-label {
-
-    display: inline-block;
-
-    color: var(--red);
-
-    font-weight: 800;
-
-    font-size: 0.62rem;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 16px;
-
-}
-
-
-/* ==========================================
-   TEXTOS
-========================================== */
-
-.page-text {
-
-    min-width: 0;
-
-}
-
-
-.page-text h2 {
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: clamp(3.5rem, 5vw, 5.5rem);
-
-    line-height: 0.85;
-
-    color: var(--dark);
-
-    margin-bottom: 25px;
-
-}
-
-
-.page-text h2 span {
-
-    color: var(--red);
-
-}
-
-
-.red-yellow-line {
-
-    width: 120px;
-
-    height: 7px;
-
-    background:
-
-        linear-gradient(
-            to right,
-            var(--red) 0%,
-            var(--red) 45%,
-            var(--yellow) 45%,
-            var(--yellow) 100%
-        );
-
-    border-radius: 20px;
-
-    margin-bottom: 28px;
-
-}
-
-
-.page-text p {
-
-    color: #553d3d;
-
-    font-size: 0.88rem;
-
-    line-height: 1.9;
-
-    margin-bottom: 16px;
-
-}
-
-
-.page-emojis {
-
-    margin-top: 25px;
-
-    font-size: 1.5rem;
-
-    letter-spacing: 7px;
-
-}
-
-
-/* ==========================================
-   CONTENEDOR DE IMÁGENES
-========================================== */
-
-.page-image {
-
-    width: 100%;
-
-    min-width: 0;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-}
-
-
-/* ==========================================
-   MARCO DE IMAGEN
-========================================== */
-
-.image-frame {
-
-    position: relative;
-
-    width: min(100%, 500px);
-
-}
-
-
-.image-frame::before {
-
+/* =========================================================
+   DETALLE TIPO PAPEL
+========================================================= */
+
+.book-page::before {
     content: "";
 
     position: absolute;
 
-    inset: -12px;
+    inset: 15px;
 
-    border: 3px solid var(--red);
+    border:
+        1px solid rgba(150, 80, 30, 0.12);
 
     border-radius: 10px;
 
-    transform: rotate(-2deg);
-
-    z-index: -1;
-
+    pointer-events: none;
 }
 
 
-.image-frame::after {
-
-    content: "🇪🇸";
+.book-page::after {
+    content: "";
 
     position: absolute;
 
-    bottom: -30px;
-    right: 15px;
+    width: 150px;
+    height: 150px;
 
-    font-size: 2rem;
+    right: -60px;
+    top: -60px;
 
-}
-
-
-/* ==========================================
-   IMÁGENES GENERALES
-========================================== */
-
-.page-image img {
-
-    display: block;
-
-    width: 100%;
-
-    height: auto;
-
-    max-height: 500px;
-
-    object-fit: contain;
-
-    border-radius: 8px;
-
-    box-shadow:
-
-        15px 20px 35px
-        rgba(0, 0, 0, 0.20);
-
-}
-/* ==========================================
-   PORTADA
-========================================== */
-
-.cover-page {
+    border-radius: 50%;
 
     background:
-
-        radial-gradient(
-            circle at center,
-            rgba(255, 196, 0, 0.25),
-            transparent 50%
-        ),
-
-        linear-gradient(
-            135deg,
-            #fff5d6,
-            #fffdf8
-        );
-
-    border: 8px solid var(--yellow);
-
-    border-left: 18px solid var(--red);
-
-}
-
-
-/* ==========================================
-   FRANJAS DE ESPAÑA
-========================================== */
-
-.spanish-stripe {
-
-    position: absolute;
-
-    left: 0;
-
-    width: 100%;
-
-    height: 16px;
-
-    background:
-
-        linear-gradient(
-            to right,
-            var(--red),
-            var(--yellow),
-            var(--red)
-        );
-
-}
-
-
-.stripe-top {
-
-    top: 0;
-
-}
-
-
-.stripe-bottom {
-
-    bottom: 0;
-
-}
-
-
-/* ==========================================
-   CONTENIDO DE PORTADA
-========================================== */
-
-.cover-content {
-
-    width: 100%;
-
-    min-height: 430px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-    padding: 25px 15px;
-
-}
-
-
-/* ==========================================
-   ICONOS PORTADA
-========================================== */
-
-.cover-icons {
-
-    font-size: 1.5rem;
-
-    letter-spacing: 8px;
-
-    margin-bottom: 20px;
-
-}
-
-
-/* ==========================================
-   TÍTULO PEQUEÑO
-========================================== */
-
-.cover-small-title {
-
-    color: var(--red);
-
-    font-size: 0.7rem;
-
-    font-weight: 800;
-
-    letter-spacing: 7px;
-
-}
-
-
-/* ==========================================
-   TÍTULO PRINCIPAL
-========================================== */
-
-.cover-content h2 {
-
-    font-family: "Bebas Neue", sans-serif;
-
-    font-size: clamp(4rem, 12vw, 8rem);
-
-    letter-spacing: 10px;
-
-    line-height: 0.9;
-
-    color: var(--red);
-
-    text-shadow:
-
-        4px 4px 0 var(--yellow);
-
-    margin: 15px 0;
-
-}
-
-
-/* ==========================================
-   LÍNEA DE BANDERA
-========================================== */
-
-.flag-line {
-
-    display: flex;
-
-    width: 180px;
-
-    height: 12px;
-
-    margin: 10px 0 25px;
-
-}
-
-
-.flag-line span:nth-child(1),
-.flag-line span:nth-child(3) {
-
-    width: 25%;
-
-    background: var(--red);
-
-}
-
-
-.flag-line span:nth-child(2) {
-
-    width: 50%;
-
-    background: var(--yellow);
-
-}
-
-
-/* ==========================================
-   SUBTÍTULO
-========================================== */
-
-.cover-subtitle {
-
-    max-width: 600px;
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 1.5rem;
-
-    font-weight: 600;
-
-    color: var(--dark-red);
-
-    margin-bottom: 25px;
-
-}
-
-
-/* ==========================================
-   IMAGEN DE PORTADA
-========================================== */
-
-.cover-image-container {
-
-    width: min(100%, 650px);
-
-    display: flex;
-
-    justify-content: center;
-
-}
-
-
-.cover-image-container img {
-
-    display: block;
-
-    width: 100%;
-
-    height: auto;
-
-    max-height: 240px;
-
-    object-fit: contain;
-
-}
-
-
-/* ==========================================
-   ICONOS INFERIORES
-========================================== */
-
-.cover-bottom-icons {
-
-    margin-top: 20px;
-
-    font-size: 1.5rem;
-
-    letter-spacing: 6px;
-
-}
-
-
-/* ==========================================
-   MAPA
-========================================== */
-
-.map-content {
-
-    grid-template-columns: 0.9fr 1.1fr;
-
-}
-
-
-/* ==========================================
-   SVG DEL MAPA
-========================================== */
-
-.spain-map {
-
-    width: 100%;
-
-    max-width: 600px;
-
-    height: auto;
-
-}
-
-
-/* ==========================================
-   FONDO DEL MAPA
-========================================== */
-
-.map-background {
-
-    fill: #fff0c2;
-
-}
-
-
-/* ==========================================
-   FORMA DE EUROPA
-========================================== */
-
-.europe-shape {
-
-    fill: #e8cdb1;
-
-    stroke: #b98d67;
-
-    stroke-width: 4;
-
-}
-
-
-/* ==========================================
-   ESPAÑA
-========================================== */
-
-.spain-shape {
-
-    fill: var(--red);
-
-    stroke: var(--dark-red);
-
-    stroke-width: 5;
-
-    filter:
-
-        drop-shadow(
-            0 10px 10px rgba(0, 0, 0, 0.20)
-        );
-
-}
-
-
-/* ==========================================
-   RUTA DEL AVIÓN
-========================================== */
-
-.flight-path {
-
-    fill: none;
-
-    stroke: var(--yellow);
-
-    stroke-width: 5;
-
-    stroke-linecap: round;
-
-    stroke-dasharray: 12 12;
-
-    animation: dash 2s linear infinite;
-
-}
-
-
-@keyframes dash {
-
-    to {
-
-        stroke-dashoffset: -48;
-
-    }
-
-}
-
-
-/* ==========================================
-   MARCADOR DE UBICACIÓN
-========================================== */
-
-.location-marker circle:first-child {
-
-    fill: rgba(198, 11, 30, 0.30);
-
-    animation: pulse 2s infinite;
-
-}
-
-
-.marker-center {
-
-    fill: var(--red);
-
-}
-
-
-@keyframes pulse {
-
-    0% {
-
-        transform: scale(0.8);
-
-        opacity: 1;
-
-    }
-
-    100% {
-
-        transform: scale(1.8);
-
-        opacity: 0;
-
-    }
-
-}
-
-
-/* ==========================================
-   ICONO DEL AVIÓN
-========================================== */
-
-.plane-icon {
-
-    font-size: 30px;
-
-}
-
-
-/* ==========================================
-   ETIQUETA DEL MAPA
-========================================== */
-
-.map-label {
-
-    font-family: "Bebas Neue", sans-serif;
-
-    font-size: 30px;
-
-    letter-spacing: 8px;
-
-    fill: var(--red);
-
-}
-
-
-/* ==========================================
-   NOTA DE FUENTES
-========================================== */
-
-.sources-note {
-
-    margin-top: 20px;
-
-    padding: 15px;
-
-    border-left: 5px solid var(--yellow);
-
-    background: rgba(255, 196, 0, 0.12);
-
-    border-radius: 8px;
-
-}
-
-
-.sources-note strong {
-
-    color: var(--red);
-
-    font-size: 0.75rem;
-
-}
-
-
-/* ==========================================
-   PÁGINA FINAL
-========================================== */
-
-.thank-you-page {
-
-    background:
-
         radial-gradient(
             circle,
-            rgba(255, 196, 0, 0.30),
-            transparent 55%
-        ),
-
-        linear-gradient(
-            135deg,
-            #fff6dc,
-            #fffdf8
-        );
-
-}
-
-
-/* ==========================================
-   CONTENIDO FINAL
-========================================== */
-
-.thank-you-content {
-
-    min-height: 550px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-}
-
-
-/* ==========================================
-   ICONOS FINALES
-========================================== */
-
-.thank-you-icons {
-
-    font-size: 1.6rem;
-
-    letter-spacing: 7px;
-
-    margin-bottom: 20px;
-
-}
-
-
-/* ==========================================
-   TÍTULO FINAL
-========================================== */
-
-.thank-you-content h2 {
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: clamp(3.8rem, 7vw, 6.8rem);
-
-    line-height: 0.9;
-
-    color: var(--red);
-
-    margin: 10px 0 20px;
-
-}
-
-
-/* ==========================================
-   LÍNEA CENTRADA
-========================================== */
-
-.center-line {
-
-    margin: 10px auto 25px;
-
-}
-
-
-/* ==========================================
-   TEXTO FINAL
-========================================== */
-
-.thank-you-text {
-
-    max-width: 600px;
-
-    color: #553d3d;
-
-    line-height: 1.8;
-
-    margin-bottom: 25px;
-
-}
-
-
-/* ==========================================
-   IMAGEN FINAL
-========================================== */
-
-.final-image {
-
-    width: min(100%, 500px);
-
-}
-
-
-.final-image img {
-
-    display: block;
-
-    width: 100%;
-
-    height: auto;
-
-    max-height: 220px;
-
-    object-fit: contain;
-
-}
-
-
-/* ==========================================
-   EMOJIS FINALES
-========================================== */
-
-.final-emojis {
-
-    margin-top: 20px;
-
-    font-size: 1.4rem;
-
-    letter-spacing: 5px;
-
-}
-
-
-/* ==========================================
-   NÚMERO DE PÁGINA
-========================================== */
-
-.page-number {
-
-    position: absolute;
-
-    right: 30px;
-
-    bottom: 20px;
-
-    color: var(--red);
-
-    font-weight: 800;
-
-    font-size: 0.7rem;
-
-    letter-spacing: 3px;
-
-}
-
-/* ==========================================
-   🇪🇸 CSS DEFINITIVO — PARTE 3
-   PÁGINAS ESPECIALES + GOBERNANTES
-========================================== */
-
-
-/* ==========================================
-   PORTADA
-========================================== */
-
-.cover-page {
-
-    background:
-
-        radial-gradient(
-            circle at center,
             rgba(255, 196, 0, 0.25),
-            transparent 50%
-        ),
-
-        linear-gradient(
-            135deg,
-            #fff5d6,
-            #fffdf8
+            transparent 70%
         );
-
-    border: 8px solid var(--yellow);
-
-    border-left: 18px solid var(--red);
-
-}
-
-
-.spanish-stripe {
-
-    position: absolute;
-
-    left: 0;
-
-    width: 100%;
-
-    height: 16px;
-
-    background:
-
-        linear-gradient(
-            to right,
-            var(--red),
-            var(--yellow),
-            var(--red)
-        );
-
-}
-
-
-.stripe-top {
-    top: 0;
-}
-
-
-.stripe-bottom {
-    bottom: 0;
-}
-
-
-/* ==========================================
-   CONTENIDO DE PORTADA
-========================================== */
-
-.cover-content {
-
-    width: 100%;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-    padding: 25px 15px;
-
-}
-
-
-.cover-icons {
-
-    font-size: 1.8rem;
-
-    letter-spacing: 8px;
-
-    margin-bottom: 20px;
-
-    animation: softFloat 3s ease-in-out infinite;
-
-}
-
-
-.cover-small-title {
-
-    color: var(--red);
-
-    font-size: 0.7rem;
-
-    font-weight: 800;
-
-    letter-spacing: 7px;
-
-}
-
-
-.cover-content h2 {
-
-    font-family: "Bebas Neue", sans-serif;
-
-    font-size: clamp(4rem, 12vw, 8rem);
-
-    letter-spacing: 10px;
-
-    line-height: 0.9;
-
-    color: var(--red);
-
-    text-shadow:
-        4px 4px 0 var(--yellow);
-
-    margin: 15px 0;
-
-}
-
-
-.flag-line {
-
-    display: flex;
-
-    width: 180px;
-
-    max-width: 100%;
-
-    height: 12px;
-
-    margin: 10px 0 25px;
-
-}
-
-
-.flag-line span:nth-child(1),
-.flag-line span:nth-child(3) {
-
-    width: 25%;
-
-    background: var(--red);
-
-}
-
-
-.flag-line span:nth-child(2) {
-
-    width: 50%;
-
-    background: var(--yellow);
-
-}
-
-
-.cover-subtitle {
-
-    max-width: 600px;
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 1.5rem;
-
-    font-weight: 600;
-
-    color: var(--dark-red);
-
-    margin-bottom: 25px;
-
-}
-
-
-.cover-image-container {
-
-    width: min(100%, 650px);
-
-    display: flex;
-
-    justify-content: center;
-
-}
-
-
-.cover-image-container img {
-
-    display: block;
-
-    width: 100%;
-
-    height: auto;
-
-    max-height: 240px;
-
-    object-fit: contain;
-
-}
-
-
-.cover-bottom-icons {
-
-    margin-top: 20px;
-
-    font-size: 1.5rem;
-
-    letter-spacing: 6px;
-
-}
-
-
-/* ==========================================
-   MAPA DE ESPAÑA
-========================================== */
-
-.map-content {
-
-    grid-template-columns: 0.9fr 1.1fr;
-
-}
-
-
-.spain-map {
-
-    display: block;
-
-    width: 100%;
-
-    max-width: 600px;
-
-    height: auto;
-
-}
-
-
-.map-background {
-
-    fill: #fff0c2;
-
-}
-
-
-.europe-shape {
-
-    fill: #e8cdb1;
-
-    stroke: #b98d67;
-
-    stroke-width: 4;
-
-}
-
-
-.spain-shape {
-
-    fill: var(--red);
-
-    stroke: var(--dark-red);
-
-    stroke-width: 5;
-
-    filter:
-        drop-shadow(
-            0 10px 10px
-            rgba(0, 0, 0, 0.2)
-        );
-
-}
-
-
-.flight-path {
-
-    fill: none;
-
-    stroke: var(--yellow);
-
-    stroke-width: 5;
-
-    stroke-linecap: round;
-
-    stroke-dasharray: 12 12;
-
-    animation: dash 2s linear infinite;
-
-}
-
-
-@keyframes dash {
-
-    to {
-        stroke-dashoffset: -48;
-    }
-
-}
-
-
-.location-marker circle:first-child {
-
-    fill: rgba(198, 11, 30, 0.3);
-
-    animation: pulse 2s infinite;
-
-}
-
-
-.marker-center {
-
-    fill: var(--red);
-
-}
-
-
-@keyframes pulse {
-
-    0% {
-
-        transform: scale(0.8);
-
-        opacity: 1;
-
-    }
-
-    100% {
-
-        transform: scale(1.8);
-
-        opacity: 0;
-
-    }
-
-}
-
-
-.plane-icon {
-
-    font-size: 30px;
-
-}
-
-
-.map-label {
-
-    font-family: "Bebas Neue", sans-serif;
-
-    font-size: 30px;
-
-    letter-spacing: 8px;
-
-    fill: var(--red);
-
-}
-
-
-/* ==========================================
-   SECCIÓN DE GOBERNANTES
-========================================== */
-
-.governors-intro-page {
-
-    position: relative;
-
-    overflow: hidden;
-
-    background:
-
-        radial-gradient(
-            circle at top right,
-            rgba(255, 196, 0, 0.18),
-            transparent 25%
-        ),
-
-        radial-gradient(
-            circle at bottom left,
-            rgba(255, 70, 50, 0.16),
-            transparent 30%
-        ),
-
-        linear-gradient(
-            135deg,
-            #7d0b12,
-            #a8141d 55%,
-            #7d0b12
-        );
-
-}
-
-
-.governors-intro-page::before {
-
-    content: "👑 🇪🇸 🏛️ 📜 👑 🇪🇸";
-
-    position: absolute;
-
-    top: 8%;
-    left: -5%;
-
-    width: 110%;
-
-    font-size: 2rem;
-
-    letter-spacing: 3rem;
-
-    opacity: 0.10;
-
-    transform: rotate(-12deg);
 
     pointer-events: none;
-
 }
 
 
-.governors-intro-page::after {
-
-    content: "🇪🇸 👑 🏛️ ⚖️ 📜 🇪🇸";
-
-    position: absolute;
-
-    bottom: 8%;
-    left: -5%;
-
-    width: 110%;
-
-    font-size: 2rem;
-
-    letter-spacing: 3rem;
-
-    opacity: 0.10;
-
-    transform: rotate(10deg);
-
-    pointer-events: none;
-
-}
-
-
-.governors-intro-content {
-
-    position: relative;
-
-    z-index: 2;
-
-    width: 100%;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-    padding: 3rem 2.5rem;
-
-}
-
-
-.governors-intro-content h2 {
-
-    color: #ffd43b;
-
-    font-size: clamp(2.3rem, 5vw, 4.5rem);
-
-    line-height: 1.05;
-
-    margin: 1rem 0;
-
-    text-transform: uppercase;
-
-    text-shadow:
-        3px 3px 0
-        rgba(80, 0, 0, 0.35);
-
-}
-
-
-.governors-intro-content h2 span {
-
-    display: block;
-
-    color: white;
-
-    font-size: 1.15em;
-
-}
-
-
-.governors-intro-content p {
-
-    max-width: 750px;
-
-    color: #fff6d8;
-
-    font-size: 1.05rem;
-
-    line-height: 1.8;
-
-    margin: 1rem auto;
-
-}
-
-
-.governors-intro-emojis {
-
-    font-size: 1.8rem;
-
-    margin-top: 1.8rem;
-
-    word-spacing: 0.8rem;
-
-    animation: softFloat 4s ease-in-out infinite;
-
-}
-
-
-/* ==========================================
-   PÁGINAS BIOGRÁFICAS
-========================================== */
-
-.biography-page {
-
-    position: relative;
-
-    overflow: hidden;
-
-    background:
-
-        radial-gradient(
-            circle at top left,
-            rgba(255, 196, 0, 0.13),
-            transparent 28%
-        ),
-
-        radial-gradient(
-            circle at bottom right,
-            rgba(255, 60, 50, 0.12),
-            transparent 30%
-        ),
-
-        linear-gradient(
-            135deg,
-            #6f090f 0%,
-            #94111a 45%,
-            #750b12 100%
-        );
-
-}
-
-
-.biography-page::before {
-
-    content: "🇪🇸 👑 🏛️ 📜 🇪🇸 👑";
-
-    position: absolute;
-
-    top: 5%;
-    left: -10%;
-
-    width: 120%;
-
-    font-size: 2rem;
-
-    letter-spacing: 4rem;
-
-    opacity: 0.07;
-
-    transform: rotate(-8deg);
-
-    pointer-events: none;
-
-}
-
-
-.biography-page::after {
-
-    content: "🏛️ 🇪🇸 👑 📜 🏛️ 🇪🇸";
-
-    position: absolute;
-
-    bottom: 5%;
-    left: -10%;
-
-    width: 120%;
-
-    font-size: 2rem;
-
-    letter-spacing: 4rem;
-
-    opacity: 0.07;
-
-    transform: rotate(8deg);
-
-    pointer-events: none;
-
-}
-
-
-/* ==========================================
-   DISTRIBUCIÓN DE BIOGRAFÍAS
-========================================== */
-
-.biography-layout {
-
-    position: relative;
-
-    z-index: 2;
-
-    width: 100%;
+/* =========================================================
+   PÁGINA INTERIOR — CONTENIDO
+========================================================= */
+
+.page-content {
+    min-height: 550px;
 
     display: grid;
 
-    grid-template-columns: 0.8fr 1.2fr;
+    grid-template-columns:
+        1fr
+        1fr;
 
     align-items: center;
 
-    gap: 2.5rem;
-
-    padding: 2.5rem 3rem;
-
-}
-
-
-/* ==========================================
-   BIOGRAFÍA INVERTIDA
-========================================== */
-
-.reverse-biography {
-
-    grid-template-columns: 1.2fr 0.8fr;
-
-}
-
-
-.reverse-biography .biography-image {
-
-    order: 2;
-
-}
-
-
-.reverse-biography .biography-content {
-
-    order: 1;
-
-}
-
-
-/* ==========================================
-   IMÁGENES DE PRESIDENTES Y GOBERNANTES
-   CORREGIDO PARA EVITAR PÁGINAS GIGANTES
-========================================== */
-
-.biography-image {
-
-    width: 100%;
-
-    min-width: 0;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-}
-
-
-.biography-image img {
-
-    display: block;
-
-    /*
-       IMPORTANTE:
-       La imagen nunca puede aumentar
-       la altura de la página.
-    */
-
-    width: auto;
-
-    max-width: min(100%, 280px);
-
-    height: auto;
-
-    max-height: 360px;
-
-    margin: 0 auto;
-
-    object-fit: contain;
-
-    object-position: center;
-
-    border-radius: 22px;
-
-    border: 4px solid #ffd43b;
-
-    box-shadow:
-
-        0 12px 0
-        rgba(70, 0, 0, 0.25),
-
-        0 18px 35px
-        rgba(0, 0, 0, 0.35);
-
-    transition:
-
-        transform 0.35s ease,
-
-        box-shadow 0.35s ease;
-
-}
-
-
-/* Efecto hover */
-
-.biography-image img:hover {
-
-    transform:
-        scale(1.03)
-        rotate(-1deg);
-
-    box-shadow:
-
-        0 14px 0
-        rgba(70, 0, 0, 0.25),
-
-        0 22px 45px
-        rgba(0, 0, 0, 0.4);
-
-}
-
-
-/* ==========================================
-   CONTENIDO DE BIOGRAFÍA
-========================================== */
-
-.biography-content {
+    gap: 65px;
 
     position: relative;
 
-    width: 100%;
-
-    min-width: 0;
-
-    max-width: 650px;
-
-    color: #fff7df;
-
-    padding: 1rem 0;
-
+    z-index: 2;
 }
 
 
-.biography-content .section-label {
+.page-content.reverse {
+    grid-template-columns:
+        1fr
+        1fr;
+}
 
+
+/* =========================================================
+   TEXTO
+========================================================= */
+
+.page-text {
+    position: relative;
+}
+
+
+.section-label {
     display: inline-block;
 
-    background: #ffd43b;
+    margin-bottom: 18px;
 
-    color: #7a0c12;
+    padding:
+        8px
+        15px;
 
-    font-size: 0.72rem;
+    border-radius: 30px;
 
+    font-size: 0.68rem;
     font-weight: 800;
 
-    letter-spacing: 0.08rem;
+    letter-spacing: 1.5px;
 
-    padding: 0.55rem 0.9rem;
+    background:
+        rgba(198, 11, 30, 0.08);
 
-    border-radius: 999px;
-
-    margin-bottom: 0.9rem;
-
-    box-shadow:
-        3px 3px 0
-        rgba(70, 0, 0, 0.3);
-
+    color: var(--red);
 }
 
 
-.biography-content h2 {
+.page-text h2,
+.biography-content h2,
+.governors-intro-content h2,
+.thank-you-content h2 {
+    font-family:
+        "Cormorant Garamond",
+        serif;
 
-    color: white;
-
-    font-size: clamp(2rem, 4vw, 3.6rem);
-
-    line-height: 1;
-
-    margin: 0.4rem 0 1rem;
-
-    text-transform: uppercase;
-
-    text-shadow:
-
-        3px 3px 0
-        rgba(80, 0, 0, 0.35);
-
-}
-
-
-.biography-content h2 span {
-
-    color: #ffd43b;
-
-}
-
-
-.biography-date {
-
-    display: inline-block;
-
-    background: rgba(255, 212, 59, 0.16);
-
-    border-left: 4px solid #ffd43b;
-
-    color: #fff3c4;
+    font-size: clamp(
+        3rem,
+        5vw,
+        5.3rem
+    );
 
     font-weight: 700;
 
-    padding: 0.7rem 1rem;
+    line-height: 0.9;
 
-    border-radius: 0 12px 12px 0;
-
-    margin-bottom: 1rem;
-
+    color: var(--dark);
 }
 
 
-.biography-content h3 {
-
-    color: #ffd43b;
-
-    font-size: 1.35rem;
-
-    margin: 0.8rem 0;
-
+.page-text h2 span,
+.biography-content h2 span,
+.governors-intro-content h2 span,
+.thank-you-content h2 span {
+    color: var(--red);
 }
 
 
-.biography-content p {
+.page-text p,
+.biography-content p,
+.governors-intro-content p,
+.thank-you-content p {
+    margin-top: 18px;
 
-    color: #fff5df;
+    font-size: 0.95rem;
 
-    font-size: 0.98rem;
+    line-height: 1.85;
 
-    line-height: 1.7;
-
-    margin-bottom: 0.9rem;
-
+    color: #584b43;
 }
 
 
-/* ==========================================
-   CAJA DE LEGADO
-========================================== */
+/* =========================================================
+   LÍNEA ROJA Y AMARILLA
+========================================================= */
 
-.legacy-box {
+.red-yellow-line {
+    width: 125px;
+    height: 7px;
 
-    position: relative;
+    margin:
+        22px 0
+        8px;
 
-    margin-top: 1.2rem;
-
-    padding: 1.1rem 1.3rem;
+    border-radius: 10px;
 
     background:
-
         linear-gradient(
-            135deg,
-            rgba(255, 212, 59, 0.20),
-            rgba(255, 255, 255, 0.06)
+            90deg,
+            var(--red) 0%,
+            var(--red) 50%,
+            var(--yellow) 50%,
+            var(--yellow) 100%
         );
-
-    border: 2px dashed
-        rgba(255, 212, 59, 0.8);
-
-    border-radius: 18px;
-
-    box-shadow:
-        6px 6px 0
-        rgba(70, 0, 0, 0.20);
-
 }
 
 
-.legacy-box strong {
-
-    display: block;
-
-    color: #ffd43b;
-
-    font-size: 1rem;
-
-    margin-bottom: 0.4rem;
-
+.center-line {
+    margin:
+        25px auto;
 }
 
 
-.legacy-box p {
+/* =========================================================
+   EMOJIS DE PÁGINA
+========================================================= */
 
-    margin: 0;
+.page-emojis {
+    margin-top: 25px;
 
-    color: #fff7df;
+    font-size: 1.65rem;
 
-    font-size: 0.92rem;
+    letter-spacing: 9px;
 
-    line-height: 1.55;
-
+    animation:
+        emojiFloat 3s ease-in-out infinite;
 }
 
 
-/* ==========================================
-   TIPOS ESPECIALES
-========================================== */
+@keyframes emojiFloat {
 
-.monarchy-page .biography-image img {
-
-    border-color: #ffd43b;
-
-}
-
-
-.institution-page .biography-image img {
-
-    max-width: min(100%, 320px);
-
-    max-height: 300px;
-
-    object-fit: contain;
-
-}
-
-
-.symbol-page .biography-image img {
-
-    max-width: min(100%, 330px);
-
-    max-height: 280px;
-
-    object-fit: contain;
-
-    background:
-        rgba(255, 255, 255, 0.08);
-
-}
-
-
-.history-page .biography-image img {
-
-    max-width: min(100%, 340px);
-
-    max-height: 280px;
-
-    object-fit: contain;
-
-    background:
-        rgba(255, 255, 255, 0.08);
-
-}
-
-
-/* ==========================================
-   ANIMACIÓN SUAVE
-========================================== */
-
-@keyframes softFloat {
-
-    0% {
+    0%,
+    100% {
         transform: translateY(0);
     }
 
@@ -2668,1465 +900,1524 @@ a {
         transform: translateY(-7px);
     }
 
-    100% {
-        transform: translateY(0);
-    }
-
 }
 
 
-/* ==========================================
-   CONCLUSIÓN Y FUENTES
-========================================== */
+/* =========================================================
+   IMÁGENES
+========================================================= */
 
-.sources-note {
-
-    margin-top: 20px;
-
-    padding: 15px;
-
-    border-left: 5px solid var(--yellow);
-
-    background:
-        rgba(255, 196, 0, 0.12);
-
-    border-radius: 8px;
-
-}
-
-
-.sources-note strong {
-
-    color: var(--red);
-
-    font-size: 0.75rem;
-
-}
-
-
-/* ==========================================
-   PÁGINA FINAL
-========================================== */
-
-.thank-you-page {
-
-    background:
-
-        radial-gradient(
-            circle,
-            rgba(255, 196, 0, 0.3),
-            transparent 55%
-        ),
-
-        linear-gradient(
-            135deg,
-            #fff6dc,
-            #fffdf8
-        );
-
-}
-
-
-.thank-you-content {
-
+.page-image,
+.biography-image {
     width: 100%;
 
-    display: flex;
+    height: 390px;
 
-    flex-direction: column;
+    position: relative;
 
-    align-items: center;
+    overflow: hidden;
 
-    justify-content: center;
+    border-radius: 18px;
 
-    text-align: center;
+    background: #ddd;
 
+    box-shadow:
+        15px 18px 0 rgba(198, 11, 30, 0.13),
+        25px 30px 45px rgba(60, 30, 10, 0.2);
 }
 
 
-.thank-you-icons {
-
-    font-size: 1.6rem;
-
-    letter-spacing: 7px;
-
-    margin-bottom: 20px;
-
-}
-
-
-.thank-you-content h2 {
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: clamp(3.8rem, 7vw, 6.8rem);
-
-    line-height: 0.9;
-
-    color: var(--red);
-
-    margin: 10px 0 20px;
-
-}
-
-
-.center-line {
-
-    margin: 10px auto 25px;
-
-}
-
-
-.thank-you-text {
-
-    max-width: 600px;
-
-    color: #553d3d;
-
-    line-height: 1.8;
-
-    margin-bottom: 25px;
-
-}
-
-
-.final-image {
-
-    width: min(100%, 500px);
-
-    display: flex;
-
-    justify-content: center;
-
-}
-
-
-.final-image img {
-
-    display: block;
-
-    width: 100%;
-
-    height: auto;
-
-    max-height: 220px;
-
-    object-fit: contain;
-
-}
-
-
-.final-emojis {
-
-    margin-top: 20px;
-
-    font-size: 1.4rem;
-
-    letter-spacing: 5px;
-
-}
-
-
-/* ==========================================
-   NÚMERO DE PÁGINA
-========================================== */
-
-.page-number {
+.image-frame::before {
+    content: "";
 
     position: absolute;
 
-    right: 30px;
-    bottom: 20px;
+    inset: 10px;
 
-    color: var(--red);
+    border:
+        2px solid rgba(255, 255, 255, 0.7);
 
-    font-weight: 800;
+    border-radius: 12px;
 
-    font-size: 0.7rem;
+    z-index: 2;
 
-    letter-spacing: 3px;
-
-}
-
-
-/* ==========================================
-   NÚMEROS EN PÁGINAS OSCURAS
-========================================== */
-
-.biography-page .page-number,
-.governors-intro-page .page-number {
-
-    color: #ffd43b;
-
-}
-/* ==========================================
-   🇪🇸 CSS DEFINITIVO — PARTE 4
-   CONTROLES + RESPONSIVE + CORRECCIÓN FINAL
-========================================== */
-
-
-/* ==========================================
-   CONTROLES DE NAVEGACIÓN
-========================================== */
-
-.controls {
-
-    width: 100%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 18px;
-
-    margin-top: 35px;
-
-}
-
-
-.navigation-button {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 12px;
-
-    min-height: 52px;
-
-    padding: 15px 28px;
-
-    border: 2px solid var(--yellow);
-
-    border-radius: 50px;
-
-    font-family: "Montserrat", sans-serif;
-
-    font-weight: 700;
-
-    cursor: pointer;
-
-    transition:
-
-        transform 0.3s ease,
-
-        background 0.3s ease,
-
-        color 0.3s ease,
-
-        box-shadow 0.3s ease;
-
-}
-
-
-.previous-button {
-
-    background: white;
-
-    color: var(--red);
-
-}
-
-
-.next-button {
-
-    background: var(--yellow);
-
-    color: var(--red);
-
-}
-
-
-.navigation-button:hover:not(:disabled) {
-
-    transform:
-
-        translateY(-5px)
-
-        scale(1.04);
-
-    box-shadow:
-
-        0 12px 25px
-
-        rgba(0, 0, 0, 0.3);
-
-}
-
-
-.previous-button:hover:not(:disabled) {
-
-    background: var(--red);
-
-    color: white;
-
-}
-
-
-.next-button:hover:not(:disabled) {
-
-    background: var(--red);
-
-    color: white;
-
-}
-
-
-.navigation-button:disabled {
-
-    opacity: 0.4;
-
-    cursor: not-allowed;
-
-    transform: none;
-
-    box-shadow: none;
-
-}
-
-
-.navigation-hint {
-
-    margin-top: 18px;
-
-    color: white;
-
-    font-size: 0.65rem;
-
-    letter-spacing: 1px;
-
-    text-align: center;
-
-}
-
-
-/* ==========================================
-   CORRECCIÓN GENERAL DE ALTURAS
-========================================== */
-
-/*
-   Estas reglas son importantes para evitar
-   que elementos internos obliguen a las páginas
-   a tener alturas enormes.
-*/
-
-.book-page * {
-
-    max-width: 100%;
-
-}
-
-
-.book-page.active {
-
-    height: auto !important;
-
-    min-height: 0 !important;
-
-}
-
-
-/*
-   Evita que grids o flex containers
-   mantengan alturas heredadas gigantes.
-*/
-
-.page-content,
-.biography-layout,
-.governors-intro-content,
-.cover-content,
-.thank-you-content {
-
-    min-height: 0 !important;
-
-    height: auto !important;
-
-}
-
-
-/* ==========================================
-   EVITAR ESPACIOS VACÍOS EN IMÁGENES
-========================================== */
-
-.page-image,
-.biography-image,
-.final-image,
-.cover-image-container {
-
-    min-height: 0;
-
-    height: auto;
-
+    pointer-events: none;
 }
 
 
 .page-image img,
-.biography-image img,
-.final-image img,
+.biography-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.6s ease;
+}
+
+
+.page-image:hover img,
+.biography-image:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================================
+   ESQUINA CON EMOJI
+========================================================= */
+
+.corner-emoji {
+    position: absolute;
+
+    top: 25px;
+    right: 35px;
+
+    font-size: 2rem;
+
+    z-index: 5;
+
+    animation:
+        cornerFloat 3s ease-in-out infinite;
+}
+
+
+@keyframes cornerFloat {
+
+    0%,
+    100% {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform:
+            translateY(-8px)
+            rotate(7deg);
+    }
+
+}
+
+
+/* =========================================================
+   NÚMERO DE PÁGINA
+========================================================= */
+
+.page-number {
+    position: absolute;
+
+    right: 45px;
+    bottom: 25px;
+
+    font-family:
+        "Bebas Neue",
+        sans-serif;
+
+    font-size: 1.3rem;
+
+    letter-spacing: 3px;
+
+    color:
+        rgba(198, 11, 30, 0.6);
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   PORTADA
+========================================================= */
+
+.cover-page {
+    padding: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffaf0,
+            #fff2cf
+        );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.spanish-stripe {
+    position: absolute;
+
+    width: 100%;
+    height: 18px;
+
+    left: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--red) 0%,
+            var(--red) 30%,
+            var(--yellow) 30%,
+            var(--yellow) 70%,
+            var(--red) 70%
+        );
+}
+
+
+.stripe-top {
+    top: 0;
+}
+
+
+.cover-content {
+    width: 100%;
+
+    max-width: 780px;
+
+    padding: 55px 30px;
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.cover-icons {
+    margin-bottom: 15px;
+
+    font-size: 1.55rem;
+
+    letter-spacing: 8px;
+}
+
+
+.cover-small-title {
+    margin-bottom: 10px;
+
+    font-size: 0.7rem;
+
+    font-weight: 800;
+
+    letter-spacing: 6px;
+
+    color: var(--red);
+}
+
+
+.cover-content h2 {
+    font-family:
+        "Bebas Neue",
+        sans-serif;
+
+    font-size:
+        clamp(
+            5rem,
+            12vw,
+            9rem
+        );
+
+    letter-spacing: 7px;
+
+    line-height: 0.9;
+
+    color: var(--dark);
+
+    text-shadow:
+        5px 5px 0
+        rgba(255, 196, 0, 0.45);
+}
+
+
+.flag-line {
+    width: 220px;
+
+    height: 13px;
+
+    margin:
+        20px auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1.4fr
+        1fr;
+
+    overflow: hidden;
+
+    border-radius: 30px;
+}
+
+
+.flag-line span:nth-child(1),
+.flag-line span:nth-child(3) {
+    background: var(--red);
+}
+
+
+.flag-line span:nth-child(2) {
+    background: var(--yellow);
+}
+
+
+.cover-subtitle {
+    max-width: 520px;
+
+    margin:
+        20px auto
+        28px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 1.45rem;
+
+    font-weight: 600;
+
+    line-height: 1.3;
+
+    color: var(--brown);
+}
+
+
+.cover-image-container {
+    width: min(480px, 90%);
+
+    height: 230px;
+
+    margin: auto;
+
+    overflow: hidden;
+
+    border:
+        8px solid white;
+
+    border-radius: 18px;
+
+    transform: rotate(-1deg);
+
+    box-shadow:
+        12px 15px 0
+        rgba(198, 11, 30, 0.12),
+        0 25px 40px rgba(50, 20, 5, 0.2);
+}
+
+
 .cover-image-container img {
+    width: 100%;
+    height: 100%;
 
-    vertical-align: middle;
+    object-fit: cover;
+}
+
+
+.cover-bottom-icons {
+    margin-top: 24px;
+
+    font-size: 1.55rem;
+
+    letter-spacing: 10px;
+}
+
+
+/* =========================================================
+   MAPA
+========================================================= */
+
+.map-content {
+    grid-template-columns:
+        0.9fr
+        1.1fr;
+}
+
+
+.map-container {
+    width: 100%;
+
+    padding: 15px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(198, 11, 30, 0.1),
+            rgba(255, 196, 0, 0.18)
+        );
+}
+
+
+.spain-map {
+    width: 100%;
+    height: auto;
+
+    display: block;
+}
+
+
+.map-background {
+    fill: #fff9eb;
+
+    stroke: #e8c77b;
+    stroke-width: 3;
+}
+
+
+.europe-shape {
+    fill: #e8d6bb;
+
+    stroke: #bda27c;
+    stroke-width: 3;
+}
+
+
+.spain-shape {
+    fill: var(--red);
+
+    stroke: var(--dark-red);
+    stroke-width: 5;
+}
+
+
+.flight-path {
+    fill: none;
+
+    stroke: var(--yellow);
+    stroke-width: 7;
+
+    stroke-linecap: round;
+
+    stroke-dasharray: 14 12;
+}
+
+
+.location-marker circle:first-child {
+    fill: var(--yellow);
+
+    stroke: var(--red);
+    stroke-width: 6;
+}
+
+
+.marker-center {
+    fill: var(--red);
+}
+
+
+.plane-icon {
+    font-size: 42px;
+}
+
+
+.map-label {
+    font-family:
+        "Bebas Neue",
+        sans-serif;
+
+    font-size: 30px;
+
+    letter-spacing: 4px;
+
+    fill: var(--dark);
+}
+
+
+/* =========================================================
+   INTRODUCCIÓN GOBERNANTES
+========================================================= */
+
+.governors-intro-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fffdf7,
+            #f9e7b3
+        );
+}
+
+
+.governors-intro-content {
+    max-width: 800px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.governors-intro-content h2 {
+    font-size:
+        clamp(
+            3.5rem,
+            6vw,
+            6rem
+        );
+}
+
+
+.governors-intro-emojis {
+    margin-top: 35px;
+
+    font-size: 1.8rem;
+
+    letter-spacing: 10px;
+}
+
+
+/* =========================================================
+   BIOGRAFÍAS
+========================================================= */
+
+.biography-layout {
+    min-height: 550px;
+
+    display: grid;
+
+    grid-template-columns:
+        0.9fr
+        1.1fr;
+
+    align-items: center;
+
+    gap: 60px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.reverse-biography .biography-image {
+    order: 2;
+}
+
+
+.reverse-biography .biography-content {
+    order: 1;
+}
+
+
+.biography-image {
+    height: 470px;
+}
+
+
+.biography-content {
+    max-width: 600px;
+}
+
+
+.biography-content h2 {
+    font-size:
+        clamp(
+            2.8rem,
+            4.6vw,
+            4.7rem
+        );
+}
+
+
+.biography-content h3 {
+    margin-top: 22px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 1.6rem;
+
+    color: var(--brown);
+}
+
+
+.biography-date {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding:
+        10px
+        15px;
+
+    border-left:
+        5px solid var(--red);
+
+    border-radius: 8px;
+
+    font-size: 0.8rem;
+
+    font-weight: 700;
+
+    background:
+        rgba(255, 196, 0, 0.2);
+
+    color: var(--dark);
+}
+
+
+/* =========================================================
+   CAJA LEGADO
+========================================================= */
+
+.legacy-box {
+    margin-top: 25px;
+
+    padding: 18px 20px;
+
+    border-radius: 14px;
+
+    border:
+        1px solid
+        rgba(198, 11, 30, 0.15);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(198, 11, 30, 0.06),
+            rgba(255, 196, 0, 0.14)
+        );
+}
+
+
+.legacy-box strong {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--red);
+}
+
+
+.legacy-box p {
+    margin-top: 0;
+
+    font-size: 0.82rem;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   PÁGINAS ESPECIALES
+========================================================= */
+
+.monarchy-page::after {
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 196, 0, 0.32),
+            transparent 70%
+        );
+}
+
+
+.institution-page::after {
+    background:
+        radial-gradient(
+            circle,
+            rgba(198, 11, 30, 0.15),
+            transparent 70%
+        );
+}
+
+
+.symbol-page {
+    background:
+        linear-gradient(
+            135deg,
+            #fffdf7,
+            #fff4cc
+        );
+}
+
+
+.history-page {
+    background:
+        linear-gradient(
+            135deg,
+            #fffdf7,
+            #f7ecd8
+        );
+}
+
+
+/* =========================================================
+   CONCLUSIÓN
+========================================================= */
+
+.conclusion-page {
+    background:
+        linear-gradient(
+            135deg,
+            #fffdf7,
+            #fff0c8
+        );
+}
+
+
+.sources-note {
+    margin-top: 25px;
+
+    padding: 18px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(198, 11, 30, 0.06);
+
+    border-left:
+        5px solid var(--yellow);
+}
+
+
+.sources-note strong {
+    color: var(--red);
+}
+
+
+.sources-note p {
+    margin-top: 8px;
+
+    font-size: 0.8rem;
+}
+
+
+/* =========================================================
+   AGRADECIMIENTO
+========================================================= */
+
+.thank-you-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(255, 196, 0, 0.28),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #fffdf7,
+            #fff0c8
+        );
+}
+
+
+.thank-you-content {
+    max-width: 850px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.thank-you-content h2 {
+    font-size:
+        clamp(
+            3rem,
+            6vw,
+            6rem
+        );
+}
+
+
+.thank-you-emojis {
+    margin-bottom: 20px;
+
+    font-size: 2rem;
+
+    letter-spacing: 10px;
+}
+
+
+.final-message {
+    margin: 35px auto;
+
+    padding:
+        20px
+        25px;
+
+    max-width: 550px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--red),
+            var(--dark-red)
+        );
+
+    color: white;
+
+    box-shadow:
+        0 15px 30px rgba(150, 10, 20, 0.25);
+}
+
+
+.final-message span {
+    font-size: 1.6rem;
+}
+
+
+.final-message strong {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 1.5rem;
+}
+
+
+.goodbye-emojis {
+    font-size: 1.6rem;
+
+    letter-spacing: 8px;
+
+    animation:
+        emojiFloat 3s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   CONTROLES
+========================================================= */
+
+.controls {
+    width: min(650px, 100%);
+
+    margin-top: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+.navigation-button {
+    min-width: 165px;
+
+    padding:
+        14px
+        24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    border: none;
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 0.85rem;
+    font-weight: 800;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        opacity 0.25s ease;
+}
+
+
+.navigation-button:hover:not(:disabled) {
+    transform: translateY(-4px);
+}
+
+
+.navigation-button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+
+.previous-button {
+    background:
+        rgba(255, 255, 255, 0.9);
+
+    color: var(--red);
+
+    box-shadow:
+        0 10px 20px rgba(50, 20, 5, 0.15);
+}
+
+
+.next-button {
+    background:
+        linear-gradient(
+            135deg,
+            var(--red),
+            var(--dark-red)
+        );
+
+    color: white;
+
+    box-shadow:
+        0 12px 25px rgba(130, 10, 20, 0.3);
+}
+
+
+.navigation-button:disabled {
+    opacity: 0.45;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   INDICACIÓN DE NAVEGACIÓN
+========================================================= */
+
+.navigation-hint {
+    margin-top: 18px;
+
+    padding:
+        10px
+        20px;
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    background:
+        rgba(255, 255, 255, 0.55);
+
+    color: white;
+
+    backdrop-filter: blur(8px);
+}
+
+
+/* =========================================================
+   ANIMACIONES DE ENTRADA
+========================================================= */
+
+.book-page.active .page-text,
+.book-page.active .biography-content {
+    animation:
+        slideText 0.65s ease both;
+}
+
+
+.book-page.active .page-image,
+.book-page.active .biography-image,
+.book-page.active .map-container {
+    animation:
+        slideImage 0.7s ease both;
+}
+
+
+@keyframes slideText {
+
+    from {
+        opacity: 0;
+        transform:
+            translateX(-25px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateX(0);
+    }
 
 }
 
 
-/* ==========================================
-   TABLET
-========================================== */
+@keyframes slideImage {
 
-@media (max-width: 900px) {
-
-
-    /* =========================
-       HEADER
-    ========================= */
-
-    .top-header {
-
-        padding: 18px 4%;
-
+    from {
+        opacity: 0;
+        transform:
+            translateX(25px)
+            rotate(2deg);
     }
 
-
-    .header-title h1 {
-
-        font-size: 2.6rem;
-
-        letter-spacing: 6px;
-
-    }
-
-
-    /* =========================
-       LIBRO
-    ========================= */
-
-    .book-page {
-
-        padding:
-
-            55px
-
-            40px
-
-            50px;
-
-    }
-
-
-    /* =========================
-       CONTENIDO GENERAL
-    ========================= */
-
-    .page-content {
-
-        gap: 35px;
-
-    }
-
-
-    /* =========================
-       BIOGRAFÍAS
-    ========================= */
-
-    .biography-layout,
-    .reverse-biography {
-
-        grid-template-columns: 1fr;
-
-        gap: 1.8rem;
-
-        padding:
-
-            2.5rem
-
-            2rem;
-
-    }
-
-
-    .reverse-biography .biography-image,
-    .reverse-biography .biography-content {
-
-        order: initial;
-
-    }
-
-
-    .biography-image img {
-
-        max-width: min(100%, 240px);
-
-        max-height: 310px;
-
-    }
-
-
-    .biography-content {
-
-        max-width: 100%;
-
-        text-align: center;
-
-    }
-
-
-    .biography-content .section-label {
-
-        margin-left: auto;
-
-        margin-right: auto;
-
-    }
-
-
-    .biography-content .red-yellow-line {
-
-        margin-left: auto;
-
-        margin-right: auto;
-
-    }
-
-
-    .biography-date {
-
-        margin-left: auto;
-
-        margin-right: auto;
-
-    }
-
-
-    .legacy-box {
-
-        text-align: left;
-
+    to {
+        opacity: 1;
+        transform:
+            translateX(0)
+            rotate(0);
     }
 
 }
 
 
-/* ==========================================
-   CELULAR
-========================================== */
+.book-page.active .reverse .page-text,
+.book-page.active .reverse-biography .biography-content {
+    animation:
+        slideTextReverse 0.65s ease both;
+}
 
-@media (max-width: 650px) {
 
+@keyframes slideTextReverse {
 
-    /* =========================
-       GENERAL
-    ========================= */
-
-    html,
-    body {
-
-        width: 100%;
-
-        max-width: 100%;
-
-        overflow-x: hidden;
-
+    from {
+        opacity: 0;
+        transform:
+            translateX(25px);
     }
 
+    to {
+        opacity: 1;
+        transform:
+            translateX(0);
+    }
 
-    /* =========================
-       HEADER
-    ========================= */
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.sidebar::-webkit-scrollbar {
+    width: 7px;
+}
+
+
+.sidebar::-webkit-scrollbar-track {
+    background:
+        rgba(0, 0, 0, 0.05);
+}
+
+
+.sidebar::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            var(--red),
+            var(--yellow)
+        );
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 950px) {
 
     .top-header {
-
-        padding: 15px;
-
-        gap: 8px;
-
-    }
-
-
-    .menu-button {
-
-        width: 43px;
-
-        height: 43px;
-
-        font-size: 1.1rem;
-
-    }
-
-
-    .header-title {
-
-        flex: 1;
-
-        min-width: 0;
-
-    }
-
-
-    .header-title span {
-
-        font-size: 0.45rem;
-
-        letter-spacing: 2px;
-
-    }
-
-
-    .header-title h1 {
-
-        font-size: 2rem;
-
-        letter-spacing: 4px;
-
-    }
-
-
-    .page-indicator {
-
-        min-width: 55px;
-
-        font-size: 0.6rem;
-
-        letter-spacing: 1px;
-
-    }
-
-
-    /* =========================
-       SIDEBAR
-    ========================= */
-
-    .sidebar {
-
-        width: 88%;
-
-        height: 100dvh;
-
         padding:
-
-            25px
-
-            18px;
-
+            12px
+            20px;
     }
 
-
-    .sidebar-header h2 {
-
-        font-size: 3rem;
-
-    }
-
-
-    /* =========================
-       ÁREA DEL LIBRO
-    ========================= */
 
     .book-area {
-
         padding:
-
-            15px
-
-            10px
-
-            40px;
-
-    }
-
-
-    .book-wrapper {
-
-        width: 100%;
-
-        max-width: 100%;
-
-    }
-
-
-    /*
-       MUY IMPORTANTE:
-
-       No usamos min-height gigante
-       en móvil.
-    */
-
-    .book {
-
-        min-height: 0 !important;
-
-        height: auto !important;
-
+            30px
+            18px;
     }
 
 
     .book-page {
-
-        width: 100%;
-
-        min-height: 0 !important;
-
-        height: auto !important;
+        min-height: 650px;
 
         padding:
-
             45px
-
-            25px
-
-            50px;
-
-        border-width: 3px;
-
-        border-left-width: 7px;
-
-        overflow: hidden;
-
+            40px
+            55px;
     }
 
-
-    .book-page.active {
-
-        position: relative;
-
-        min-height: 0 !important;
-
-        height: auto !important;
-
-    }
-
-
-    /* =========================
-       CONTENIDO GENERAL
-    ========================= */
 
     .page-content,
-    .page-content.reverse,
-    .map-content {
-
-        display: flex;
-
-        flex-direction: column;
-
-        align-items: stretch;
-
-        min-height: 0 !important;
-
-        height: auto !important;
-
-        gap: 30px;
-
+    .biography-layout {
+        gap: 35px;
     }
 
-
-    .page-content.reverse .page-text {
-
-        order: 1;
-
-    }
-
-
-    .page-content.reverse .page-image {
-
-        order: 2;
-
-    }
-
-
-    /* =========================
-       TEXTO
-    ========================= */
-
-    .page-text h2 {
-
-        font-size: 3.4rem;
-
-        line-height: 0.9;
-
-    }
-
-
-    .page-text p {
-
-        font-size: 0.78rem;
-
-        line-height: 1.75;
-
-    }
-
-
-    .section-label {
-
-        font-size: 0.56rem;
-
-        letter-spacing: 2px;
-
-    }
-
-
-    /* =========================
-       EMOJI ESQUINA
-    ========================= */
-
-    .corner-emoji {
-
-        font-size: 1.5rem;
-
-        top: 15px;
-
-        right: 18px;
-
-    }
-
-
-    /* =========================
-       IMÁGENES GENERALES
-    ========================= */
 
     .page-image {
-
-        width: 100%;
-
-        min-height: 0;
-
-    }
-
-
-    .image-frame {
-
-        width: min(100%, 100%);
-
-    }
-
-
-    .page-image img {
-
-        width: 100%;
-
-        max-width: 100%;
-
-        height: auto;
-
-        max-height: 350px;
-
-        object-fit: contain;
-
-    }
-
-
-    .image-frame::after {
-
-        bottom: -28px;
-
-        right: 8px;
-
-    }
-
-
-    /* =========================
-       PORTADA
-    ========================= */
-
-    .book-page.cover-page {
-
-        min-height: 0 !important;
-
-        height: auto !important;
-
-    }
-
-
-    .cover-content {
-
-        min-height: 0 !important;
-
-        height: auto !important;
-
-        padding:
-
-            20px
-
-            15px !important;
-
-    }
-
-
-    .cover-icons {
-
-        font-size: 1.5rem;
-
-        letter-spacing: 4px;
-
-        margin-bottom: 15px;
-
-    }
-
-
-    .cover-small-title {
-
-        font-size: 0.55rem;
-
-        letter-spacing: 4px;
-
-    }
-
-
-    .cover-content h2 {
-
-        font-size: clamp(4rem, 16vw, 6rem) !important;
-
-        letter-spacing: 5px;
-
-        text-shadow:
-
-            3px 3px 0
-
-            var(--yellow);
-
-    }
-
-
-    .cover-subtitle {
-
-        font-size: 1.2rem;
-
-    }
-
-
-    .cover-image-container {
-
-        width: 100%;
-
-        min-height: 0;
-
-    }
-
-
-    .cover-image-container img {
-
-        width: 100%;
-
-        max-height: 200px;
-
-        height: auto;
-
-        object-fit: contain;
-
-    }
-
-
-    .cover-bottom-icons {
-
-        font-size: 1.1rem;
-
-        letter-spacing: 2px;
-
-    }
-
-
-    /* =========================
-       EMOJIS GENERALES
-    ========================= */
-
-    .page-emojis {
-
-        font-size: 1.2rem;
-
-        letter-spacing: 4px;
-
-    }
-
-
-    /* =========================
-       INTRODUCCIÓN GOBERNANTES
-    ========================= */
-
-    .governors-intro-content {
-
-        min-height: 0 !important;
-
-        height: auto !important;
-
-        padding:
-
-            2rem
-
-            1.3rem;
-
-    }
-
-
-    .governors-intro-content h2 {
-
-        font-size: 2.3rem;
-
-    }
-
-
-    .governors-intro-content p {
-
-        font-size: 0.92rem;
-
-        line-height: 1.65;
-
-    }
-
-
-    .governors-intro-emojis {
-
-        font-size: 1.4rem;
-
-        word-spacing: 0.2rem;
-
-    }
-
-
-    /* =========================
-       BIOGRAFÍAS
-    ========================= */
-
-    .biography-layout,
-    .reverse-biography {
-
-        display: flex;
-
-        flex-direction: column;
-
-        min-height: 0 !important;
-
-        height: auto !important;
-
-        padding:
-
-            2rem
-
-            1.3rem;
-
-        gap: 1.3rem;
-
+        height: 340px;
     }
 
 
     .biography-image {
-
-        width: 100%;
-
-        min-height: 0;
-
-        height: auto;
-
-        flex: none;
-
+        height: 410px;
     }
 
 
-    /*
-       CORRECCIÓN PRINCIPAL
-       PARA LAS IMÁGENES DE PRESIDENTES
-    */
-
-    .biography-image img {
-
-        display: block;
-
-        width: auto;
-
-        max-width: min(100%, 200px);
-
-        height: auto;
-
-        max-height: 260px;
-
-        margin: 0 auto;
-
-        object-fit: contain;
-
-        border-width: 3px;
-
-        border-radius: 18px;
-
-    }
-
-
-    .institution-page .biography-image img {
-
-        max-width: min(100%, 240px);
-
-        max-height: 220px;
-
-    }
-
-
-    .symbol-page .biography-image img {
-
-        max-width: min(100%, 250px);
-
-        max-height: 210px;
-
-    }
-
-
-    .history-page .biography-image img {
-
-        max-width: min(100%, 260px);
-
-        max-height: 220px;
-
-    }
-
-
-    .biography-content {
-
-        width: 100%;
-
-        min-height: 0;
-
-        height: auto;
-
-    }
-
-
+    .page-text h2,
     .biography-content h2 {
-
-        font-size: 2rem;
-
-    }
-
-
-    .biography-content h3 {
-
-        font-size: 1.2rem;
-
-    }
-
-
-    .biography-content p {
-
-        font-size: 0.9rem;
-
-        line-height: 1.6;
-
-    }
-
-
-    .biography-content .section-label {
-
-        font-size: 0.62rem;
-
-        padding:
-
-            0.45rem
-
-            0.7rem;
-
-    }
-
-
-    .biography-date {
-
-        font-size: 0.82rem;
-
-        padding:
-
-            0.6rem
-
-            0.8rem;
-
-    }
-
-
-    .legacy-box {
-
-        padding: 1rem;
-
-        border-radius: 15px;
-
-    }
-
-
-    .biography-page::before,
-    .biography-page::after {
-
-        font-size: 1.4rem;
-
-        letter-spacing: 2rem;
-
-    }
-
-
-    /* =========================
-       PÁGINA FINAL
-    ========================= */
-
-    .thank-you-content {
-
-        min-height: 0 !important;
-
-        height: auto !important;
-
-        padding: 20px 0;
-
-    }
-
-
-    .thank-you-content h2 {
-
-        font-size: 3.8rem;
-
-    }
-
-
-    .final-image {
-
-        width: 100%;
-
-        min-height: 0;
-
-    }
-
-
-    .final-image img {
-
-        width: 100%;
-
-        max-height: 200px;
-
-        height: auto;
-
-        object-fit: contain;
-
-    }
-
-
-    .final-emojis {
-
-        font-size: 1rem;
-
-        letter-spacing: 2px;
-
-    }
-
-
-    /* =========================
-       NÚMERO DE PÁGINA
-    ========================= */
-
-    .page-number {
-
-        right: 18px;
-
-        bottom: 15px;
-
-        font-size: 0.6rem;
-
-    }
-
-
-    /* =========================
-       CONTROLES
-    ========================= */
-
-    .controls {
-
-        width: 100%;
-
-        justify-content: center;
-
-        gap: 10px;
-
-        margin-top: 25px;
-
-    }
-
-
-    .navigation-button {
-
-        min-height: 48px;
-
-        padding:
-
-            13px
-
-            20px;
-
-        font-size: 0.7rem;
-
-    }
-
-
-    .navigation-hint {
-
-        padding: 0 15px;
-
-        font-size: 0.58rem;
-
+        font-size:
+            clamp(
+                2.7rem,
+                6vw,
+                4.3rem
+            );
     }
 
 }
 
 
-/* ==========================================
-   CELULARES PEQUEÑOS
-========================================== */
+/* =========================================================
+   RESPONSIVE — CELULAR
+========================================================= */
 
-@media (max-width: 380px) {
+@media (max-width: 700px) {
 
+
+    /* HEADER */
 
     .top-header {
+        min-height: 70px;
 
-        padding: 12px 10px;
-
+        padding:
+            10px
+            14px;
     }
 
 
-    .header-title h1 {
+    .menu-button {
+        width: 43px;
+        height: 43px;
 
-        font-size: 1.7rem;
-
-        letter-spacing: 3px;
-
+        font-size: 1.3rem;
     }
 
 
     .header-title span {
+        font-size: 0.48rem;
 
-        font-size: 0.38rem;
+        letter-spacing: 2px;
+    }
 
+
+    .header-title h1 {
+        font-size: 1.55rem;
+
+        letter-spacing: 1px;
     }
 
 
     .page-indicator {
+        min-width: 62px;
 
-        min-width: 45px;
+        padding:
+            8px
+            9px;
 
-        font-size: 0.52rem;
+        font-size: 0.78rem;
+    }
 
+
+    /* LIBRO */
+
+    .book-area {
+        min-height: auto;
+
+        padding:
+            20px
+            10px
+            25px;
+    }
+
+
+    .book {
+        min-height: auto;
     }
 
 
     .book-page {
+        min-height: auto;
 
         padding:
+            50px
+            24px
+            58px;
 
-            40px
-
-            18px
-
-            45px;
-
+        border-radius: 14px;
     }
 
 
-    .page-text h2 {
+    .book-page.active {
+        display: block;
+    }
 
-        font-size: 2.9rem;
 
+    .page-content,
+    .page-content.reverse,
+    .map-content,
+    .biography-layout {
+        min-height: auto;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 28px;
+    }
+
+
+    /* ORDEN EN MÓVIL */
+
+    .page-content.reverse .page-image {
+        order: 1;
+    }
+
+
+    .page-content.reverse .page-text {
+        order: 2;
+    }
+
+
+    .reverse-biography .biography-image {
+        order: 1;
+    }
+
+
+    .reverse-biography .biography-content {
+        order: 2;
+    }
+
+
+    /* TEXTO */
+
+    .section-label {
+        margin-bottom: 13px;
+
+        padding:
+            7px
+            11px;
+
+        font-size: 0.55rem;
+
+        letter-spacing: 1px;
+    }
+
+
+    .page-text h2,
+    .biography-content h2,
+    .governors-intro-content h2,
+    .thank-you-content h2 {
+        font-size:
+            clamp(
+                2.8rem,
+                13vw,
+                4rem
+            );
+    }
+
+
+    .page-text p,
+    .biography-content p,
+    .governors-intro-content p,
+    .thank-you-content p {
+        font-size: 0.85rem;
+
+        line-height: 1.75;
+    }
+
+
+    /* IMÁGENES */
+
+    .page-image,
+    .biography-image {
+        width: 100%;
+
+        height: 280px;
+    }
+
+
+    .biography-image {
+        height: 340px;
+    }
+
+
+    /* PORTADA */
+
+    .cover-content {
+        padding:
+            60px
+            15px
+            40px;
+    }
+
+
+    .cover-icons {
+        font-size: 1.15rem;
+
+        letter-spacing: 4px;
+    }
+
+
+    .cover-small-title {
+        font-size: 0.55rem;
+
+        letter-spacing: 3px;
     }
 
 
     .cover-content h2 {
+        font-size:
+            clamp(
+                4.5rem,
+                23vw,
+                6.5rem
+            );
 
-        font-size: 4.3rem !important;
-
+        letter-spacing: 3px;
     }
 
 
-    .biography-image img {
-
-        max-width: min(100%, 170px);
-
-        max-height: 230px;
-
+    .cover-subtitle {
+        font-size: 1.15rem;
     }
 
 
-    .navigation-button span {
+    .cover-image-container {
+        width: 92%;
 
-        display: none;
+        height: 190px;
+    }
 
+
+    .cover-bottom-icons {
+        font-size: 1.2rem;
+
+        letter-spacing: 5px;
+    }
+
+
+    /* MAPA */
+
+    .map-container {
+        padding: 5px;
+    }
+
+
+    /* BIOGRAFÍAS */
+
+    .biography-date {
+        font-size: 0.7rem;
+    }
+
+
+    .biography-content h3 {
+        font-size: 1.35rem;
+    }
+
+
+    .legacy-box {
+        padding:
+            15px;
+    }
+
+
+    /* INTRO GOBERNANTES */
+
+    .governors-intro-page,
+    .thank-you-page {
+        min-height: 620px;
+    }
+
+
+    .governors-intro-emojis {
+        font-size: 1.35rem;
+
+        letter-spacing: 5px;
+    }
+
+
+    /* AGRADECIMIENTO */
+
+    .thank-you-emojis {
+        font-size: 1.45rem;
+
+        letter-spacing: 5px;
+    }
+
+
+    .final-message {
+        padding:
+            16px
+            12px;
+
+        gap: 10px;
+    }
+
+
+    .final-message strong {
+        font-size: 1.15rem;
+    }
+
+
+    .goodbye-emojis {
+        font-size: 1.25rem;
+
+        letter-spacing: 3px;
+    }
+
+
+    /* CONTROLES */
+
+    .controls {
+        margin-top: 20px;
+
+        gap: 12px;
     }
 
 
     .navigation-button {
+        min-width: 0;
 
-        width: 58px;
+        flex: 1;
 
-        height: 50px;
+        padding:
+            13px
+            12px;
 
-        min-height: 50px;
+        font-size: 0.72rem;
+    }
 
-        justify-content: center;
 
-        font-size: 1.2rem;
+    .navigation-hint {
+        max-width: 95%;
 
-        padding: 0;
+        font-size: 0.58rem;
 
+        line-height: 1.5;
+    }
+
+
+    /* DETALLES */
+
+    .corner-emoji {
+        top: 16px;
+        right: 18px;
+
+        font-size: 1.5rem;
+    }
+
+
+    .page-number {
+        right: 22px;
+        bottom: 18px;
+
+        font-size: 1rem;
+    }
+
+
+    .page-emojis {
+        font-size: 1.3rem;
+
+        letter-spacing: 5px;
     }
 
 }
 
 
-/* ==========================================
-   CORRECCIÓN FINAL ABSOLUTA
-   CONTRA ESPACIOS VACÍOS GIGANTES
-========================================== */
+/* =========================================================
+   CELULARES PEQUEÑOS
+========================================================= */
 
-/*
-   Esta sección tiene prioridad sobre las reglas
-   anteriores y evita que cualquier página vuelva
-   a heredar una altura fija.
-*/
+@media (max-width: 390px) {
 
-.book,
-.book-page,
-.book-page.active {
-
-    min-height: 0 !important;
-
-}
+    .header-title h1 {
+        font-size: 1.35rem;
+    }
 
 
-.book-page.active {
-
-    height: auto !important;
-
-}
+    .header-title span {
+        display: none;
+    }
 
 
-/*
-   Todos los contenedores principales de contenido
-   deben medir solamente lo que mide su contenido.
-*/
-
-.book-page.active .page-content,
-.book-page.active .biography-layout,
-.book-page.active .cover-content,
-.book-page.active .governors-intro-content,
-.book-page.active .thank-you-content {
-
-    min-height: 0 !important;
-
-    height: auto !important;
-
-}
+    .page-indicator {
+        font-size: 0.7rem;
+    }
 
 
-/*
-   Las imágenes nunca pueden crear una altura
-   mayor que su tamaño máximo establecido.
-*/
+    .book-page {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
 
-.book-page.active img {
 
-    height: auto;
+    .page-image {
+        height: 245px;
+    }
+
+
+    .biography-image {
+        height: 300px;
+    }
+
+
+    .navigation-button span {
+        display: none;
+    }
+
+
+    .navigation-button {
+        font-size: 1.25rem;
+    }
 
 }
 
 
-/* ==========================================
-   FIN DEL CSS DEFINITIVO
-========================================== */
+/* =========================================================
+   ACCESIBILIDAD
+========================================================= */
+
+button:focus-visible {
+    outline:
+        3px solid var(--yellow);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   REDUCIR MOVIMIENTO
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+    }
+
+}
