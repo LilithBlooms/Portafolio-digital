@@ -2660,3 +2660,37 @@ body {
     }
 
 }
+/* ==========================================
+   CORRECCIÓN DEFINITIVA DEL ESPACIO VACÍO
+   EN LA PORTADA
+========================================== */
+
+@media (max-width: 650px) {
+
+    /* El libro no tendrá una altura gigante obligatoria */
+    .book {
+        min-height: 0 !important;
+    }
+
+    /* Las páginas normales mantienen espacio para funcionar */
+    .book-page {
+        min-height: 0 !important;
+    }
+
+    /* PORTADA: eliminar el espacio vacío */
+    .book-page.cover-page {
+        min-height: 0 !important;
+        height: auto !important;
+    }
+
+    .cover-content {
+        min-height: 0 !important;
+        height: auto !important;
+        padding-bottom: 35px !important;
+    }
+
+    .cover-bottom-icons {
+        margin-bottom: 10px !important;
+    }
+
+}
