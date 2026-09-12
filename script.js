@@ -1,348 +1,298 @@
-/* ==========================================
-   PORTAFOLIO DIGITAL DE ESPAÑA
-   JAVASCRIPT COMPLETO
-========================================== */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    /* ==========================================
-       ELEMENTOS PRINCIPALES
-    ========================================== */
-
-    const pages = Array.from(
-        document.querySelectorAll(".book-page")
-    );
-
-    const thumbnails = Array.from(
-        document.querySelectorAll(".thumbnail")
-    );
-
-    const previousButton = document.getElementById("prevPage");
-    const nextButton = document.getElementById("nextPage");
-
-    const currentPageElement =
-        document.getElementById("currentPage");
-
-    const totalPagesElement =
-        document.getElementById("totalPages");
-
-    const menuButton =
-        document.querySelector(".menu-button");
-
-    const closeMenuButton =
-        document.getElementById("closeMenu");
-
-    const sidebar =
-        document.querySelector(".sidebar");
-
-    const overlay =
-        document.querySelector(".overlay");
-
-    const bookWrapper =
-        document.querySelector(".book-wrapper");
-
-    const book =
-        document.querySelector(".book");
+/* =========================================================
+   ESPAÑA 🇪🇸 — PORTAFOLIO DIGITAL
+   SCRIPT.JS COMPLETO
+========================================================= */
 
 
-    /* ==========================================
-       CONFIGURACIÓN INICIAL
-    ========================================== */
+/* =========================================================
+   ELEMENTOS PRINCIPALES
+========================================================= */
 
-    let currentPage = 0;
+const pages = Array.from(
+    document.querySelectorAll(".book-page")
+);
 
-    const totalPages = pages.length;
+const thumbnails = Array.from(
+    document.querySelectorAll(".thumbnail")
+);
 
-    if (totalPagesElement) {
-        totalPagesElement.textContent = totalPages;
+const previousButton =
+    document.getElementById("prevPage");
+
+const nextButton =
+    document.getElementById("nextPage");
+
+const currentPageElement =
+    document.getElementById("currentPage");
+
+const totalPagesElement =
+    document.getElementById("totalPages");
+
+const menuButton =
+    document.getElementById("menuButton");
+
+const closeMenuButton =
+    document.getElementById("closeMenu");
+
+const sidebar =
+    document.getElementById("sidebar");
+
+const overlay =
+    document.getElementById("overlay");
+
+
+/* =========================================================
+   CONFIGURACIÓN INICIAL
+========================================================= */
+
+let currentPage = 0;
+
+const totalPages = pages.length;
+
+
+/* =========================================================
+   MOSTRAR TOTAL DE PÁGINAS
+========================================================= */
+
+if (totalPagesElement) {
+    totalPagesElement.textContent = totalPages;
+}
+
+
+/* =========================================================
+   MOSTRAR PÁGINA
+========================================================= */
+
+function showPage(index) {
+
+    /* Evitar páginas inexistentes */
+
+    if (index < 0) {
+        index = 0;
+    }
+
+    if (index >= totalPages) {
+        index = totalPages - 1;
     }
 
 
-    /* ==========================================
-       MOSTRAR UNA PÁGINA
-    ========================================== */
+    /* Guardar página actual */
 
-    function showPage(index, direction = "next") {
-
-        /* Evitar índices inválidos */
-
-        if (index < 0 || index >= totalPages) {
-            return;
-        }
+    currentPage = index;
 
 
-        /* Página anterior */
+    /* Ocultar todas las páginas */
 
-        const oldPage = pages[currentPage];
+    pages.forEach((page, pageIndex) => {
 
-        /* Nueva página */
-
-        const newPage = pages[index];
+        page.classList.remove("active");
 
 
-        /* Si es la misma página, no hacer nada */
+        /* Resetear animaciones */
 
-        if (oldPage === newPage) {
-            return;
-        }
-
-
-        /* ==========================================
-           ANIMACIÓN DE SALIDA
-        ========================================== */
-
-        if (oldPage) {
-
-            oldPage.classList.remove(
-                "exit-left",
-                "exit-right"
+        const animatedElements =
+            page.querySelectorAll(
+                ".page-text, .page-image, .biography-content, .biography-image, .map-container"
             );
 
-            if (direction === "next") {
+        animatedElements.forEach(element => {
 
-                oldPage.classList.add("exit-left");
-
-            } else {
-
-                oldPage.classList.add("exit-right");
-
-            }
-
-            setTimeout(() => {
-
-                oldPage.classList.remove(
-                    "active",
-                    "exit-left",
-                    "exit-right"
-                );
-
-            }, 700);
-
-        }
-
-
-        /* ==========================================
-           PREPARAR NUEVA PÁGINA
-        ========================================== */
-
-        pages.forEach((page, pageIndex) => {
-
-            if (pageIndex !== index &&
-                pageIndex !== currentPage) {
-
-                page.classList.remove(
-                    "active",
-                    "exit-left",
-                    "exit-right"
-                );
-
-            }
+            element.style.animation = "none";
 
         });
 
-
-        /* Activar nueva página */
-
-        newPage.classList.remove(
-            "exit-left",
-            "exit-right"
-        );
-
-        newPage.classList.add("active");
+    });
 
 
-        /* Actualizar número */
+    /* Mostrar página seleccionada */
 
-        currentPage = index;
+    const activePage = pages[currentPage];
 
-        updateInterface();
+    if (activePage) {
+
+        activePage.classList.add("active");
 
 
-        /* Pequeño efecto de profundidad */
+        /* Reiniciar animaciones */
 
-        if (bookWrapper) {
+        setTimeout(() => {
 
-            bookWrapper.style.transform =
-                "scale(0.985)";
+            const animatedElements =
+                activePage.querySelectorAll(
+                    ".page-text, .page-image, .biography-content, .biography-image, .map-container"
+                );
 
-            setTimeout(() => {
+            animatedElements.forEach(element => {
 
-                bookWrapper.style.transform =
-                    "scale(1)";
+                element.style.animation = "";
 
-            }, 180);
+            });
 
-        }
+        }, 50);
 
     }
 
 
-    /* ==========================================
-       ACTUALIZAR INTERFAZ
-    ========================================== */
+    /* =====================================================
+       ACTUALIZAR NÚMERO DE PÁGINA
+    ===================================================== */
 
-    function updateInterface() {
+    if (currentPageElement) {
 
-        /* Número actual */
-
-        if (currentPageElement) {
-
-            currentPageElement.textContent =
-                currentPage + 1;
-
-        }
-
-
-        /* Botón anterior */
-
-        if (previousButton) {
-
-            previousButton.disabled =
-                currentPage === 0;
-
-        }
-
-
-        /* Botón siguiente */
-
-        if (nextButton) {
-
-            nextButton.disabled =
-                currentPage === totalPages - 1;
-
-        }
-
-
-        /* ==========================================
-           ACTUALIZAR ÍNDICE
-        ========================================== */
-
-        thumbnails.forEach((thumbnail, index) => {
-
-            thumbnail.classList.remove("active");
-
-            const targetPage =
-                Number(thumbnail.dataset.page);
-
-            if (!Number.isNaN(targetPage)) {
-
-                if (targetPage === currentPage) {
-
-                    thumbnail.classList.add("active");
-
-                }
-
-            } else if (index === currentPage) {
-
-                thumbnail.classList.add("active");
-
-            }
-
-        });
+        currentPageElement.textContent =
+            currentPage + 1;
 
     }
 
 
-    /* ==========================================
-       PÁGINA SIGUIENTE
-    ========================================== */
-
-    function nextPage() {
-
-        if (currentPage < totalPages - 1) {
-
-            showPage(
-                currentPage + 1,
-                "next"
-            );
-
-        }
-
-    }
-
-
-    /* ==========================================
-       PÁGINA ANTERIOR
-    ========================================== */
-
-    function previousPage() {
-
-        if (currentPage > 0) {
-
-            showPage(
-                currentPage - 1,
-                "previous"
-            );
-
-        }
-
-    }
-
-
-    /* ==========================================
-       BOTONES DE NAVEGACIÓN
-    ========================================== */
-
-    if (nextButton) {
-
-        nextButton.addEventListener(
-            "click",
-            nextPage
-        );
-
-    }
-
+    /* =====================================================
+       ACTUALIZAR BOTONES
+    ===================================================== */
 
     if (previousButton) {
 
-        previousButton.addEventListener(
-            "click",
-            previousPage
-        );
+        previousButton.disabled =
+            currentPage === 0;
 
     }
 
 
-    /* ==========================================
-       NAVEGACIÓN CON TECLADO
-    ========================================== */
+    if (nextButton) {
 
-    document.addEventListener("keydown", (event) => {
+        nextButton.disabled =
+            currentPage === totalPages - 1;
 
-        /* No interferir con inputs */
+    }
 
-        const tagName =
-            document.activeElement.tagName;
 
-        if (
-            tagName === "INPUT" ||
-            tagName === "TEXTAREA" ||
-            tagName === "SELECT"
-        ) {
+    /* =====================================================
+       ACTUALIZAR MINIATURAS
+    ===================================================== */
+
+    thumbnails.forEach((thumbnail, thumbnailIndex) => {
+
+        thumbnail.classList.remove("active");
+
+
+        /*
+           Si las miniaturas están en el mismo orden
+           que las páginas, usamos su posición.
+        */
+
+        if (thumbnailIndex === currentPage) {
+
+            thumbnail.classList.add("active");
+
+        }
+
+    });
+
+
+    /* =====================================================
+       SCROLL HACIA ARRIBA
+    ===================================================== */
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+/* =========================================================
+   SIGUIENTE PÁGINA
+========================================================= */
+
+function nextPage() {
+
+    if (currentPage < totalPages - 1) {
+
+        showPage(currentPage + 1);
+
+    }
+
+}
+
+
+/* =========================================================
+   PÁGINA ANTERIOR
+========================================================= */
+
+function previousPage() {
+
+    if (currentPage > 0) {
+
+        showPage(currentPage - 1);
+
+    }
+
+}
+
+
+/* =========================================================
+   BOTONES DE NAVEGACIÓN
+========================================================= */
+
+if (nextButton) {
+
+    nextButton.addEventListener(
+        "click",
+        nextPage
+    );
+
+}
+
+
+if (previousButton) {
+
+    previousButton.addEventListener(
+        "click",
+        previousPage
+    );
+
+}
+
+
+/* =========================================================
+   NAVEGACIÓN CON TECLADO
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function (event) {
+
+        /* No cambiar página mientras escribes */
+
+        const activeElement =
+            document.activeElement;
+
+        const typingElement =
+            activeElement &&
+            (
+                activeElement.tagName === "INPUT" ||
+                activeElement.tagName === "TEXTAREA" ||
+                activeElement.isContentEditable
+            );
+
+
+        if (typingElement) {
             return;
         }
 
 
-        /* Flecha derecha */
+        if (event.key === "ArrowRight") {
 
-        if (
-            event.key === "ArrowRight" ||
-            event.key === "d" ||
-            event.key === "D"
-        ) {
+            event.preventDefault();
 
             nextPage();
 
         }
 
 
-        /* Flecha izquierda */
+        if (event.key === "ArrowLeft") {
 
-        if (
-            event.key === "ArrowLeft" ||
-            event.key === "a" ||
-            event.key === "A"
-        ) {
+            event.preventDefault();
 
             previousPage();
 
@@ -357,452 +307,391 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
 
-    });
-
-
-    /* ==========================================
-       SIDEBAR / MENÚ
-    ========================================== */
-
-    function openSidebar() {
-
-        if (!sidebar || !overlay) {
-            return;
-        }
-
-        sidebar.classList.add("open");
-
-        overlay.classList.add("active");
-
-        document.body.style.overflow = "hidden";
-
     }
+);
 
 
-    function closeSidebar() {
+/* =========================================================
+   MINIATURAS DEL MENÚ
+========================================================= */
 
-        if (!sidebar || !overlay) {
-            return;
-        }
+thumbnails.forEach(
+    function (thumbnail, index) {
 
-        sidebar.classList.remove("open");
-
-        overlay.classList.remove("active");
-
-        document.body.style.overflow = "";
-
-    }
-
-
-    if (menuButton) {
-
-        menuButton.addEventListener(
+        thumbnail.addEventListener(
             "click",
-            openSidebar
-        );
+            function () {
 
-    }
+                showPage(index);
 
+                closeSidebar();
 
-    if (closeMenuButton) {
-
-        closeMenuButton.addEventListener(
-            "click",
-            closeSidebar
-        );
-
-    }
-
-
-    if (overlay) {
-
-        overlay.addEventListener(
-            "click",
-            closeSidebar
-        );
-
-    }
-
-
-    /* ==========================================
-       NAVEGACIÓN DESDE EL ÍNDICE
-    ========================================== */
-
-    thumbnails.forEach((thumbnail, index) => {
-
-        thumbnail.addEventListener("click", () => {
-
-            let targetPage =
-                Number(thumbnail.dataset.page);
-
-
-            /* Si no existe data-page */
-
-            if (Number.isNaN(targetPage)) {
-
-                targetPage = index;
-
-            }
-
-
-            /* Dirección automática */
-
-            const direction =
-                targetPage > currentPage
-                    ? "next"
-                    : "previous";
-
-
-            showPage(
-                targetPage,
-                direction
-            );
-
-
-            closeSidebar();
-
-
-            /* Volver arriba */
-
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-
-        });
-
-    });
-
-
-    /* ==========================================
-       DESLIZAMIENTO TÁCTIL
-    ========================================== */
-
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    const minimumSwipeDistance = 60;
-
-
-    if (book) {
-
-        book.addEventListener(
-            "touchstart",
-            (event) => {
-
-                touchStartX =
-                    event.changedTouches[0].screenX;
-
-            },
-            {
-                passive: true
-            }
-        );
-
-
-        book.addEventListener(
-            "touchend",
-            (event) => {
-
-                touchEndX =
-                    event.changedTouches[0].screenX;
-
-                handleSwipe();
-
-            },
-            {
-                passive: true
             }
         );
 
     }
+);
 
 
-    function handleSwipe() {
+/* =========================================================
+   ABRIR MENÚ
+========================================================= */
 
-        const swipeDistance =
-            touchEndX - touchStartX;
+function openSidebar() {
 
-
-        /* Deslizar hacia la izquierda */
-
-        if (
-            swipeDistance <
-            -minimumSwipeDistance
-        ) {
-
-            nextPage();
-
-        }
-
-
-        /* Deslizar hacia la derecha */
-
-        if (
-            swipeDistance >
-            minimumSwipeDistance
-        ) {
-
-            previousPage();
-
-        }
-
+    if (!sidebar || !overlay) {
+        return;
     }
 
 
-    /* ==========================================
-       FONDO DE EMOJIS CAYENDO
-    ========================================== */
+    sidebar.classList.add("open");
 
-    const emojiBackground =
-        document.querySelector(".spain-background");
+    overlay.classList.add("show");
 
 
-    const spainEmojis = [
+    /* Evita que el fondo se mueva */
 
-        "🇪🇸",
-        "🌞",
-        "🎸",
-        "💃",
-        "🪭",
-        "🥘",
-        "🏰",
-        "🏛️",
-        "⚽",
-        "🎨",
-        "🍊",
-        "🌹",
-        "👑",
-        "✨"
+    document.body.style.overflow =
+        "hidden";
 
-    ];
+}
 
 
-    function createFallingEmoji() {
+/* =========================================================
+   CERRAR MENÚ
+========================================================= */
 
-        if (!emojiBackground) {
-            return;
-        }
+function closeSidebar() {
 
-
-        const emoji =
-            document.createElement("span");
-
-
-        emoji.classList.add(
-            "falling-emoji"
-        );
+    if (!sidebar || !overlay) {
+        return;
+    }
 
 
-        /* Emoji aleatorio */
+    sidebar.classList.remove("open");
 
-        emoji.textContent =
-            spainEmojis[
-                Math.floor(
-                    Math.random() *
-                    spainEmojis.length
-                )
-            ];
+    overlay.classList.remove("show");
 
 
-        /* Posición horizontal */
+    document.body.style.overflow =
+        "";
 
-        emoji.style.left =
-            Math.random() * 100 + "%";
-
-
-        /* Tamaño */
-
-        const size =
-            Math.random() * 1.4 + 0.8;
-
-        emoji.style.fontSize =
-            size + "rem";
+}
 
 
-        /* Duración */
+/* =========================================================
+   EVENTOS DEL MENÚ
+========================================================= */
 
-        const duration =
-            Math.random() * 8 + 8;
+if (menuButton) {
 
-        emoji.style.animationDuration =
-            duration + "s";
+    menuButton.addEventListener(
+        "click",
+        openSidebar
+    );
 
-
-        /* Retraso */
-
-        emoji.style.animationDelay =
-            Math.random() * -10 + "s";
-
-
-        emojiBackground.appendChild(emoji);
+}
 
 
-        /* Eliminar después */
+if (closeMenuButton) {
 
-        setTimeout(() => {
+    closeMenuButton.addEventListener(
+        "click",
+        closeSidebar
+    );
+
+}
+
+
+if (overlay) {
+
+    overlay.addEventListener(
+        "click",
+        closeSidebar
+    );
+
+}
+
+
+/* =========================================================
+   EMOJIS CAYENDO 🇪🇸
+========================================================= */
+
+const background =
+    document.querySelector(".spain-background");
+
+
+/*
+   Emojis relacionados con España.
+*/
+
+const spanishEmojis = [
+
+    "🇪🇸",
+    "🌹",
+    "💃",
+    "🪭",
+    "🎸",
+    "🏰",
+    "☀️",
+    "🥘",
+    "⚽",
+    "🎨",
+    "🍊",
+    "✨"
+
+];
+
+
+/* =========================================================
+   CREAR EMOJI
+========================================================= */
+
+function createFloatingEmoji() {
+
+    if (!background) {
+        return;
+    }
+
+
+    const emoji =
+        document.createElement("span");
+
+
+    emoji.classList.add(
+        "floating-emoji"
+    );
+
+
+    /* Emoji aleatorio */
+
+    emoji.textContent =
+        spanishEmojis[
+            Math.floor(
+                Math.random() *
+                spanishEmojis.length
+            )
+        ];
+
+
+    /* Posición horizontal */
+
+    emoji.style.left =
+        Math.random() * 100 + "%";
+
+
+    /* Tamaño */
+
+    const size =
+        Math.random() * 22 + 18;
+
+    emoji.style.fontSize =
+        size + "px";
+
+
+    /* Duración de caída */
+
+    const duration =
+        Math.random() * 8 + 8;
+
+    emoji.style.animationDuration =
+        duration + "s, " +
+        (Math.random() * 2 + 2) +
+        "s";
+
+
+    /* Retraso */
+
+    emoji.style.animationDelay =
+        "0s, 0s";
+
+
+    background.appendChild(
+        emoji
+    );
+
+
+    /* Eliminar cuando termine */
+
+    setTimeout(
+        function () {
 
             emoji.remove();
 
-        }, duration * 1000);
+        },
+        duration * 1000 + 500
+    );
+
+}
+
+
+/* =========================================================
+   CREAR EMOJIS INICIALES
+========================================================= */
+
+function startFloatingEmojis() {
+
+    if (!background) {
+        return;
+    }
+
+
+    /*
+       Crear algunos emojis inmediatamente
+       para que el fondo no empiece vacío.
+    */
+
+    for (let i = 0; i < 14; i++) {
+
+        setTimeout(
+            createFloatingEmoji,
+            i * 350
+        );
 
     }
 
 
-    /* Crear emojis iniciales */
-
-    for (let i = 0; i < 20; i++) {
-
-        createFallingEmoji();
-
-    }
-
-
-    /* Crear nuevos continuamente */
+    /*
+       Seguir creando emojis constantemente.
+    */
 
     setInterval(
-        createFallingEmoji,
-        1500
+        createFloatingEmoji,
+        850
     );
 
-
-    /* ==========================================
-       EFECTO DE PARALLAX SUAVE
-    ========================================== */
-
-    window.addEventListener(
-        "mousemove",
-        (event) => {
-
-            /* Solo computadoras */
-
-            if (window.innerWidth < 850) {
-                return;
-            }
+}
 
 
-            if (!bookWrapper) {
-                return;
-            }
+/* =========================================================
+   SOPORTE PARA DESLIZAR EN MÓVIL
+========================================================= */
+
+let touchStartX = 0;
+
+let touchEndX = 0;
 
 
-            const x =
-                event.clientX /
-                window.innerWidth -
-                0.5;
+document.addEventListener(
+    "touchstart",
+    function (event) {
 
+        /*
+           No activar swipe si el menú está abierto.
+        */
 
-            const y =
-                event.clientY /
-                window.innerHeight -
-                0.5;
-
-
-            bookWrapper.style.transform =
-                `rotateY(${x * 2}deg)
-                 rotateX(${y * -1.5}deg)`;
-
+        if (
+            sidebar &&
+            sidebar.classList.contains("open")
+        ) {
+            return;
         }
-    );
 
 
-    /* Restaurar posición */
+        touchStartX =
+            event.changedTouches[0].screenX;
 
-    if (bookWrapper) {
+    },
+    {
+        passive: true
+    }
+);
 
-        bookWrapper.addEventListener(
-            "mouseleave",
-            () => {
 
-                bookWrapper.style.transform =
-                    "rotateY(0deg) rotateX(0deg)";
+document.addEventListener(
+    "touchend",
+    function (event) {
 
-            }
-        );
+        if (
+            sidebar &&
+            sidebar.classList.contains("open")
+        ) {
+            return;
+        }
+
+
+        touchEndX =
+            event.changedTouches[0].screenX;
+
+
+        handleSwipe();
+
+    },
+    {
+        passive: true
+    }
+);
+
+
+/* =========================================================
+   DETECTAR DIRECCIÓN DEL SWIPE
+========================================================= */
+
+function handleSwipe() {
+
+    const minimumSwipeDistance = 70;
+
+    const distance =
+        touchEndX -
+        touchStartX;
+
+
+    /*
+       Swipe hacia la izquierda
+       → siguiente página
+    */
+
+    if (
+        distance <
+        -minimumSwipeDistance
+    ) {
+
+        nextPage();
 
     }
 
 
-    /* ==========================================
-       EFECTO DE CLIC EN EL LIBRO
-    ========================================== */
+    /*
+       Swipe hacia la derecha
+       → página anterior
+    */
 
-    if (bookWrapper) {
+    if (
+        distance >
+        minimumSwipeDistance
+    ) {
 
-        bookWrapper.addEventListener(
-            "mousedown",
-            () => {
-
-                if (window.innerWidth > 850) {
-
-                    bookWrapper.style.transform +=
-                        " scale(0.99)";
-
-                }
-
-            }
-        );
-
-
-        bookWrapper.addEventListener(
-            "mouseup",
-            () => {
-
-                if (window.innerWidth > 850) {
-
-                    setTimeout(() => {
-
-                        bookWrapper.style.transform =
-                            "rotateY(0deg) rotateX(0deg)";
-
-                    }, 100);
-
-                }
-
-            }
-        );
+        previousPage();
 
     }
 
-
-    /* ==========================================
-       INICIALIZACIÓN
-    ========================================== */
-
-    pages.forEach((page, index) => {
-
-        page.classList.remove(
-            "active",
-            "exit-left",
-            "exit-right"
-        );
+}
 
 
-        if (index === 0) {
+/* =========================================================
+   INICIALIZACIÓN
+========================================================= */
 
-            page.classList.add("active");
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        /*
+           Mostrar la primera página.
+        */
+
+        if (pages.length > 0) {
+
+            showPage(0);
 
         }
 
-    });
 
+        /*
+           Iniciar emojis.
+        */
 
-    currentPage = 0;
+        startFloatingEmojis();
 
-    updateInterface();
-
-
-    /* ==========================================
-       MENSAJE DE DEPURACIÓN
-    ========================================== */
-
-    console.log(
-        "🇪🇸 Portafolio Digital de España cargado correctamente."
-    );
-
-    console.log(
-        "📖 Total de páginas:",
-        totalPages
-    );
-
-});
+    }
+);
