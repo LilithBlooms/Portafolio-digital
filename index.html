@@ -1,68 +1,122 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>España 🇪🇸 | Portafolio Digital</title>
 
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
 </head>
+
 
 <body>
 
-    <!-- FONDO ANIMADO -->
-    <div class="spain-background" id="spainBackground"></div>
+
+    <!-- ==========================================
+         FONDO ANIMADO
+    =========================================== -->
+
+    <div
+        class="spain-background"
+        id="spainBackground"
+    ></div>
 
     <div class="glow glow-one"></div>
     <div class="glow glow-two"></div>
     <div class="glow glow-three"></div>
 
 
-    <!-- HEADER -->
+    <!-- ==========================================
+         HEADER
+    =========================================== -->
+
     <header class="top-header">
 
-        <button class="menu-button" id="menuButton" aria-label="Abrir índice">
+        <button
+            class="menu-button"
+            id="menuButton"
+            aria-label="Abrir índice"
+        >
             ☰
         </button>
 
+
         <div class="header-title">
+
             <span>PORTAFOLIO DIGITAL</span>
 
             <h1>
                 ESPAÑA <i>🇪🇸</i>
             </h1>
+
         </div>
 
+
         <div class="page-indicator">
+
             <span id="currentPage">1</span>
+
             <span class="slash">/</span>
-            <span id="totalPages">18</span>
+
+            <span id="totalPages">33</span>
+
         </div>
 
     </header>
 
 
-    <!-- ÍNDICE -->
-    <aside class="sidebar" id="sidebar">
+    <!-- ==========================================
+         ÍNDICE
+    =========================================== -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+    >
 
         <div class="sidebar-header">
 
             <div>
-                <p>🇪🇸 EXPLORA EL PORTAFOLIO</p>
+
+                <p>
+                    🇪🇸 EXPLORA EL PORTAFOLIO
+                </p>
+
                 <h2>Índice</h2>
+
             </div>
 
-            <button id="closeMenu" aria-label="Cerrar menú">
+
+            <button
+                id="closeMenu"
+                aria-label="Cerrar menú"
+            >
                 ×
             </button>
 
         </div>
+
 
         <div class="sidebar-decoration">
             ❤️ ━━━━━ 💛 ━━━━━ ❤️
@@ -71,111 +125,664 @@
 
         <div class="thumbnail-list">
 
-            <button class="thumbnail active" data-page="0">
-                <img src="IMG_9032.jpeg" alt="Portada">
-                <span><b>01.</b> Portada</span>
+
+            <!-- 01 -->
+
+            <button
+                class="thumbnail active"
+                data-page="0"
+            >
+
+                <img
+                    src="IMG_9032.jpeg"
+                    alt="Portada"
+                >
+
+                <span>
+                    <b>01.</b> Portada
+                </span>
+
             </button>
 
-            <button class="thumbnail" data-page="1">
-                <img src="IMG_9045.jpeg" alt="España">
-                <span><b>02.</b> ¿Quién es España?</span>
+
+            <!-- 02 -->
+
+            <button
+                class="thumbnail"
+                data-page="1"
+            >
+
+                <img
+                    src="IMG_9045.jpeg"
+                    alt="España"
+                >
+
+                <span>
+                    <b>02.</b> ¿Quién es España?
+                </span>
+
             </button>
 
-            <button class="thumbnail map-thumbnail" data-page="2">
-                <div class="emoji-thumbnail">🗺️🇪🇸✈️</div>
-                <span><b>03.</b> España en el mapa</span>
+
+            <!-- 03 -->
+
+            <button
+                class="thumbnail map-thumbnail"
+                data-page="2"
+            >
+
+                <div class="emoji-thumbnail">
+                    🗺️🇪🇸✈️
+                </div>
+
+                <span>
+                    <b>03.</b> España en el mapa
+                </span>
+
             </button>
 
-            <button class="thumbnail" data-page="3">
-                <img src="IMG_9033.jpeg" alt="Cronología">
-                <span><b>04.</b> Cronología</span>
+
+            <!-- 04 -->
+
+            <button
+                class="thumbnail"
+                data-page="3"
+            >
+
+                <img
+                    src="IMG_9033.jpeg"
+                    alt="Cronología"
+                >
+
+                <span>
+                    <b>04.</b> Cronología
+                </span>
+
             </button>
 
-            <button class="thumbnail" data-page="4">
-                <img src="IMG_9034.jpeg" alt="Registro digital">
-                <span><b>05.</b> Registro digital</span>
+
+            <!-- 05 -->
+
+            <button
+                class="thumbnail"
+                data-page="4"
+            >
+
+                <img
+                    src="IMG_9034.jpeg"
+                    alt="Registro digital"
+                >
+
+                <span>
+                    <b>05.</b> Registro digital
+                </span>
+
             </button>
 
-            <button class="thumbnail" data-page="5">
-                <img src="IMG_9035.jpeg" alt="Hemeroteca">
-                <span><b>06.</b> Hemeroteca</span>
+
+            <!-- 06 -->
+
+            <button
+                class="thumbnail"
+                data-page="5"
+            >
+
+                <img
+                    src="IMG_9035.jpeg"
+                    alt="Hemeroteca"
+                >
+
+                <span>
+                    <b>06.</b> Hemeroteca
+                </span>
+
             </button>
 
-            <button class="thumbnail" data-page="6">
-                <img src="IMG_9036.jpeg" alt="Cultura">
-                <span><b>07.</b> Cultura española</span>
+
+            <!-- 07 -->
+
+            <button
+                class="thumbnail"
+                data-page="6"
+            >
+
+                <img
+                    src="IMG_9036.jpeg"
+                    alt="Cultura española"
+                >
+
+                <span>
+                    <b>07.</b> Cultura española
+                </span>
+
             </button>
 
-            <button class="thumbnail" data-page="7">
-                <img src="IMG_9037.jpeg" alt="Videoteca">
-                <span><b>08.</b> Videoteca</span>
+
+            <!-- 08 -->
+
+            <button
+                class="thumbnail"
+                data-page="7"
+            >
+
+                <img
+                    src="IMG_9037.jpeg"
+                    alt="Videoteca"
+                >
+
+                <span>
+                    <b>08.</b> Videoteca
+                </span>
+
             </button>
 
-            <button class="thumbnail" data-page="8">
-                <img src="IMG_9038.jpeg" alt="Biblioteca">
-                <span><b>09.</b> Biblioteca</span>
+
+            <!-- 09 -->
+
+            <button
+                class="thumbnail"
+                data-page="8"
+            >
+
+                <img
+                    src="IMG_9038.jpeg"
+                    alt="Biblioteca"
+                >
+
+                <span>
+                    <b>09.</b> Biblioteca
+                </span>
+
             </button>
 
-            <button class="thumbnail" data-page="9">
-                <img src="IMG_9040.jpeg" alt="Comercio">
-                <span><b>10.</b> Comercio</span>
+
+            <!-- 10 -->
+
+            <button
+                class="thumbnail"
+                data-page="9"
+            >
+
+                <img
+                    src="IMG_9040.jpeg"
+                    alt="Comercio"
+                >
+
+                <span>
+                    <b>10.</b> Comercio
+                </span>
+
             </button>
 
-            <button class="thumbnail" data-page="10">
-                <img src="IMG_9041.jpeg" alt="Teatro">
-                <span><b>11.</b> Obras teatrales</span>
+
+            <!-- 11 -->
+
+            <button
+                class="thumbnail"
+                data-page="10"
+            >
+
+                <img
+                    src="IMG_9041.jpeg"
+                    alt="Obras teatrales"
+                >
+
+                <span>
+                    <b>11.</b> Obras teatrales
+                </span>
+
             </button>
 
-            <button class="thumbnail" data-page="11">
-                <img src="IMG_9042.jpeg" alt="Eventos">
-                <span><b>12.</b> Eventos artísticos</span>
+
+            <!-- 12 -->
+
+            <button
+                class="thumbnail"
+                data-page="11"
+            >
+
+                <img
+                    src="IMG_9042.jpeg"
+                    alt="Eventos artísticos"
+                >
+
+                <span>
+                    <b>12.</b> Eventos artísticos
+                </span>
+
             </button>
 
-            <button class="thumbnail" data-page="12">
-                <img src="IMG_9043.jpeg" alt="Exposición">
-                <span><b>13.</b> Exposición</span>
+
+            <!-- 13 -->
+
+            <button
+                class="thumbnail"
+                data-page="12"
+            >
+
+                <img
+                    src="IMG_9043.jpeg"
+                    alt="Exposición"
+                >
+
+                <span>
+                    <b>13.</b> Exposición
+                </span>
+
             </button>
 
-            <button class="thumbnail" data-page="13">
-                <img src="IMG_9044.jpeg" alt="Fototeca">
-                <span><b>14.</b> Fototeca</span>
+
+            <!-- 14 -->
+
+            <button
+                class="thumbnail"
+                data-page="13"
+            >
+
+                <img
+                    src="IMG_9044.jpeg"
+                    alt="Fototeca"
+                >
+
+                <span>
+                    <b>14.</b> Fototeca
+                </span>
+
             </button>
 
-            <button class="thumbnail" data-page="14">
-                <img src="IMG_9046.jpeg" alt="Archivo">
-                <span><b>15.</b> Archivo</span>
+
+            <!-- 15 -->
+
+            <button
+                class="thumbnail"
+                data-page="14"
+            >
+
+                <img
+                    src="IMG_9046.jpeg"
+                    alt="Archivo"
+                >
+
+                <span>
+                    <b>15.</b> Archivo
+                </span>
+
             </button>
 
-            <button class="thumbnail" data-page="15">
-                <img src="IMG_9048.jpeg" alt="Conclusión">
-                <span><b>16.</b> Conclusión</span>
+
+            <!-- 16 -->
+
+            <button
+                class="thumbnail"
+                data-page="15"
+            >
+
+                <div class="emoji-thumbnail">
+                    👑🏛️🇪🇸
+                </div>
+
+                <span>
+                    <b>16.</b> Gobernantes de España
+                </span>
+
             </button>
 
-            <button class="thumbnail" data-page="16">
-                <img src="IMG_9049.jpeg" alt="Agradecimiento">
-                <span><b>17.</b> Agradecimiento</span>
+
+            <!-- 17 -->
+
+            <button
+                class="thumbnail"
+                data-page="16"
+            >
+
+                <img
+                    src="IMG_9059.jpeg"
+                    alt="Adolfo Suárez"
+                >
+
+                <span>
+                    <b>17.</b> Adolfo Suárez
+                </span>
+
             </button>
+
+
+            <!-- 18 -->
+
+            <button
+                class="thumbnail"
+                data-page="17"
+            >
+
+                <img
+                    src="IMG_9060.jpeg"
+                    alt="Leopoldo Calvo-Sotelo"
+                >
+
+                <span>
+                    <b>18.</b> Leopoldo Calvo-Sotelo
+                </span>
+
+            </button>
+
+
+            <!-- 19 -->
+
+            <button
+                class="thumbnail"
+                data-page="18"
+            >
+
+                <img
+                    src="IMG_9061.jpeg"
+                    alt="Felipe González"
+                >
+
+                <span>
+                    <b>19.</b> Felipe González
+                </span>
+
+            </button>
+
+
+            <!-- 20 -->
+
+            <button
+                class="thumbnail"
+                data-page="19"
+            >
+
+                <img
+                    src="IMG_9062.jpeg"
+                    alt="José María Aznar"
+                >
+
+                <span>
+                    <b>20.</b> José María Aznar
+                </span>
+
+            </button>
+
+
+            <!-- 21 -->
+
+            <button
+                class="thumbnail"
+                data-page="20"
+            >
+
+                <img
+                    src="IMG_9063.jpeg"
+                    alt="José Luis Rodríguez Zapatero"
+                >
+
+                <span>
+                    <b>21.</b> José Luis Rodríguez Zapatero
+                </span>
+
+            </button>
+
+
+            <!-- 22 -->
+
+            <button
+                class="thumbnail"
+                data-page="21"
+            >
+
+                <img
+                    src="IMG_9064.jpeg"
+                    alt="Mariano Rajoy"
+                >
+
+                <span>
+                    <b>22.</b> Mariano Rajoy
+                </span>
+
+            </button>
+
+
+            <!-- 23 -->
+
+            <button
+                class="thumbnail"
+                data-page="22"
+            >
+
+                <img
+                    src="IMG_9065.jpeg"
+                    alt="Pedro Sánchez"
+                >
+
+                <span>
+                    <b>23.</b> Pedro Sánchez
+                </span>
+
+            </button>
+
+
+            <!-- 24 -->
+
+            <button
+                class="thumbnail"
+                data-page="23"
+            >
+
+                <img
+                    src="IMG_9066.jpeg"
+                    alt="Isabel I y Fernando II"
+                >
+
+                <span>
+                    <b>24.</b> Isabel I y Fernando II
+                </span>
+
+            </button>
+
+
+            <!-- 25 -->
+
+            <button
+                class="thumbnail"
+                data-page="24"
+            >
+
+                <img
+                    src="IMG_9067.jpeg"
+                    alt="Juan Carlos I"
+                >
+
+                <span>
+                    <b>25.</b> Juan Carlos I
+                </span>
+
+            </button>
+
+
+            <!-- 26 -->
+
+            <button
+                class="thumbnail"
+                data-page="25"
+            >
+
+                <img
+                    src="IMG_9068.jpeg"
+                    alt="Felipe VI"
+                >
+
+                <span>
+                    <b>26.</b> Felipe VI
+                </span>
+
+            </button>
+
+
+            <!-- 27 -->
+
+            <button
+                class="thumbnail"
+                data-page="26"
+            >
+
+                <img
+                    src="IMG_9069.jpeg"
+                    alt="Palacio de la Moncloa"
+                >
+
+                <span>
+                    <b>27.</b> Palacio de la Moncloa
+                </span>
+
+            </button>
+
+
+            <!-- 28 -->
+
+            <button
+                class="thumbnail"
+                data-page="27"
+            >
+
+                <img
+                    src="IMG_9070.jpeg"
+                    alt="Congreso de los Diputados"
+                >
+
+                <span>
+                    <b>28.</b> Congreso de los Diputados
+                </span>
+
+            </button>
+
+
+            <!-- 29 -->
+
+            <button
+                class="thumbnail"
+                data-page="28"
+            >
+
+                <img
+                    src="IMG_9071.jpeg"
+                    alt="Bandera de España"
+                >
+
+                <span>
+                    <b>29.</b> Bandera de España
+                </span>
+
+            </button>
+
+
+            <!-- 30 -->
+
+            <button
+                class="thumbnail"
+                data-page="29"
+            >
+
+                <img
+                    src="IMG_9072.jpeg"
+                    alt="Constitución de 1978"
+                >
+
+                <span>
+                    <b>30.</b> Constitución de 1978
+                </span>
+
+            </button>
+
+
+            <!-- 31 -->
+
+            <button
+                class="thumbnail"
+                data-page="30"
+            >
+
+                <img
+                    src="IMG_9073.jpeg"
+                    alt="Historia y territorio"
+                >
+
+                <span>
+                    <b>31.</b> Historia y territorio
+                </span>
+
+            </button>
+
+
+            <!-- 32 -->
+
+            <button
+                class="thumbnail"
+                data-page="31"
+            >
+
+                <img
+                    src="IMG_9048.jpeg"
+                    alt="Conclusión"
+                >
+
+                <span>
+                    <b>32.</b> Conclusión
+                </span>
+
+            </button>
+
+
+            <!-- 33 -->
+
+            <button
+                class="thumbnail"
+                data-page="32"
+            >
+
+                <div class="emoji-thumbnail">
+                    🇪🇸❤️💛👋✨
+                </div>
+
+                <span>
+                    <b>33.</b> Agradecimiento
+                </span>
+
+            </button>
+
 
         </div>
 
     </aside>
 
 
-    <div class="overlay" id="overlay"></div>
+    <div
+        class="overlay"
+        id="overlay"
+    ></div>
 
 
-    <!-- LIBRO -->
+    <!-- ==========================================
+         LIBRO
+    =========================================== -->
+
     <main class="book-area">
 
         <div class="book-wrapper">
 
-            <div class="book" id="book">
+            <div
+                class="book"
+                id="book"
+            >
 
 
-                <!-- PÁGINA 1 -->
+                <!-- ==========================================
+                     PÁGINA 01 — PORTADA
+                =========================================== -->
+
                 <section class="book-page cover-page active">
 
                     <div class="spanish-stripe stripe-top"></div>
+
 
                     <div class="cover-content">
 
@@ -183,26 +790,41 @@
                             ☀️ ✦ 🇪🇸 ✦ ☀️
                         </div>
 
+
                         <p class="cover-small-title">
                             PORTAFOLIO DIGITAL
                         </p>
 
+
                         <h2>ESPAÑA</h2>
 
+
                         <div class="flag-line">
+
                             <span></span>
                             <span></span>
                             <span></span>
+
                         </div>
+
 
                         <p class="cover-subtitle">
+
                             Un recorrido por su historia,
                             cultura, arte y tradición
+
                         </p>
 
+
                         <div class="cover-image-container">
-                            <img src="IMG_9032.jpeg" alt="España">
+
+                            <img
+                                src="IMG_9032.jpeg"
+                                alt="España"
+                            >
+
                         </div>
+
 
                         <div class="cover-bottom-icons">
                             🏰 💃 🥘 🎸 🪭 ⚽
@@ -210,28 +832,39 @@
 
                     </div>
 
+
                     <div class="page-number">01</div>
 
                 </section>
 
 
-                <!-- PÁGINA 2 -->
+                <!-- ==========================================
+                     PÁGINA 02 — ¿QUIÉN ES ESPAÑA?
+                =========================================== -->
+
                 <section class="book-page">
 
                     <div class="corner-emoji">🇪🇸</div>
 
+
                     <div class="page-content">
+
 
                         <div class="page-text">
 
-                            <span class="section-label">✦ INTRODUCCIÓN</span>
+                            <span class="section-label">
+                                ✦ INTRODUCCIÓN
+                            </span>
+
 
                             <h2>
                                 ¿Quién es<br>
                                 <span>España?</span>
                             </h2>
 
+
                             <div class="red-yellow-line"></div>
+
 
                             <p>
                                 España es un país situado en el suroeste de Europa,
@@ -239,11 +872,13 @@
                                 cultural y artística.
                             </p>
 
+
                             <p>
                                 A lo largo de los siglos, diferentes civilizaciones
                                 dejaron su huella en su territorio, creando una
                                 identidad diversa y profundamente rica.
                             </p>
+
 
                             <p>
                                 Su idioma, sus tradiciones, su gastronomía, sus
@@ -251,29 +886,43 @@
                                 una enorme influencia en diferentes partes del mundo.
                             </p>
 
+
                             <div class="page-emojis">
                                 🏰 ☀️ 🎸 💃 🥘
                             </div>
 
                         </div>
 
+
                         <div class="page-image image-frame">
-                            <img src="IMG_9045.jpeg" alt="España">
+
+                            <img
+                                src="IMG_9045.jpeg"
+                                alt="España"
+                            >
+
                         </div>
 
+
                     </div>
+
 
                     <div class="page-number">02</div>
 
                 </section>
 
 
-                <!-- PÁGINA 3 -->
+                <!-- ==========================================
+                     PÁGINA 03 — ESPAÑA EN EL MAPA
+                =========================================== -->
+
                 <section class="book-page map-page">
 
                     <div class="corner-emoji">🗺️</div>
 
+
                     <div class="page-content map-content">
+
 
                         <div class="page-text">
 
@@ -281,23 +930,28 @@
                                 ✦ UBICACIÓN GEOGRÁFICA
                             </span>
 
+
                             <h2>
                                 España en<br>
                                 <span>el mapa</span>
                             </h2>
 
+
                             <div class="red-yellow-line"></div>
+
 
                             <p>
                                 España ocupa gran parte de la península ibérica y
                                 está situada en el extremo suroccidental de Europa.
                             </p>
 
+
                             <p>
                                 Su ubicación geográfica ha sido fundamental en su
                                 historia, convirtiéndola durante siglos en un punto
                                 de encuentro entre diferentes pueblos y culturas.
                             </p>
+
 
                             <div class="page-emojis">
                                 🌍 ✈️ 🇪🇸 📍
@@ -308,7 +962,10 @@
 
                         <div class="map-container">
 
-                            <svg viewBox="0 0 700 450" class="spain-map">
+                            <svg
+                                viewBox="0 0 700 450"
+                                class="spain-map"
+                            >
 
                                 <rect
                                     width="700"
@@ -317,15 +974,18 @@
                                     class="map-background"
                                 />
 
+
                                 <path
                                     class="europe-shape"
                                     d="M110 80 C180 30 300 30 380 70 C470 40 560 80 590 140 C640 190 610 270 550 300 C510 360 420 360 350 330 C280 370 170 350 130 280 C70 220 70 130 110 80 Z"
                                 />
 
+
                                 <path
                                     class="spain-shape"
                                     d="M185 220 L260 190 L340 205 L405 245 L380 310 L290 330 L210 300 Z"
                                 />
+
 
                                 <path
                                     id="flightPath"
@@ -333,9 +993,14 @@
                                     class="flight-path"
                                 />
 
+
                                 <g class="location-marker">
 
-                                    <circle cx="300" cy="255" r="22"></circle>
+                                    <circle
+                                        cx="300"
+                                        cy="255"
+                                        r="22"
+                                    ></circle>
 
                                     <circle
                                         cx="300"
@@ -346,13 +1011,17 @@
 
                                 </g>
 
+
                                 <g id="plane">
+
                                     <text
                                         x="0"
                                         y="0"
                                         class="plane-icon"
                                     >✈</text>
+
                                 </g>
+
 
                                 <text
                                     x="300"
@@ -367,31 +1036,51 @@
 
                         </div>
 
+
                     </div>
+
 
                     <div class="page-number">03</div>
 
                 </section>
 
 
-                <!-- PÁGINA 4 -->
+                <!-- ==========================================
+                     PÁGINA 04 — CRONOLOGÍA
+                =========================================== -->
+
                 <section class="book-page">
 
                     <div class="corner-emoji">📜</div>
 
+
                     <div class="page-content reverse">
 
+
                         <div class="page-image image-frame">
-                            <img src="IMG_9033.jpeg" alt="Cronología">
+
+                            <img
+                                src="IMG_9033.jpeg"
+                                alt="Cronología"
+                            >
+
                         </div>
+
 
                         <div class="page-text">
 
-                            <span class="section-label">✦ HISTORIA</span>
+                            <span class="section-label">
+                                ✦ HISTORIA
+                            </span>
 
-                            <h2>Crono<span>logía</span></h2>
+
+                            <h2>
+                                Crono<span>logía</span>
+                            </h2>
+
 
                             <div class="red-yellow-line"></div>
+
 
                             <p>
                                 La historia de España está formada por numerosos
@@ -399,11 +1088,13 @@
                                 construyeron la nación que conocemos actualmente.
                             </p>
 
+
                             <p>
                                 Desde las civilizaciones antiguas hasta la España
                                 contemporánea, cada período histórico dejó una
                                 huella importante en su cultura e identidad.
                             </p>
+
 
                             <div class="page-emojis">
                                 ⏳ 📜 🏛️ 👑
@@ -411,19 +1102,26 @@
 
                         </div>
 
+
                     </div>
+
 
                     <div class="page-number">04</div>
 
                 </section>
 
 
-                <!-- PÁGINA 5 -->
+                <!-- ==========================================
+                     PÁGINA 05 — REGISTRO DIGITAL
+                =========================================== -->
+
                 <section class="book-page">
 
                     <div class="corner-emoji">💻</div>
 
+
                     <div class="page-content">
+
 
                         <div class="page-text">
 
@@ -431,12 +1129,15 @@
                                 ✦ TECNOLOGÍA Y MEMORIA
                             </span>
 
+
                             <h2>
                                 Registro<br>
                                 <span>digital</span>
                             </h2>
 
+
                             <div class="red-yellow-line"></div>
+
 
                             <p>
                                 La tecnología permite conservar, organizar y
@@ -444,11 +1145,13 @@
                                 manera mucho más accesible.
                             </p>
 
+
                             <p>
                                 Gracias a los recursos digitales, documentos,
                                 fotografías y diferentes registros pueden ser
                                 preservados para las futuras generaciones.
                             </p>
+
 
                             <div class="page-emojis">
                                 💻 📱 📂 ✨
@@ -456,27 +1159,46 @@
 
                         </div>
 
+
                         <div class="page-image image-frame">
-                            <img src="IMG_9034.jpeg" alt="Registro digital">
+
+                            <img
+                                src="IMG_9034.jpeg"
+                                alt="Registro digital"
+                            >
+
                         </div>
 
+
                     </div>
+
 
                     <div class="page-number">05</div>
 
                 </section>
 
 
-                <!-- PÁGINA 6 -->
+                <!-- ==========================================
+                     PÁGINA 06 — HEMEROTECA
+                =========================================== -->
+
                 <section class="book-page">
 
                     <div class="corner-emoji">📰</div>
 
+
                     <div class="page-content reverse">
 
+
                         <div class="page-image image-frame">
-                            <img src="IMG_9035.jpeg" alt="Hemeroteca">
+
+                            <img
+                                src="IMG_9035.jpeg"
+                                alt="Hemeroteca"
+                            >
+
                         </div>
+
 
                         <div class="page-text">
 
@@ -484,9 +1206,14 @@
                                 ✦ PRENSA E INFORMACIÓN
                             </span>
 
-                            <h2>Heme<span>roteca</span></h2>
+
+                            <h2>
+                                Heme<span>roteca</span>
+                            </h2>
+
 
                             <div class="red-yellow-line"></div>
+
 
                             <p>
                                 Las hemerotecas conservan periódicos, revistas y
@@ -494,11 +1221,13 @@
                                 opiniones y momentos importantes del pasado.
                             </p>
 
+
                             <p>
                                 Estos registros constituyen una fuente fundamental
                                 para comprender la evolución histórica de una
                                 sociedad.
                             </p>
+
 
                             <div class="page-emojis">
                                 📰 🗞️ 📚 🕰️
@@ -506,30 +1235,42 @@
 
                         </div>
 
+
                     </div>
+
 
                     <div class="page-number">06</div>
 
                 </section>
 
 
-                <!-- PÁGINA 7 -->
+                <!-- ==========================================
+                     PÁGINA 07 — CULTURA ESPAÑOLA
+                =========================================== -->
+
                 <section class="book-page">
 
                     <div class="corner-emoji">💃</div>
 
+
                     <div class="page-content">
+
 
                         <div class="page-text">
 
-                            <span class="section-label">✦ IDENTIDAD</span>
+                            <span class="section-label">
+                                ✦ IDENTIDAD
+                            </span>
+
 
                             <h2>
                                 Cultura<br>
                                 <span>española</span>
                             </h2>
 
+
                             <div class="red-yellow-line"></div>
+
 
                             <p>
                                 La cultura española se caracteriza por su diversidad,
@@ -537,10 +1278,12 @@
                                 pueblos y tradiciones.
                             </p>
 
+
                             <p>
                                 La música, la danza, las celebraciones, la gastronomía
                                 y las costumbres forman parte esencial de su identidad.
                             </p>
+
 
                             <div class="page-emojis">
                                 💃 🎸 🪭 🥘 🇪🇸
@@ -548,27 +1291,46 @@
 
                         </div>
 
+
                         <div class="page-image image-frame">
-                            <img src="IMG_9036.jpeg" alt="Cultura española">
+
+                            <img
+                                src="IMG_9036.jpeg"
+                                alt="Cultura española"
+                            >
+
                         </div>
 
+
                     </div>
+
 
                     <div class="page-number">07</div>
 
                 </section>
 
 
-                <!-- PÁGINA 8 -->
+                <!-- ==========================================
+                     PÁGINA 08 — VIDEOTECA
+                =========================================== -->
+
                 <section class="book-page">
 
                     <div class="corner-emoji">🎬</div>
 
+
                     <div class="page-content reverse">
 
+
                         <div class="page-image image-frame">
-                            <img src="IMG_9037.jpeg" alt="Videoteca">
+
+                            <img
+                                src="IMG_9037.jpeg"
+                                alt="Videoteca"
+                            >
+
                         </div>
+
 
                         <div class="page-text">
 
@@ -576,9 +1338,14 @@
                                 ✦ MEMORIA AUDIOVISUAL
                             </span>
 
-                            <h2>Video<span>teca</span></h2>
+
+                            <h2>
+                                Video<span>teca</span>
+                            </h2>
+
 
                             <div class="red-yellow-line"></div>
+
 
                             <p>
                                 El contenido audiovisual permite documentar la
@@ -586,11 +1353,13 @@
                                 culturales.
                             </p>
 
+
                             <p>
                                 Las imágenes y los videos ayudan a conservar momentos
                                 que pueden ser observados y estudiados incluso muchos
                                 años después.
                             </p>
+
 
                             <div class="page-emojis">
                                 🎬 📹 🎞️ 🍿
@@ -598,32 +1367,47 @@
 
                         </div>
 
+
                     </div>
+
 
                     <div class="page-number">08</div>
 
                 </section>
 
 
-                <!-- PÁGINA 9 -->
+                <!-- ==========================================
+                     PÁGINA 09 — BIBLIOTECA
+                =========================================== -->
+
                 <section class="book-page">
 
                     <div class="corner-emoji">📚</div>
 
+
                     <div class="page-content">
+
 
                         <div class="page-text">
 
-                            <span class="section-label">✦ CONOCIMIENTO</span>
+                            <span class="section-label">
+                                ✦ CONOCIMIENTO
+                            </span>
 
-                            <h2>Biblio<span>teca</span></h2>
+
+                            <h2>
+                                Biblio<span>teca</span>
+                            </h2>
+
 
                             <div class="red-yellow-line"></div>
+
 
                             <p>
                                 Las bibliotecas representan espacios fundamentales
                                 para la conservación y transmisión del conocimiento.
                             </p>
+
 
                             <p>
                                 Los libros permiten conocer las ideas, historias y
@@ -631,46 +1415,74 @@
                                 cultura de una sociedad.
                             </p>
 
+
                             <div class="page-emojis">
                                 📚 📖 ✍️ 🏛️
                             </div>
 
                         </div>
 
+
                         <div class="page-image image-frame">
-                            <img src="IMG_9038.jpeg" alt="Biblioteca">
+
+                            <img
+                                src="IMG_9038.jpeg"
+                                alt="Biblioteca"
+                            >
+
                         </div>
 
+
                     </div>
+
 
                     <div class="page-number">09</div>
 
                 </section>
 
 
-                <!-- PÁGINA 10 -->
+                <!-- ==========================================
+                     PÁGINA 10 — COMERCIO
+                =========================================== -->
+
                 <section class="book-page">
 
                     <div class="corner-emoji">🛍️</div>
 
+
                     <div class="page-content reverse">
 
+
                         <div class="page-image image-frame">
-                            <img src="IMG_9040.jpeg" alt="Comercio">
+
+                            <img
+                                src="IMG_9040.jpeg"
+                                alt="Comercio"
+                            >
+
                         </div>
+
 
                         <div class="page-text">
 
-                            <span class="section-label">✦ ECONOMÍA</span>
+                            <span class="section-label">
+                                ✦ ECONOMÍA
+                            </span>
 
-                            <h2>Comer<span>cio</span></h2>
+
+                            <h2>
+                                Comer<span>cio</span>
+                            </h2>
+
 
                             <div class="red-yellow-line"></div>
+
 
                             <p>
                                 El comercio ha sido una actividad fundamental para el
                                 desarrollo económico y social de España.
                             </p>
+
 
                             <p>
                                 A través del intercambio de productos, ideas y recursos,
@@ -678,25 +1490,33 @@
                                 territorios del mundo.
                             </p>
 
+
                             <div class="page-emojis">
                                 🛍️ 🚢 💰 📦
                             </div>
 
                         </div>
 
+
                     </div>
+
 
                     <div class="page-number">10</div>
 
                 </section>
 
 
-                <!-- PÁGINA 11 -->
+                <!-- ==========================================
+                     PÁGINA 11 — OBRAS TEATRALES
+                =========================================== -->
+
                 <section class="book-page">
 
                     <div class="corner-emoji">🎭</div>
 
+
                     <div class="page-content">
+
 
                         <div class="page-text">
 
@@ -704,17 +1524,21 @@
                                 ✦ ARTES ESCÉNICAS
                             </span>
 
+
                             <h2>
                                 Obras<br>
                                 <span>teatrales</span>
                             </h2>
 
+
                             <div class="red-yellow-line"></div>
+
 
                             <p>
                                 El teatro ha ocupado un lugar importante dentro de la
                                 tradición artística española.
                             </p>
+
 
                             <p>
                                 Grandes autores y compañías teatrales han contribuido
@@ -722,1107 +1546,1087 @@
                                 por su valor cultural.
                             </p>
 
+
                             <div class="page-emojis">
                                 🎭 🎟️ 🎬 ✨
                             </div>
 
                         </div>
 
+
                         <div class="page-image image-frame">
-                            <img src="IMG_9041.jpeg" alt="Teatro">
+
+                            <img
+                                src="IMG_9041.jpeg"
+                                alt="Teatro"
+                            >
+
                         </div>
 
+
                     </div>
+
 
                     <div class="page-number">11</div>
 
                 </section>
 
+                                <!-- =====================================================
+                     PÁGINA 16 — GOBERNANTES DE ESPAÑA
+                ====================================================== -->
 
-                <!-- PÁGINA 12 -->
-                <section class="book-page">
+                <section class="book-page governors-intro-page">
 
-                    <div class="corner-emoji">🎨</div>
+                    <div class="corner-emoji">👑</div>
 
-                    <div class="page-content reverse">
+                    <div class="governors-intro-content">
 
-                        <div class="page-image image-frame">
-                            <img src="IMG_9042.jpeg" alt="Eventos">
+                        <div class="cover-icons">
+                            👑 🏛️ 🇪🇸 📜 👑
                         </div>
 
-                        <div class="page-text">
+                        <span class="section-label">
+                            ✦ HISTORIA POLÍTICA DE ESPAÑA
+                        </span>
+
+                        <h2>
+                            Gobernantes de
+                            <span>España</span>
+                        </h2>
+
+                        <div class="red-yellow-line center-line"></div>
+
+                        <p>
+                            La historia de España ha estado marcada por reyes,
+                            reinas y presidentes que han dirigido el país durante
+                            diferentes períodos. Sus decisiones y gobiernos han
+                            contribuido a transformar la organización política,
+                            social e institucional de España.
+                        </p>
+
+                        <p>
+                            En esta sección conoceremos algunas figuras
+                            fundamentales de la monarquía española y de los
+                            gobiernos democráticos contemporáneos.
+                        </p>
+
+                        <div class="governors-intro-emojis">
+                            👑 🏛️ 📜 🇪🇸 ⚖️ 🕊️
+                        </div>
+
+                    </div>
+
+                    <div class="page-number">16</div>
+
+                </section>
+
+
+                <!-- =====================================================
+                     PÁGINA 17 — ADOLFO SUÁREZ
+                ====================================================== -->
+
+                <section class="book-page biography-page">
+
+                    <div class="corner-emoji">🇪🇸</div>
+
+                    <div class="biography-layout">
+
+                        <div class="biography-image image-frame">
+                            <img src="IMG_9059.jpeg" alt="Adolfo Suárez">
+                        </div>
+
+                        <div class="biography-content">
 
                             <span class="section-label">
-                                ✦ EXPRESIÓN CULTURAL
+                                👑 PRESIDENTES DEL GOBIERNO
                             </span>
 
                             <h2>
-                                Eventos<br>
-                                <span>artísticos</span>
+                                Adolfo <span>Suárez</span>
                             </h2>
 
                             <div class="red-yellow-line"></div>
 
+                            <div class="biography-date">
+                                📅 Presidente del Gobierno: 1976–1981
+                            </div>
+
+                            <h3>La Transición española</h3>
+
                             <p>
-                                Los eventos artísticos permiten reunir diferentes
-                                formas de expresión como la música, la pintura,
-                                la danza y el teatro.
+                                Adolfo Suárez fue una figura fundamental durante
+                                la transición de España hacia la democracia.
+                                Llegó a la Presidencia del Gobierno en 1976 y
+                                dirigió importantes reformas políticas después
+                                del final de la dictadura franquista.
                             </p>
 
                             <p>
-                                Estos encuentros contribuyen a mantener vivas las
-                                tradiciones y a promover nuevas manifestaciones
-                                culturales.
+                                Durante su gobierno se celebraron las elecciones
+                                generales de 1977 y se desarrolló el proceso
+                                político que culminó con la aprobación de la
+                                Constitución española de 1978.
                             </p>
 
-                            <div class="page-emojis">
-                                🎨 🎶 💃 🎭
+                            <div class="legacy-box">
+
+                                <strong>🏛️ Su legado</strong>
+
+                                <p>
+                                    Es recordado como uno de los principales
+                                    protagonistas de la construcción de la
+                                    democracia española moderna.
+                                </p>
+
                             </div>
 
                         </div>
 
                     </div>
 
-                    <div class="page-number">12</div>
+                    <div class="page-number">17</div>
 
                 </section>
 
 
-                <!-- PÁGINA 13 -->
-                <section class="book-page">
-
-                    <div class="corner-emoji">🖼️</div>
-
-                    <div class="page-content">
-
-                        <div class="page-text">
-
-                            <span class="section-label">
-                                ✦ ARTE E HISTORIA
-                            </span>
-
-                            <h2>Expo<span>sición</span></h2>
-
-                            <div class="red-yellow-line"></div>
-
-                            <p>
-                                Las exposiciones permiten presentar obras, objetos y
-                                documentos que ayudan a comprender diferentes aspectos
-                                de la historia y la cultura.
-                            </p>
-
-                            <p>
-                                Son espacios donde el conocimiento puede ser compartido
-                                de una manera visual e interactiva.
-                            </p>
-
-                            <div class="page-emojis">
-                                🖼️ 🏛️ 🎨 ✨
-                            </div>
-
-                        </div>
-
-                        <div class="page-image image-frame">
-                            <img src="IMG_9043.jpeg" alt="Exposición">
-                        </div>
-
-                    </div>
-
-                    <div class="page-number">13</div>
-
-                </section>
-
-
-                <!-- PÁGINA 14 -->
-                <section class="book-page">
-
-                    <div class="corner-emoji">📸</div>
-
-                    <div class="page-content reverse">
-
-                        <div class="page-image image-frame">
-                            <img src="IMG_9044.jpeg" alt="Fototeca">
-                        </div>
-
-                        <div class="page-text">
-
-                            <span class="section-label">
-                                ✦ MEMORIA VISUAL
-                            </span>
-
-                            <h2>Foto<span>teca</span></h2>
-
-                            <div class="red-yellow-line"></div>
-
-                            <p>
-                                Las fotografías constituyen testimonios visuales capaces
-                                de conservar lugares, personas y acontecimientos.
-                            </p>
-
-                            <p>
-                                Una fototeca permite organizar y preservar estas imágenes
-                                como parte de la memoria histórica y cultural.
-                            </p>
-
-                            <div class="page-emojis">
-                                📸 🖼️ 📷 ✨
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="page-number">14</div>
-
-                </section>
-
-
-                <!-- PÁGINA 15 -->
-                <section class="book-page">
-
-                    <div class="corner-emoji">📁</div>
-
-                    <div class="page-content">
-
-                        <div class="page-text">
-
-                            <span class="section-label">
-                                ✦ CONSERVACIÓN
-                            </span>
-
-                            <h2>Archi<span>vo</span></h2>
-
-                            <div class="red-yellow-line"></div>
-
-                            <p>
-                                Los archivos conservan documentos y registros de gran
-                                importancia para la investigación y la memoria histórica.
-                            </p>
-
-                            <p>
-                                Su preservación permite que las futuras generaciones puedan
-                                conocer y comprender acontecimientos del pasado.
-                            </p>
-
-                            <div class="page-emojis">
-                                📁 📜 🗃️ 🔐
-                            </div>
-
-                        </div>
-
-                        <div class="page-image image-frame">
-                            <img src="IMG_9046.jpeg" alt="Archivo">
-                        </div>
-
-                    </div>
-
-                    <div class="page-number">15</div>
-
-                </section>
                 <!-- =====================================================
-     PÁGINA 16 — GOBERNANTES DE ESPAÑA
-===================================================== -->
+                     PÁGINA 18 — LEOPOLDO CALVO-SOTELO
+                ====================================================== -->
 
-<section class="book-page governors-intro-page">
+                <section class="book-page biography-page">
 
-    <div class="corner-emoji">👑</div>
+                    <div class="corner-emoji">🏛️</div>
 
-    <div class="governors-intro-content">
+                    <div class="biography-layout reverse-biography">
 
-        <div class="cover-icons">
-            👑 🏛️ 🇪🇸 📜 👑
-        </div>
+                        <div class="biography-image image-frame">
+                            <img
+                                src="IMG_9060.jpeg"
+                                alt="Leopoldo Calvo-Sotelo"
+                            >
+                        </div>
 
-        <span class="section-label">
-            ✦ HISTORIA POLÍTICA DE ESPAÑA
-        </span>
+                        <div class="biography-content">
 
-        <h2>
-            Gobernantes de
-            <span>España</span>
-        </h2>
+                            <span class="section-label">
+                                👑 PRESIDENTES DEL GOBIERNO
+                            </span>
 
-        <div class="red-yellow-line center-line"></div>
+                            <h2>
+                                Leopoldo <span>Calvo-Sotelo</span>
+                            </h2>
 
-        <p>
-            La historia de España ha estado marcada por reyes, reinas y
-            presidentes que han dirigido el país durante diferentes períodos.
-            Sus decisiones y gobiernos han contribuido a transformar la
-            organización política, social e institucional de España.
-        </p>
+                            <div class="red-yellow-line"></div>
 
-        <p>
-            En esta sección conoceremos algunas figuras fundamentales de la
-            monarquía española y de los gobiernos democráticos contemporáneos.
-        </p>
+                            <div class="biography-date">
+                                📅 Presidente del Gobierno: 1981–1982
+                            </div>
 
-        <div class="governors-intro-emojis">
-            👑 🏛️ 📜 🇪🇸 ⚖️ 🕊️
-        </div>
+                            <h3>
+                                Una democracia en consolidación
+                            </h3>
 
-    </div>
+                            <p>
+                                Leopoldo Calvo-Sotelo asumió la Presidencia del
+                                Gobierno en 1981, en un período especialmente
+                                delicado para la joven democracia española.
+                            </p>
 
-    <div class="page-number">16</div>
+                            <p>
+                                Su gobierno estuvo relacionado con la
+                                consolidación de las instituciones democráticas
+                                y con decisiones importantes en la política
+                                exterior española.
+                            </p>
 
-</section>
+                            <div class="legacy-box">
 
+                                <strong>🏛️ Su legado</strong>
 
-<!-- =====================================================
-     PÁGINA 17 — ADOLFO SUÁREZ
-===================================================== -->
+                                <p>
+                                    Su etapa representa un momento importante
+                                    en la consolidación institucional de la
+                                    democracia española.
+                                </p>
 
-<section class="book-page biography-page">
+                            </div>
 
-    <div class="corner-emoji">🇪🇸</div>
+                        </div>
 
-    <div class="biography-layout">
+                    </div>
 
-        <div class="biography-image image-frame">
-            <img src="IMG_9059.jpeg" alt="Adolfo Suárez">
-        </div>
+                    <div class="page-number">18</div>
 
-        <div class="biography-content">
+                </section>
 
-            <span class="section-label">👑 PRESIDENTES DEL GOBIERNO</span>
 
-            <h2>Adolfo <span>Suárez</span></h2>
+                <!-- =====================================================
+                     PÁGINA 19 — FELIPE GONZÁLEZ
+                ====================================================== -->
 
-            <div class="red-yellow-line"></div>
+                <section class="book-page biography-page">
 
-            <div class="biography-date">
-                📅 Presidente del Gobierno: 1976–1981
-            </div>
+                    <div class="corner-emoji">🌹</div>
 
-            <h3>La Transición española</h3>
+                    <div class="biography-layout">
 
-            <p>
-                Adolfo Suárez fue una figura fundamental durante la transición
-                de España hacia la democracia. Llegó a la Presidencia del
-                Gobierno en 1976 y dirigió importantes reformas políticas
-                después del final de la dictadura franquista.
-            </p>
+                        <div class="biography-image image-frame">
+                            <img src="IMG_9061.jpeg" alt="Felipe González">
+                        </div>
 
-            <p>
-                Durante su gobierno se celebraron las elecciones generales de
-                1977 y se desarrolló el proceso político que culminó con la
-                aprobación de la Constitución española de 1978.
-            </p>
+                        <div class="biography-content">
 
-            <div class="legacy-box">
+                            <span class="section-label">
+                                👑 PRESIDENTES DEL GOBIERNO
+                            </span>
 
-                <strong>🏛️ Su legado</strong>
+                            <h2>
+                                Felipe <span>González</span>
+                            </h2>
 
-                <p>
-                    Es recordado como uno de los principales protagonistas de
-                    la construcción de la democracia española moderna.
-                </p>
+                            <div class="red-yellow-line"></div>
 
-            </div>
+                            <div class="biography-date">
+                                📅 Presidente del Gobierno: 1982–1996
+                            </div>
 
-        </div>
+                            <h3>Modernización y transformación</h3>
 
-    </div>
+                            <p>
+                                Felipe González fue presidente del Gobierno
+                                durante catorce años, convirtiéndose en una de
+                                las figuras políticas más importantes de la
+                                España democrática.
+                            </p>
 
-    <div class="page-number">17</div>
+                            <p>
+                                Durante sus gobiernos se impulsaron importantes
+                                transformaciones sociales y económicas, mientras
+                                España reforzaba su integración internacional y
+                                europea.
+                            </p>
 
-</section>
+                            <div class="legacy-box">
 
+                                <strong>🇪🇸 Su legado</strong>
 
-<!-- =====================================================
-     PÁGINA 18 — LEOPOLDO CALVO-SOTELO
-===================================================== -->
+                                <p>
+                                    Su largo período de gobierno estuvo asociado
+                                    a una profunda etapa de modernización y
+                                    cambio en España.
+                                </p>
 
-<section class="book-page biography-page">
+                            </div>
 
-    <div class="corner-emoji">🏛️</div>
+                        </div>
 
-    <div class="biography-layout reverse-biography">
+                    </div>
 
-        <div class="biography-image image-frame">
-            <img src="IMG_9060.jpeg" alt="Leopoldo Calvo-Sotelo">
-        </div>
+                    <div class="page-number">19</div>
 
-        <div class="biography-content">
+                </section>
 
-            <span class="section-label">👑 PRESIDENTES DEL GOBIERNO</span>
 
-            <h2>Leopoldo <span>Calvo-Sotelo</span></h2>
+                <!-- =====================================================
+                     PÁGINA 20 — JOSÉ MARÍA AZNAR
+                ====================================================== -->
 
-            <div class="red-yellow-line"></div>
+                <section class="book-page biography-page">
 
-            <div class="biography-date">
-                📅 Presidente del Gobierno: 1981–1982
-            </div>
+                    <div class="corner-emoji">🏛️</div>
 
-            <h3>Una democracia en consolidación</h3>
+                    <div class="biography-layout reverse-biography">
 
-            <p>
-                Leopoldo Calvo-Sotelo asumió la Presidencia del Gobierno en
-                1981, en un período especialmente delicado para la joven
-                democracia española.
-            </p>
+                        <div class="biography-image image-frame">
+                            <img
+                                src="IMG_9062.jpeg"
+                                alt="José María Aznar"
+                            >
+                        </div>
 
-            <p>
-                Su gobierno estuvo relacionado con la consolidación de las
-                instituciones democráticas y con decisiones importantes en la
-                política exterior española, entre ellas el proceso de ingreso
-                de España en la OTAN.
-            </p>
+                        <div class="biography-content">
 
-            <div class="legacy-box">
+                            <span class="section-label">
+                                👑 PRESIDENTES DEL GOBIERNO
+                            </span>
 
-                <strong>🏛️ Su legado</strong>
+                            <h2>
+                                José María <span>Aznar</span>
+                            </h2>
 
-                <p>
-                    Su etapa representa un momento importante en la
-                    consolidación institucional de la democracia española.
-                </p>
+                            <div class="red-yellow-line"></div>
 
-            </div>
+                            <div class="biography-date">
+                                📅 Presidente del Gobierno: 1996–2004
+                            </div>
 
-        </div>
+                            <h3>Una nueva etapa política</h3>
 
-    </div>
+                            <p>
+                                José María Aznar presidió el Gobierno de España
+                                entre 1996 y 2004. Su llegada al poder
+                                representó un cambio político tras los años de
+                                gobierno socialista de Felipe González.
+                            </p>
 
-    <div class="page-number">18</div>
+                            <p>
+                                Durante su mandato, España experimentó
+                                importantes cambios económicos y fortaleció su
+                                presencia dentro de la política internacional.
+                            </p>
 
-</section>
+                            <div class="legacy-box">
 
+                                <strong>📜 Su legado</strong>
 
-<!-- =====================================================
-     PÁGINA 19 — FELIPE GONZÁLEZ
-===================================================== -->
+                                <p>
+                                    Su gobierno forma parte de una etapa
+                                    decisiva de la España de finales del siglo
+                                    XX y comienzos del siglo XXI.
+                                </p>
 
-<section class="book-page biography-page">
+                            </div>
 
-    <div class="corner-emoji">🌹</div>
+                        </div>
 
-    <div class="biography-layout">
+                    </div>
 
-        <div class="biography-image image-frame">
-            <img src="IMG_9061.jpeg" alt="Felipe González">
-        </div>
+                    <div class="page-number">20</div>
 
-        <div class="biography-content">
+                </section>
 
-            <span class="section-label">👑 PRESIDENTES DEL GOBIERNO</span>
 
-            <h2>Felipe <span>González</span></h2>
+                <!-- =====================================================
+                     PÁGINA 21 — JOSÉ LUIS RODRÍGUEZ ZAPATERO
+                ====================================================== -->
 
-            <div class="red-yellow-line"></div>
+                <section class="book-page biography-page">
 
-            <div class="biography-date">
-                📅 Presidente del Gobierno: 1982–1996
-            </div>
+                    <div class="corner-emoji">🇪🇸</div>
 
-            <h3>Modernización y transformación</h3>
+                    <div class="biography-layout">
 
-            <p>
-                Felipe González fue presidente del Gobierno durante catorce
-                años, convirtiéndose en una de las figuras políticas más
-                importantes de la España democrática.
-            </p>
+                        <div class="biography-image image-frame">
+                            <img
+                                src="IMG_9063.jpeg"
+                                alt="José Luis Rodríguez Zapatero"
+                            >
+                        </div>
 
-            <p>
-                Durante sus gobiernos se impulsaron importantes transformaciones
-                sociales y económicas, mientras España reforzaba su integración
-                internacional y europea.
-            </p>
+                        <div class="biography-content">
 
-            <div class="legacy-box">
+                            <span class="section-label">
+                                👑 PRESIDENTES DEL GOBIERNO
+                            </span>
 
-                <strong>🇪🇸 Su legado</strong>
+                            <h2>
+                                José Luis Rodríguez
+                                <span>Zapatero</span>
+                            </h2>
 
-                <p>
-                    Su largo período de gobierno estuvo asociado a una profunda
-                    etapa de modernización y cambio en España.
-                </p>
+                            <div class="red-yellow-line"></div>
 
-            </div>
+                            <div class="biography-date">
+                                📅 Presidente del Gobierno: 2004–2011
+                            </div>
 
-        </div>
+                            <h3>Reformas y cambios sociales</h3>
 
-    </div>
+                            <p>
+                                José Luis Rodríguez Zapatero presidió el Gobierno
+                                durante dos legislaturas. Su etapa estuvo marcada
+                                por importantes reformas sociales y debates
+                                relacionados con la ampliación de derechos
+                                civiles.
+                            </p>
 
-    <div class="page-number">19</div>
+                            <p>
+                                Su segundo mandato coincidió con la crisis
+                                económica mundial, que tuvo importantes
+                                consecuencias para España.
+                            </p>
 
-</section>
+                            <div class="legacy-box">
 
+                                <strong>⚖️ Su legado</strong>
 
-<!-- =====================================================
-     PÁGINA 20 — JOSÉ MARÍA AZNAR
-===================================================== -->
+                                <p>
+                                    Su gobierno dejó una importante huella en la
+                                    evolución social y política de la España
+                                    contemporánea.
+                                </p>
 
-<section class="book-page biography-page">
+                            </div>
 
-    <div class="corner-emoji">🏛️</div>
+                        </div>
 
-    <div class="biography-layout reverse-biography">
+                    </div>
 
-        <div class="biography-image image-frame">
-            <img src="IMG_9062.jpeg" alt="José María Aznar">
-        </div>
+                    <div class="page-number">21</div>
 
-        <div class="biography-content">
+                </section>
 
-            <span class="section-label">👑 PRESIDENTES DEL GOBIERNO</span>
 
-            <h2>José María <span>Aznar</span></h2>
+                <!-- =====================================================
+                     PÁGINA 22 — MARIANO RAJOY
+                ====================================================== -->
 
-            <div class="red-yellow-line"></div>
+                <section class="book-page biography-page">
 
-            <div class="biography-date">
-                📅 Presidente del Gobierno: 1996–2004
-            </div>
+                    <div class="corner-emoji">🏛️</div>
 
-            <h3>Una nueva etapa política</h3>
+                    <div class="biography-layout reverse-biography">
 
-            <p>
-                José María Aznar presidió el Gobierno de España entre 1996 y
-                2004. Su llegada al poder representó un cambio político tras
-                los años de gobierno socialista de Felipe González.
-            </p>
+                        <div class="biography-image image-frame">
+                            <img src="IMG_9064.jpeg" alt="Mariano Rajoy">
+                        </div>
 
-            <p>
-                Durante su mandato, España experimentó importantes cambios
-                económicos y fortaleció su presencia dentro de la política
-                internacional.
-            </p>
+                        <div class="biography-content">
 
-            <div class="legacy-box">
+                            <span class="section-label">
+                                👑 PRESIDENTES DEL GOBIERNO
+                            </span>
 
-                <strong>📜 Su legado</strong>
+                            <h2>
+                                Mariano <span>Rajoy</span>
+                            </h2>
 
-                <p>
-                    Su gobierno forma parte de una etapa decisiva de la España
-                    de finales del siglo XX y comienzos del siglo XXI.
-                </p>
+                            <div class="red-yellow-line"></div>
 
-            </div>
+                            <div class="biography-date">
+                                📅 Presidente del Gobierno: 2011–2018
+                            </div>
 
-        </div>
+                            <h3>Gobernar durante la crisis</h3>
 
-    </div>
+                            <p>
+                                Mariano Rajoy llegó a la Presidencia del Gobierno
+                                en un período marcado por una profunda crisis
+                                económica y altos niveles de desempleo.
+                            </p>
 
-    <div class="page-number">20</div>
+                            <p>
+                                Su gobierno aplicó políticas dirigidas a la
+                                recuperación económica y afrontó también
+                                importantes desafíos territoriales y políticos.
+                            </p>
 
-</section>
+                            <div class="legacy-box">
 
+                                <strong>🏛️ Su legado</strong>
 
-<!-- =====================================================
-     PÁGINA 21 — JOSÉ LUIS RODRÍGUEZ ZAPATERO
-===================================================== -->
+                                <p>
+                                    Su mandato estuvo especialmente relacionado
+                                    con los retos económicos y políticos de la
+                                    España de la década de 2010.
+                                </p>
 
-<section class="book-page biography-page">
+                            </div>
 
-    <div class="corner-emoji">🇪🇸</div>
+                        </div>
 
-    <div class="biography-layout">
+                    </div>
 
-        <div class="biography-image image-frame">
-            <img src="IMG_9063.jpeg" alt="José Luis Rodríguez Zapatero">
-        </div>
+                    <div class="page-number">22</div>
 
-        <div class="biography-content">
+                </section>
 
-            <span class="section-label">👑 PRESIDENTES DEL GOBIERNO</span>
 
-            <h2>José Luis Rodríguez <span>Zapatero</span></h2>
+                <!-- =====================================================
+                     PÁGINA 23 — PEDRO SÁNCHEZ
+                ====================================================== -->
 
-            <div class="red-yellow-line"></div>
+                <section class="book-page biography-page">
 
-            <div class="biography-date">
-                📅 Presidente del Gobierno: 2004–2011
-            </div>
+                    <div class="corner-emoji">🇪🇸</div>
 
-            <h3>Reformas y cambios sociales</h3>
+                    <div class="biography-layout">
 
-            <p>
-                José Luis Rodríguez Zapatero presidió el Gobierno durante dos
-                legislaturas. Su etapa estuvo marcada por importantes reformas
-                sociales y por debates relacionados con la ampliación de
-                derechos civiles.
-            </p>
+                        <div class="biography-image image-frame">
+                            <img src="IMG_9065.jpeg" alt="Pedro Sánchez">
+                        </div>
 
-            <p>
-                Su segundo mandato coincidió con la crisis económica mundial,
-                que tuvo importantes consecuencias para España.
-            </p>
+                        <div class="biography-content">
 
-            <div class="legacy-box">
+                            <span class="section-label">
+                                👑 PRESIDENTES DEL GOBIERNO
+                            </span>
 
-                <strong>⚖️ Su legado</strong>
+                            <h2>
+                                Pedro <span>Sánchez</span>
+                            </h2>
 
-                <p>
-                    Su gobierno dejó una importante huella en la evolución
-                    social y política de la España contemporánea.
-                </p>
+                            <div class="red-yellow-line"></div>
 
-            </div>
+                            <div class="biography-date">
+                                📅 Presidente del Gobierno: 2018–Actualidad
+                            </div>
 
-        </div>
+                            <h3>La España contemporánea</h3>
 
-    </div>
+                            <p>
+                                Pedro Sánchez llegó a la Presidencia del Gobierno
+                                en 2018 y ha encabezado diferentes legislaturas
+                                desde entonces.
+                            </p>
 
-    <div class="page-number">21</div>
+                            <p>
+                                Su etapa de gobierno ha estado marcada por
+                                importantes desafíos contemporáneos y por la
+                                gestión de acontecimientos nacionales e
+                                internacionales de gran impacto.
+                            </p>
 
-</section>
+                            <div class="legacy-box">
 
+                                <strong>🏛️ Actualidad</strong>
 
-<!-- =====================================================
-     PÁGINA 22 — MARIANO RAJOY
-===================================================== -->
+                                <p>
+                                    Representa la etapa más reciente del
+                                    recorrido de los presidentes del Gobierno de
+                                    la España democrática.
+                                </p>
 
-<section class="book-page biography-page">
+                            </div>
 
-    <div class="corner-emoji">🏛️</div>
+                        </div>
 
-    <div class="biography-layout reverse-biography">
+                    </div>
 
-        <div class="biography-image image-frame">
-            <img src="IMG_9064.jpeg" alt="Mariano Rajoy">
-        </div>
+                    <div class="page-number">23</div>
 
-        <div class="biography-content">
+                </section>
 
-            <span class="section-label">👑 PRESIDENTES DEL GOBIERNO</span>
 
-            <h2>Mariano <span>Rajoy</span></h2>
+                <!-- =====================================================
+                     PÁGINA 24 — ISABEL I Y FERNANDO II
+                ====================================================== -->
 
-            <div class="red-yellow-line"></div>
+                <section class="book-page biography-page monarchy-page">
 
-            <div class="biography-date">
-                📅 Presidente del Gobierno: 2011–2018
-            </div>
+                    <div class="corner-emoji">👑</div>
 
-            <h3>Gobernar durante la crisis</h3>
+                    <div class="biography-layout reverse-biography">
 
-            <p>
-                Mariano Rajoy llegó a la Presidencia del Gobierno en un período
-                marcado por una profunda crisis económica y altos niveles de
-                desempleo.
-            </p>
+                        <div class="biography-image image-frame">
+                            <img
+                                src="IMG_9066.jpeg"
+                                alt="Isabel I de Castilla y Fernando II de Aragón"
+                            >
+                        </div>
 
-            <p>
-                Su gobierno aplicó políticas dirigidas a la recuperación
-                económica y afrontó también importantes desafíos territoriales
-                y políticos.
-            </p>
+                        <div class="biography-content">
 
-            <div class="legacy-box">
+                            <span class="section-label">
+                                👑 MONARQUÍA E HISTORIA
+                            </span>
 
-                <strong>🏛️ Su legado</strong>
+                            <h2>
+                                Isabel I y <span>Fernando II</span>
+                            </h2>
 
-                <p>
-                    Su mandato estuvo especialmente relacionado con los retos
-                    económicos y políticos de la España de la década de 2010.
-                </p>
+                            <div class="red-yellow-line"></div>
 
-            </div>
+                            <div class="biography-date">
+                                📅 Reyes Católicos
+                            </div>
 
-        </div>
+                            <h3>Una unión decisiva</h3>
 
-    </div>
+                            <p>
+                                Isabel I de Castilla y Fernando II de Aragón son
+                                conocidos como los Reyes Católicos. Su matrimonio
+                                unió dinásticamente las coronas de Castilla y
+                                Aragón.
+                            </p>
 
-    <div class="page-number">22</div>
+                            <p>
+                                Su reinado estuvo marcado por la conquista de
+                                Granada en 1492 y por el inicio de una nueva
+                                etapa de expansión de la monarquía hispánica.
+                            </p>
 
-</section>
+                            <div class="legacy-box">
 
+                                <strong>👑 Su legado</strong>
 
-<!-- =====================================================
-     PÁGINA 23 — PEDRO SÁNCHEZ
-===================================================== -->
+                                <p>
+                                    Son considerados figuras fundamentales en la
+                                    formación de la España moderna y en la
+                                    expansión histórica de la monarquía
+                                    española.
+                                </p>
 
-<section class="book-page biography-page">
+                            </div>
 
-    <div class="corner-emoji">🇪🇸</div>
+                        </div>
 
-    <div class="biography-layout">
+                    </div>
 
-        <div class="biography-image image-frame">
-            <img src="IMG_9065.jpeg" alt="Pedro Sánchez">
-        </div>
+                    <div class="page-number">24</div>
 
-        <div class="biography-content">
+                </section>
 
-            <span class="section-label">👑 PRESIDENTES DEL GOBIERNO</span>
 
-            <h2>Pedro <span>Sánchez</span></h2>
+                <!-- =====================================================
+                     PÁGINA 25 — JUAN CARLOS I
+                ====================================================== -->
 
-            <div class="red-yellow-line"></div>
+                <section class="book-page biography-page monarchy-page">
 
-            <div class="biography-date">
-                📅 Presidente del Gobierno: 2018–Actualidad
-            </div>
+                    <div class="corner-emoji">👑</div>
 
-            <h3>La España contemporánea</h3>
+                    <div class="biography-layout">
 
-            <p>
-                Pedro Sánchez llegó a la Presidencia del Gobierno en 2018 y ha
-                encabezado diferentes legislaturas desde entonces.
-            </p>
+                        <div class="biography-image image-frame">
+                            <img src="IMG_9067.jpeg" alt="Juan Carlos I">
+                        </div>
 
-            <p>
-                Su etapa de gobierno ha estado marcada por importantes desafíos
-                contemporáneos y por la gestión de acontecimientos nacionales e
-                internacionales de gran impacto.
-            </p>
+                        <div class="biography-content">
 
-            <div class="legacy-box">
+                            <span class="section-label">
+                                👑 MONARQUÍA ESPAÑOLA
+                            </span>
 
-                <strong>🏛️ Actualidad</strong>
+                            <h2>
+                                Juan Carlos <span>I</span>
+                            </h2>
 
-                <p>
-                    Representa la etapa más reciente del recorrido de los
-                    presidentes del Gobierno de la España democrática.
-                </p>
+                            <div class="red-yellow-line"></div>
 
-            </div>
+                            <div class="biography-date">
+                                📅 Rey de España: 1975–2014
+                            </div>
 
-        </div>
+                            <h3>El inicio de una nueva etapa</h3>
 
-    </div>
+                            <p>
+                                Juan Carlos I fue proclamado rey de España en
+                                1975. Su reinado coincidió con el proceso de
+                                transición hacia un sistema democrático.
+                            </p>
 
-    <div class="page-number">23</div>
+                            <p>
+                                Durante este período se aprobó la Constitución
+                                de 1978, que estableció a España como una
+                                monarquía parlamentaria.
+                            </p>
 
-</section>
+                            <div class="legacy-box">
 
+                                <strong>🏛️ Su importancia histórica</strong>
 
-<!-- =====================================================
-     PÁGINA 24 — ISABEL I Y FERNANDO II
-===================================================== -->
+                                <p>
+                                    Su reinado quedó estrechamente relacionado
+                                    con la Transición española y la consolidación
+                                    del nuevo sistema constitucional.
+                                </p>
 
-<section class="book-page biography-page monarchy-page">
+                            </div>
 
-    <div class="corner-emoji">👑</div>
+                        </div>
 
-    <div class="biography-layout reverse-biography">
+                    </div>
 
-        <div class="biography-image image-frame">
-            <img src="IMG_9066.jpeg" alt="Isabel I de Castilla y Fernando II de Aragón">
-        </div>
+                    <div class="page-number">25</div>
 
-        <div class="biography-content">
+                </section>
 
-            <span class="section-label">👑 MONARQUÍA E HISTORIA</span>
 
-            <h2>Isabel I y <span>Fernando II</span></h2>
+                <!-- =====================================================
+                     PÁGINA 26 — FELIPE VI
+                ====================================================== -->
 
-            <div class="red-yellow-line"></div>
+                <section class="book-page biography-page monarchy-page">
 
-            <div class="biography-date">
-                📅 Reyes Católicos
-            </div>
+                    <div class="corner-emoji">👑</div>
 
-            <h3>Una unión decisiva</h3>
+                    <div class="biography-layout reverse-biography">
 
-            <p>
-                Isabel I de Castilla y Fernando II de Aragón son conocidos como
-                los Reyes Católicos. Su matrimonio unió dinásticamente las
-                coronas de Castilla y Aragón, convirtiéndose en un momento
-                fundamental de la historia de la península.
-            </p>
+                        <div class="biography-image image-frame">
+                            <img src="IMG_9068.jpeg" alt="Felipe VI">
+                        </div>
 
-            <p>
-                Su reinado estuvo marcado por la conquista de Granada en 1492
-                y por el inicio de una nueva etapa de expansión de la monarquía
-                hispánica.
-            </p>
+                        <div class="biography-content">
 
-            <div class="legacy-box">
+                            <span class="section-label">
+                                👑 MONARQUÍA ESPAÑOLA
+                            </span>
 
-                <strong>👑 Su legado</strong>
+                            <h2>
+                                Felipe <span>VI</span>
+                            </h2>
 
-                <p>
-                    Son considerados figuras fundamentales en la formación de
-                    la España moderna y en la expansión histórica de la
-                    monarquía española.
-                </p>
+                            <div class="red-yellow-line"></div>
 
-            </div>
+                            <div class="biography-date">
+                                📅 Rey de España: 2014–Actualidad
+                            </div>
 
-        </div>
+                            <h3>La monarquía actual</h3>
 
-    </div>
+                            <p>
+                                Felipe VI accedió al trono en 2014. Como rey de
+                                España, es el jefe del Estado dentro del sistema
+                                de monarquía parlamentaria establecido por la
+                                Constitución.
+                            </p>
 
-    <div class="page-number">24</div>
+                            <p>
+                                Su reinado representa la continuidad de la
+                                institución monárquica dentro de la España
+                                democrática contemporánea.
+                            </p>
 
-</section>
+                            <div class="legacy-box">
 
+                                <strong>👑 Su papel</strong>
 
-<!-- =====================================================
-     PÁGINA 25 — JUAN CARLOS I
-===================================================== -->
+                                <p>
+                                    Como jefe del Estado, representa la unidad y
+                                    continuidad institucional del país dentro del
+                                    marco constitucional.
+                                </p>
 
-<section class="book-page biography-page monarchy-page">
+                            </div>
 
-    <div class="corner-emoji">👑</div>
+                        </div>
 
-    <div class="biography-layout">
+                    </div>
 
-        <div class="biography-image image-frame">
-            <img src="IMG_9067.jpeg" alt="Juan Carlos I">
-        </div>
+                    <div class="page-number">26</div>
 
-        <div class="biography-content">
+                </section>
 
-            <span class="section-label">👑 MONARQUÍA ESPAÑOLA</span>
 
-            <h2>Juan Carlos <span>I</span></h2>
+                <!-- =====================================================
+                     PÁGINA 27 — PALACIO DE LA MONCLOA
+                ====================================================== -->
 
-            <div class="red-yellow-line"></div>
+                <section class="book-page biography-page institution-page">
 
-            <div class="biography-date">
-                📅 Rey de España: 1975–2014
-            </div>
+                    <div class="corner-emoji">🏛️</div>
 
-            <h3>El inicio de una nueva etapa</h3>
+                    <div class="biography-layout">
 
-            <p>
-                Juan Carlos I fue proclamado rey de España en 1975, después de
-                la muerte de Francisco Franco. Su reinado coincidió con el
-                proceso de transición hacia un sistema democrático.
-            </p>
+                        <div class="biography-image image-frame">
+                            <img
+                                src="IMG_9069.jpeg"
+                                alt="Palacio de la Moncloa"
+                            >
+                        </div>
 
-            <p>
-                Durante este período se aprobó la Constitución de 1978, que
-                estableció a España como una monarquía parlamentaria.
-            </p>
+                        <div class="biography-content">
 
-            <div class="legacy-box">
+                            <span class="section-label">
+                                🏛️ INSTITUCIONES DE ESPAÑA
+                            </span>
 
-                <strong>🏛️ Su importancia histórica</strong>
+                            <h2>
+                                Palacio de la <span>Moncloa</span>
+                            </h2>
 
-                <p>
-                    Su reinado quedó estrechamente relacionado con la
-                    Transición española y la consolidación del nuevo sistema
-                    constitucional.
-                </p>
+                            <div class="red-yellow-line"></div>
 
-            </div>
+                            <h3>El centro del Gobierno</h3>
 
-        </div>
+                            <p>
+                                El Palacio de la Moncloa es uno de los lugares
+                                más vinculados al funcionamiento del Gobierno de
+                                España y a la actividad de la Presidencia del
+                                Gobierno.
+                            </p>
 
-    </div>
+                            <p>
+                                Con el tiempo, La Moncloa se ha convertido en un
+                                símbolo de la dirección política del poder
+                                ejecutivo español.
+                            </p>
 
-    <div class="page-number">25</div>
+                            <div class="legacy-box">
 
-</section>
+                                <strong>🏛️ Importancia</strong>
 
+                                <p>
+                                    Representa uno de los principales espacios
+                                    institucionales relacionados con la
+                                    Presidencia del Gobierno.
+                                </p>
 
-<!-- =====================================================
-     PÁGINA 26 — FELIPE VI
-===================================================== -->
+                            </div>
 
-<section class="book-page biography-page monarchy-page">
+                        </div>
 
-    <div class="corner-emoji">👑</div>
+                    </div>
 
-    <div class="biography-layout reverse-biography">
+                    <div class="page-number">27</div>
 
-        <div class="biography-image image-frame">
-            <img src="IMG_9068.jpeg" alt="Felipe VI">
-        </div>
+                </section>
 
-        <div class="biography-content">
 
-            <span class="section-label">👑 MONARQUÍA ESPAÑOLA</span>
+                <!-- =====================================================
+                     PÁGINA 28 — CONGRESO DE LOS DIPUTADOS
+                ====================================================== -->
 
-            <h2>Felipe <span>VI</span></h2>
+                <section class="book-page biography-page institution-page">
 
-            <div class="red-yellow-line"></div>
+                    <div class="corner-emoji">🏛️</div>
 
-            <div class="biography-date">
-                📅 Rey de España: 2014–Actualidad
-            </div>
+                    <div class="biography-layout reverse-biography">
 
-            <h3>La monarquía actual</h3>
+                        <div class="biography-image image-frame">
+                            <img
+                                src="IMG_9070.jpeg"
+                                alt="Congreso de los Diputados"
+                            >
+                        </div>
 
-            <p>
-                Felipe VI accedió al trono en 2014. Como rey de España, es el
-                jefe del Estado dentro del sistema de monarquía parlamentaria
-                establecido por la Constitución.
-            </p>
+                        <div class="biography-content">
 
-            <p>
-                Su reinado representa la continuidad de la institución
-                monárquica dentro de la España democrática contemporánea.
-            </p>
+                            <span class="section-label">
+                                🏛️ INSTITUCIONES DEMOCRÁTICAS
+                            </span>
 
-            <div class="legacy-box">
+                            <h2>
+                                Congreso de los <span>Diputados</span>
+                            </h2>
 
-                <strong>👑 Su papel</strong>
+                            <div class="red-yellow-line"></div>
 
-                <p>
-                    Como jefe del Estado, representa la unidad y continuidad
-                    institucional del país dentro del marco constitucional.
-                </p>
+                            <h3>La representación ciudadana</h3>
 
-            </div>
+                            <p>
+                                El Congreso de los Diputados es una de las
+                                instituciones fundamentales del sistema
+                                democrático español y forma parte de las Cortes
+                                Generales.
+                            </p>
 
-        </div>
+                            <p>
+                                En él se debaten y aprueban leyes y se desarrolla
+                                una parte esencial de la representación política
+                                de la ciudadanía.
+                            </p>
 
-    </div>
+                            <div class="legacy-box">
 
-    <div class="page-number">26</div>
+                                <strong>⚖️ Su función</strong>
 
-</section>
+                                <p>
+                                    Es una institución esencial para el
+                                    funcionamiento de la democracia y del sistema
+                                    parlamentario español.
+                                </p>
 
+                            </div>
 
-<!-- =====================================================
-     PÁGINA 27 — PALACIO DE LA MONCLOA
-===================================================== -->
+                        </div>
 
-<section class="book-page biography-page institution-page">
+                    </div>
 
-    <div class="corner-emoji">🏛️</div>
+                    <div class="page-number">28</div>
 
-    <div class="biography-layout">
+                </section>
 
-        <div class="biography-image image-frame">
-            <img src="IMG_9069.jpeg" alt="Palacio de la Moncloa">
-        </div>
 
-        <div class="biography-content">
+                <!-- =====================================================
+                     PÁGINA 29 — BANDERA DE ESPAÑA
+                ====================================================== -->
 
-            <span class="section-label">🏛️ INSTITUCIONES DE ESPAÑA</span>
+                <section class="book-page biography-page symbol-page">
 
-            <h2>Palacio de la <span>Moncloa</span></h2>
+                    <div class="corner-emoji">🇪🇸</div>
 
-            <div class="red-yellow-line"></div>
+                    <div class="biography-layout">
 
-            <h3>El centro del Gobierno</h3>
+                        <div class="biography-image image-frame">
+                            <img
+                                src="IMG_9071.jpeg"
+                                alt="Bandera de España"
+                            >
+                        </div>
 
-            <p>
-                El Palacio de la Moncloa es uno de los lugares más vinculados
-                al funcionamiento del Gobierno de España y a la actividad de
-                la Presidencia del Gobierno.
-            </p>
+                        <div class="biography-content">
 
-            <p>
-                Con el tiempo, La Moncloa se ha convertido en un símbolo de la
-                dirección política del poder ejecutivo español.
-            </p>
+                            <span class="section-label">
+                                🇪🇸 SÍMBOLOS NACIONALES
+                            </span>
 
-            <div class="legacy-box">
+                            <h2>
+                                Bandera de <span>España</span>
+                            </h2>
 
-                <strong>🏛️ Importancia</strong>
+                            <div class="red-yellow-line"></div>
 
-                <p>
-                    Representa uno de los principales espacios institucionales
-                    relacionados con la Presidencia del Gobierno.
-                </p>
+                            <h3>Rojo y amarillo</h3>
 
-            </div>
+                            <p>
+                                La bandera de España es uno de los símbolos
+                                nacionales más reconocibles del país. Sus colores
+                                rojo y amarillo forman parte de la identidad
+                                visual española.
+                            </p>
 
-        </div>
+                            <p>
+                                El diseño actual está definido dentro del marco
+                                legal español y representa oficialmente al
+                                Estado.
+                            </p>
 
-    </div>
+                            <div class="legacy-box">
 
-    <div class="page-number">27</div>
+                                <strong>🇪🇸 Su significado</strong>
 
-</section>
+                                <p>
+                                    Es uno de los principales símbolos de
+                                    identidad y representación nacional de
+                                    España.
+                                </p>
 
+                            </div>
 
-<!-- =====================================================
-     PÁGINA 28 — CONGRESO DE LOS DIPUTADOS
-===================================================== -->
+                        </div>
 
-<section class="book-page biography-page institution-page">
+                    </div>
 
-    <div class="corner-emoji">🏛️</div>
+                    <div class="page-number">29</div>
 
-    <div class="biography-layout reverse-biography">
+                </section>
 
-        <div class="biography-image image-frame">
-            <img src="IMG_9070.jpeg" alt="Congreso de los Diputados">
-        </div>
 
-        <div class="biography-content">
+                <!-- =====================================================
+                     PÁGINA 30 — CONSTITUCIÓN ESPAÑOLA
+                ====================================================== -->
 
-            <span class="section-label">🏛️ INSTITUCIONES DEMOCRÁTICAS</span>
+                <section class="book-page biography-page institution-page">
 
-            <h2>Congreso de los <span>Diputados</span></h2>
+                    <div class="corner-emoji">📜</div>
 
-            <div class="red-yellow-line"></div>
+                    <div class="biography-layout reverse-biography">
 
-            <h3>La representación ciudadana</h3>
+                        <div class="biography-image image-frame">
+                            <img
+                                src="IMG_9072.jpeg"
+                                alt="Constitución española de 1978"
+                            >
+                        </div>
 
-            <p>
-                El Congreso de los Diputados es una de las instituciones
-                fundamentales del sistema democrático español y forma parte de
-                las Cortes Generales.
-            </p>
+                        <div class="biography-content">
 
-            <p>
-                En él se debaten y aprueban leyes y se desarrolla una parte
-                esencial de la representación política de la ciudadanía.
-            </p>
+                            <span class="section-label">
+                                📜 DEMOCRACIA Y CONSTITUCIÓN
+                            </span>
 
-            <div class="legacy-box">
+                            <h2>
+                                Constitución de <span>1978</span>
+                            </h2>
 
-                <strong>⚖️ Su función</strong>
+                            <div class="red-yellow-line"></div>
 
-                <p>
-                    Es una institución esencial para el funcionamiento de la
-                    democracia y del sistema parlamentario español.
-                </p>
+                            <h3>La base del sistema democrático</h3>
 
-            </div>
+                            <p>
+                                La Constitución española de 1978 estableció las
+                                bases del actual sistema democrático y
+                                constitucional de España.
+                            </p>
 
-        </div>
+                            <p>
+                                Proclama a España como un Estado social y
+                                democrático de Derecho y establece la monarquía
+                                parlamentaria como forma política del Estado.
+                            </p>
 
-    </div>
+                            <div class="legacy-box">
 
-    <div class="page-number">28</div>
+                                <strong>📜 Su importancia</strong>
 
-</section>
+                                <p>
+                                    Es la norma fundamental que organiza las
+                                    instituciones y protege los derechos y
+                                    libertades dentro del Estado.
+                                </p>
 
+                            </div>
 
-<!-- =====================================================
-     PÁGINA 29 — BANDERA DE ESPAÑA
-===================================================== -->
+                        </div>
 
-<section class="book-page biography-page symbol-page">
+                    </div>
 
-    <div class="corner-emoji">🇪🇸</div>
+                    <div class="page-number">30</div>
 
-    <div class="biography-layout">
+                </section>
 
-        <div class="biography-image image-frame">
-            <img src="IMG_9071.jpeg" alt="Bandera de España">
-        </div>
 
-        <div class="biography-content">
+                <!-- =====================================================
+                     PÁGINA 31 — MAPA HISTÓRICO DE ESPAÑA
+                ====================================================== -->
 
-            <span class="section-label">🇪🇸 SÍMBOLOS NACIONALES</span>
+                <section class="book-page biography-page history-page">
 
-            <h2>Bandera de <span>España</span></h2>
+                    <div class="corner-emoji">🗺️</div>
 
-            <div class="red-yellow-line"></div>
+                    <div class="biography-layout">
 
-            <h3>Rojo y amarillo</h3>
+                        <div class="biography-image image-frame">
+                            <img
+                                src="IMG_9073.jpeg"
+                                alt="Mapa histórico de España"
+                            >
+                        </div>
 
-            <p>
-                La bandera de España es uno de los símbolos nacionales más
-                reconocibles del país. Sus colores rojo y amarillo forman parte
-                de la identidad visual española.
-            </p>
+                        <div class="biography-content">
 
-            <p>
-                El diseño actual está definido dentro del marco legal español
-                y representa oficialmente al Estado.
-            </p>
+                            <span class="section-label">
+                                🗺️ ESPAÑA A TRAVÉS DEL TIEMPO
+                            </span>
 
-            <div class="legacy-box">
+                            <h2>
+                                Historia y <span>territorio</span>
+                            </h2>
 
-                <strong>🇪🇸 Su significado</strong>
+                            <div class="red-yellow-line"></div>
 
-                <p>
-                    Es uno de los principales símbolos de identidad y
-                    representación nacional de España.
-                </p>
+                            <h3>Un país en transformación</h3>
 
-            </div>
+                            <p>
+                                La historia territorial de España ha cambiado a
+                                lo largo de los siglos debido a la evolución de
+                                los distintos reinos, coronas y estructuras
+                                políticas de la península ibérica.
+                            </p>
 
-        </div>
+                            <p>
+                                Los mapas históricos permiten observar cómo se
+                                transformaron las fronteras y cómo se desarrolló
+                                el territorio hasta llegar a la España
+                                contemporánea.
+                            </p>
 
-    </div>
+                            <div class="legacy-box">
 
-    <div class="page-number">29</div>
+                                <strong>🗺️ Su importancia</strong>
 
-</section>
+                                <p>
+                                    El estudio del territorio permite comprender
+                                    mejor la evolución histórica y política de
+                                    España.
+                                </p>
 
+                            </div>
 
-<!-- =====================================================
-     PÁGINA 30 — CONSTITUCIÓN ESPAÑOLA
-===================================================== -->
+                        </div>
 
-<section class="book-page biography-page institution-page">
+                    </div>
 
-    <div class="corner-emoji">📜</div>
+                    <div class="page-number">31</div>
 
-    <div class="biography-layout reverse-biography">
+                </section>
 
-        <div class="biography-image image-frame">
-            <img src="IMG_9072.jpeg" alt="Constitución española de 1978">
-        </div>
 
-        <div class="biography-content">
-
-            <span class="section-label">📜 DEMOCRACIA Y CONSTITUCIÓN</span>
-
-            <h2>Constitución de <span>1978</span></h2>
-
-            <div class="red-yellow-line"></div>
-
-            <h3>La base del sistema democrático</h3>
-
-            <p>
-                La Constitución española de 1978 estableció las bases del
-                actual sistema democrático y constitucional de España.
-            </p>
-
-            <p>
-                Proclama a España como un Estado social y democrático de
-                Derecho y establece la monarquía parlamentaria como forma
-                política del Estado.
-            </p>
-
-            <div class="legacy-box">
-
-                <strong>📜 Su importancia</strong>
-
-                <p>
-                    Es la norma fundamental que organiza las instituciones y
-                    protege los derechos y libertades dentro del Estado.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="page-number">30</div>
-
-</section>
-
-
-<!-- =====================================================
-     PÁGINA 31 — MAPA HISTÓRICO DE ESPAÑA
-===================================================== -->
-
-<section class="book-page biography-page history-page">
-
-    <div class="corner-emoji">🗺️</div>
-
-    <div class="biography-layout">
-
-        <div class="biography-image image-frame">
-            <img src="IMG_9073.jpeg" alt="Mapa histórico de España">
-        </div>
-
-        <div class="biography-content">
-
-            <span class="section-label">🗺️ ESPAÑA A TRAVÉS DEL TIEMPO</span>
-
-            <h2>Historia y <span>territorio</span></h2>
-
-            <div class="red-yellow-line"></div>
-
-            <h3>Un país en transformación</h3>
-
-            <p>
-                La historia territorial de España ha cambiado a lo largo de los
-                siglos debido a la evolución de los distintos reinos, coronas y
-                estructuras políticas de la península ibérica.
-            </p>
-
-            <p>
-                Los mapas históricos permiten observar cómo se transformaron
-                las fronteras y cómo se desarrolló el territorio hasta llegar a
-                la España contempor
+                <!-- =====================================================
+                     PÁGINA 32 — CONCLUSIÓN
+                ====================================================== -->
 
                 <section class="book-page conclusion-page">
 
@@ -1831,7 +2635,10 @@
                     <div class="page-content reverse">
 
                         <div class="page-image image-frame">
-                            <img src="IMG_9048.jpeg" alt="Conclusión">
+                            <img
+                                src="IMG_9048.jpeg"
+                                alt="Conclusión"
+                            >
                         </div>
 
                         <div class="page-text">
@@ -1840,19 +2647,21 @@
                                 ✦ REFLEXIÓN FINAL
                             </span>
 
-                            <h2>Conclu<span>sión</span></h2>
+                            <h2>
+                                Conclu<span>sión</span>
+                            </h2>
 
                             <div class="red-yellow-line"></div>
 
                             <p>
-                                España representa una combinación extraordinaria de
-                                historia, cultura, arte y tradición.
+                                España representa una combinación extraordinaria
+                                de historia, cultura, arte y tradición.
                             </p>
 
                             <p>
-                                Conocer y preservar estos elementos permite comprender
-                                mejor la importancia de su legado y su influencia en
-                                el mundo.
+                                Conocer y preservar estos elementos permite
+                                comprender mejor la importancia de su legado y
+                                su influencia en el mundo.
                             </p>
 
                             <div class="sources-note">
@@ -1861,7 +2670,8 @@
 
                                 <p>
                                     Recursos históricos, culturales y educativos
-                                    utilizados para la elaboración de este portafolio.
+                                    utilizados para la elaboración de este
+                                    portafolio.
                                 </p>
 
                             </div>
@@ -1875,62 +2685,66 @@
                 </section>
 
 
-            <!-- =====================================================
-     PÁGINA 33 — DESPEDIDA Y AGRADECIMIENTO
-===================================================== -->
+                <!-- =====================================================
+                     PÁGINA 33 — DESPEDIDA Y AGRADECIMIENTO
+                ====================================================== -->
 
-<section class="book-page thank-you-page">
+                <section class="book-page thank-you-page">
 
-    <div class="corner-emoji">🇪🇸</div>
+                    <div class="corner-emoji">🇪🇸</div>
 
-    <div class="thank-you-content">
+                    <div class="thank-you-content">
 
-        <div class="thank-you-emojis">
-            🇪🇸 ❤️ 💛 👋 ✨ 🏛️
-        </div>
+                        <div class="thank-you-emojis">
+                            🇪🇸 ❤️ 💛 👋 ✨ 🏛️
+                        </div>
 
-        <span class="section-label">
-            ✦ FIN DEL RECORRIDO
-        </span>
+                        <span class="section-label">
+                            ✦ FIN DEL RECORRIDO
+                        </span>
 
-        <h2>
-            ¡Muchas gracias por
-            <span>su atención!</span>
-        </h2>
+                        <h2>
+                            ¡Muchas gracias por
+                            <span>su atención!</span>
+                        </h2>
 
-        <div class="red-yellow-line center-line"></div>
+                        <div class="red-yellow-line center-line"></div>
 
-        <p>
-            Hemos llegado al final de este recorrido por la historia, la
-            cultura, las tradiciones y algunos de los aspectos más importantes
-            de España.
-        </p>
+                        <p>
+                            Hemos llegado al final de este recorrido por la
+                            historia, la cultura, las tradiciones y algunos de
+                            los aspectos más importantes de España.
+                        </p>
 
-        <p>
-            España es un país lleno de historia, diversidad y riqueza cultural,
-            donde cada región, tradición y acontecimiento ha contribuido a
-            construir la identidad que conocemos hoy.
-        </p>
+                        <p>
+                            España es un país lleno de historia, diversidad y
+                            riqueza cultural, donde cada región, tradición y
+                            acontecimiento ha contribuido a construir la
+                            identidad que conocemos hoy.
+                        </p>
 
-        <div class="final-message">
-            <span>🇪🇸</span>
-            <strong>¡Hasta la próxima aventura!</strong>
-            <span>🇪🇸</span>
-        </div>
+                        <div class="final-message">
 
-        <div class="goodbye-emojis">
-            👋 🥘 💃 ⚽ 🏰 ☀️ 🎶 ❤️💛
-        </div>
+                            <span>🇪🇸</span>
 
-    </div>
+                            <strong>
+                                ¡Hasta la próxima aventura!
+                            </strong>
 
-    <div class="page-number">33</div>
+                            <span>🇪🇸</span>
 
-</section>
+                        </div>
+
+                        <div class="goodbye-emojis">
+                            👋 🥘 💃 ⚽ 🏰 ☀️ 🎶 ❤️💛
+                        </div>
+
+                    </div>
 
                     <div class="page-number">33</div>
 
                 </section>
+
 
             </div>
 
@@ -1938,6 +2752,7 @@
 
 
         <!-- CONTROLES -->
+
         <div class="controls">
 
             <button
@@ -1969,4 +2784,6 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>
+
